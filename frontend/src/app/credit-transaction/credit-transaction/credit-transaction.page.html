@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons mode="ios">
+      <ion-button>
+      </ion-button>
+      <ion-button></ion-button>
+    </ion-buttons>
+    <ion-title >Transactions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-segment (ionChange)="segmentChanged($event)" value="credit" mode='ios'>
+      <ion-segment-button value="all">
+        <ion-label>All</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="debit">
+        <ion-label>Debit</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="credit">
+        <ion-label>Credit</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div class="transactions" (click)="navigatePage('empty')">
+    <div class="d-flex">
+      <span>
+        <h6>Mobile Airtime</h6>
+        <small>20th May 2020</small>
+      </span>
+      <span class="success">
+        +200
+      </span>
+    </div>
+  </div>
+  <div class="transactions">
+    <div class="d-flex">
+      <span>
+        <h6>Mobile Airtime</h6>
+        <small>20th May 2020</small>
+      </span>
+      <span class="success">
+        +200
+      </span>
+    </div>
+  </div>
+  <div class="transactions">
+    <div class="d-flex">
+      <span>
+        <h6>Cable TV</h6>
+        <small>4th June 2020</small>
+      </span>
+      <span class="success">
+        +3800
+      </span>
+    </div>
+  </div>
+  <div class="transactions">
+    <div class="d-flex">
+      <span>
+        <h6>Credit Wallet</h6>
+        <small>1st January 2020</small>
+      </span>
+      <span class="success">
+        +15000
+      </span>
+    </div>
+  </div>
+
+</ion-content>

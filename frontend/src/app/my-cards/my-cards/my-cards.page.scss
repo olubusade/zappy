@@ -1,0 +1,74 @@
+ion-card {
+  text-align: center;
+  margin-top: 20px !important;
+  width: 299px !important;
+  height: 150px !important;
+
+
+  .caption {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    padding-left: 10px !important;
+  }
+}
+
+ion-title {
+  text-align: center;
+}
+
+ion-toolbar {
+  --paddin-end: 0px;
+  --padding-start: 0px;
+}
+
+.swiper-pagination {
+  position: absolute;
+  display: none !important;
+}
+
+ion-slide {
+  --padding-start: 0px !important;
+  --padding-end: 0px !important;
+  --margin: 10px 0px 10px 0px !important;
+  width: 100% !important;
+}
+ion-slide >:first-child {
+  width: 100%;
+  margin: 30px 30px 35px 30px !important;
+  .slider .slider-pager {
+    color: red !important;
+  }
+}
+
+.text-right {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  line-height: 12px !important;
+  text-align: center;
+  color: rgba(0, 54, 121, 0.6) !important;
+}
+
+
+.details {
+  padding: 0px 10px !important;
+}
+
+ion-button {
+  width: 241px;
+  --border-radius: 6px;
+  margin: 0 auto;
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 22px !important;
+  
+}
+
+ion-row {
+  padding: 18px 20px !important;
+}

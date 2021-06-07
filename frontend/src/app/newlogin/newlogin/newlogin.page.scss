@@ -1,0 +1,70 @@
+ion-content {
+  --ion-background-color: linear-gradient(90deg, #9ACD32 0%, #056608 157.2%) !important; 
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 50vh;
+  margin-top: 150px;
+}
+
+ion-item {
+  color: #9ACD32;
+  border-radius: 6px;
+  --background: #ffffff;
+   width: 311px;
+  --min-height: 40px;
+  --padding-left: 0;
+  --padding-right: 0;
+}
+
+ion-input {
+  color: #9ACD32;
+  width: 311px !important;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  --placeholder-color: rgba(0, 54, 121, 0.6);
+}
+
+button {
+  width: 240px;
+  border-radius: 6px;
+  color: #9ACD32 !important;
+  min-height: 40px;
+  font-family: 'Poppins';
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 18px;
+  background: #DDAB14;
+  margin: 20px 0px;
+
+  ::placeholder {
+    color: rgba(0, 54, 121, 0.6);
+  }
+}
+
+.brand {
+  text-align: center;
+  padding-top: 40px;
+  img {
+    width: 40% !important;
+  }
+}
+
+p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px !important;
+  line-height: 14px;  
+  color: #FFFFFF !important;
+
+  margin-top: -10px;
+}

@@ -1,0 +1,110 @@
+<ion-header>
+  <div class="containner">    
+    <ion-toolbar color="none" mode="ios">
+      <ion-buttons  (click)="goBack()">
+      <ion-button >
+        <ion-icon ios="arrow-back-outline" md="arrow-back"></ion-icon>
+      </ion-button>
+      </ion-buttons>
+      <ion-title color="primary">Wallet</ion-title>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="container">    
+    <ion-buttons class="justify-content-between">
+      <h4>My Cards</h4>
+      <ion-button>      
+      </ion-button>
+    </ion-buttons>
+  </div>
+  <div class="slides" id="slides">
+    <ion-slides pager="true" [options]="slideOpts" speed="2" mode="ios">
+      <ion-slide>
+        <ion-card mode="ios" color="primary">  
+          <ion-card-content class="debit-card">
+            <div class="caption text-white">
+              <h5>xxxx xxxx xxxx 6743</h5>
+              <div class="bottom">
+                <h5>25/05/2020</h5>
+                <span class="d-flexs mr-2">
+                  <img src="../../assets/icon/mastercard_circles_icon.svg" alt="">                  
+                </span>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card mode="ios" class="bg-secondary-light">  
+          <ion-card-content class="debit-card">
+            <div class="caption text-primary">
+              <h5>xxxx xxxx xxxx 6743</h5>
+              <div class="bottom">
+                <h5>25/05/2020</h5>
+                <span class="d-flexs mr-2">
+                  <img src="../../assets/icon/mastercard_circles_icon.svg" alt="">                  
+                </span>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>       
+      </ion-slide>
+
+      <ion-slide>
+          <ion-card mode="ios" class="bg-purple">  
+            <ion-card-content class="debit-card">
+              <div class="caption text-white">
+                <h5>xxxx xxxx xxxx 6743</h5>
+                <div class="bottom">
+                  <h5>25/05/2020</h5>
+                  <span class="d-flexs mr-2">
+                    <img src="../../assets/icon/mastercard_circles_icon.svg" alt="">                  
+                  </span>
+                </div>
+              </div>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+
+  </div>
+
+  <div class="wrapper">
+    <div class="inner">
+      <ion-buttons class="justify-content-between">
+        <h6>Add your card here</h6>
+        <ion-button>      
+        </ion-button>
+      </ion-buttons>
+
+      <ion-item lines="none">
+        <ion-label position='stacked'>Card number</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position='stacked'>Card holder name</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <div class="d-flex">
+        <ion-item lines="none" class="field-sm">
+          <ion-label position='stacked'>Expiry Date</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="none" class="field-sm">
+          <ion-label position='stacked'>CVV (Security code)</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="ion-text-center">
+        <ion-button color='primary' mode='ios' (click)="addCard()">Submit</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

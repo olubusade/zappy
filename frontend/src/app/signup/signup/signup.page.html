@@ -1,0 +1,92 @@
+<ion-content>
+  <div class="brand">
+    <img src="assets/imgs/white-logo.png" alt="white-logo">
+  </div>
+  <div class="signup">
+    <h4>Register</h4>
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()" novalidate>
+      <ion-item lines="full">
+        <ion-label position="floating">First Name<span class="required"><sup>*</sup></span></ion-label>
+        <ion-input formControlName="first_name" type="text"></ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.first_name.errors?.required">
+        First Name is required.
+      </span>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.first_name.errors?.minlength">
+        Min 3 chars long.
+      </span>
+      <ion-item lines="full">
+        <ion-label position="floating">Last Name<span class="required"><sup>*</sup></span></ion-label>
+        <ion-input formControlName="last_name" type="text"></ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.last_name.errors?.required">
+        Last Name is required.
+      </span>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.last_name.errors?.minlength">
+        Min 3 chars long.
+      </span>
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email" Placeholder="(Optional)"></ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.email.errors?.pattern">
+        Enter valid email.
+      </span>
+    <!--
+      <ion-item lines="full">
+        <ion-label position="floating">Mobile</ion-label>
+        <ion-input maxlength="13" formControlName="mobile" type="text" required></ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.mobile.errors?.required">
+        Mobile number is required.
+      </span>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.mobile.errors?.pattern">
+        Number values allowed.
+      </span>
+    -->
+      <ion-item lines="full">
+        <ion-label position="floating">Password<span class="required"><sup>*</sup></span></ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.password.errors?.required">
+        Password is required.
+      </span>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.password.errors?.minlength">
+        Min 6 chars long.
+      </span>
+      <ion-item lines="full">
+        <ion-label position="floating">Confirm Password<span class="required"><sup>*</sup></span></ion-label>
+        <ion-input formControlName="confirmpassword" type="password"></ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.confirmpassword.errors?.required">
+        Confirm Password is required.
+      </span>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.confirmpassword.errors?.minlength">
+        Min 6 chars long.
+      </span>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.confirmpassword.errors?.passwordMismatch">
+        Password Mismatch
+      </span>
+      <ion-item lines="full">
+        <ion-label position="floating">Transaction Pin<span class="required"><sup>*</sup></span></ion-label>
+        <ion-input ion-input 
+                 inputmode="numeric"
+                 formControlName="transaction_pin"
+                 pattern= "{{pinPattern}"
+                 onKeyPress="if(this.value.length == 4) return false;"
+                 type="number" 
+                 
+                 placeholder="Transaction Pin"
+                 maxlength="4">
+      </ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.transaction_pin.errors?.required">
+        Transaction pin is required.
+      </span>
+      <br>
+      <button class="btn btn-primary text-white" ion-button mode="ios">
+        Register to continue
+      </button>
+    </form>
+  </div>
+</ion-content>

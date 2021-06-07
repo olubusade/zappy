@@ -1,0 +1,33 @@
+
+.container {
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+
+  button {
+    padding: 0px !important;
+    background: transparent;
+    //color: #003679 !important;
+    opacity: .9;
+    font-weight: 600;
+  }
+}
+
+h4 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;  
+  text-align: center;
+  color: rgba(0, 54, 121, 0.6) !important;
+}
+
+button {
+  color: #003679;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px; 
+}

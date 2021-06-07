@@ -1,0 +1,39 @@
+
+<ion-content>
+    <ion-tabs>
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="home">
+            <ion-icon name="home-outline"></ion-icon>
+            <!-- <ion-icon>
+              <img src="../../assets/icon/home_icon.svg" alt="">
+            </ion-icon> -->
+            <ion-label>Home</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button tab="wallet">
+            <ion-icon name="wallet-outline"></ion-icon> 
+            <!-- <img src="../../assets/icon/wallet_icon.svg" alt=""> -->
+            <ion-label>Wallet</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button tab="transactions">
+            <ion-icon name="sync-outline"></ion-icon>
+            <!-- <img src="../../assets/icon/transaction_icon.svg" alt=""> -->
+            <ion-label>Transactions</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button tab="profile">
+            <ion-icon name="person-outline"></ion-icon>
+            <!-- <img src="../../assets/icon/profile_icon.svg" alt=""> -->
+            <ion-label>Profile</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button  (click)="openMenu()">
+            <ion-icon name="grid-outline"></ion-icon>
+            <!-- <img src="../../assets/icon/more_icon.svg" alt=""> -->
+            <ion-label>More</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+    </ion-tabs>
+</ion-content>
+  

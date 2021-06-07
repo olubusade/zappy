@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons mode="ios">
+      <ion-button>
+      </ion-button>
+      <ion-button></ion-button>
+    </ion-buttons>
+    <ion-title >Wallet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">    
+    <ion-segment (ionChange)="segmentChanged($event)" value="wallet" mode="ios">
+      <ion-segment-button value="wallet">
+        <ion-label>My balance</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="card-blank">
+        <ion-label>My cards</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-buttons class="ion-align-items-center" mode="ios">
+      <ion-button  fill="clear"> 
+      </ion-button>
+      <ion-button slot="end" class="tool-text" fill="clear" (click)="navigatePage('add-money')">          
+        Add money
+        <img src="../../assets/icon/add_money_icon.svg" alt="add-money" class="ml-1">
+      </ion-button>
+    </ion-buttons>
+
+    <ion-card color="primary" mode="ios">  
+      <ion-card-content >
+         <p class="text">Available Balance</p>
+        <div class="amount">N 5000.00</div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+</ion-content>

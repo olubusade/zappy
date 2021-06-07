@@ -1,0 +1,116 @@
+<ion-header class="header-bg">
+  <ion-toolbar mode="ios" color="none" class="text-white">
+    <ion-buttons mode="ios">
+      <ion-button (click)="goBack()" slot="start">
+        <ion-icon ios="arrow-back-outline" md="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-button slot="end">
+      </ion-button>
+    </ion-buttons>
+    <ion-title >Fund Transfer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-buttons class="ion-align-items-center" mode="ios">
+      <ion-button slot="start" class="tool-text" fill="clear" (click)="goToService('fund-transfer')">          
+        Make transfer here
+      </ion-button>
+      <ion-button slot="end" class="tool-text" fill="clear" (click)="goToService('add-money')">          
+        Add money
+        <img src="../../assets/icon/add_money_icon.svg" alt="add-money" class="ml-1">
+      </ion-button>
+    </ion-buttons>
+   
+    <ion-card color="primary" mode="ios">  
+      <ion-card-content >
+        <p class="text">Available Balance</p>
+        <div class="amount">N 0.00</div>
+      </ion-card-content>
+    </ion-card>
+      <div class="most-recent">        
+        <h4>
+          <img src="../../assets/icon/most_recent_icon.svg" alt="most recent">
+          Most recent
+        </h4>
+        <div class="slides" id="slides">
+          <ion-slides pager="false" [options]="slideOpts" mode="ios">
+            <ion-slide>
+              <div class="m-recent">        
+                <span class="circle-sm">
+                  GE
+                </span>
+                <p>          
+                  Grace Emmanuel
+                </p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div class="m-recent">        
+                <span class="circle-sm">
+                  GE
+                </span>
+                <p>          
+                  Grace Emmanuel
+                </p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div class="m-recent">        
+                <span class="circle-sm">
+                  GE
+                </span>
+                <p>          
+                  Grace Emmanuel
+                </p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div class="m-recent">        
+                <span class="circle-sm">
+                  GE
+                </span>
+                <p>          
+                  Grace Emmanuel
+                </p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div class="m-recent">        
+                <span class="circle-sm">
+                  GE
+                </span>
+                <p>          
+                  Grace Emmanuel
+                </p>
+              </div>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </div>
+      <ion-item lines="none">
+        <ion-input placeholder="Amount" type="text" required></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label mode="ios">Select Bank</ion-label>
+        <ion-select okText="Okay" cancelText="Dismiss" required>
+          <ion-select-option value="gtb">GTBank</ion-select-option>
+          <ion-select-option value="first bank">First Bank Nigeria</ion-select-option>
+          <ion-select-option value="uba">UBA</ion-select-option>
+          <ion-select-option value="zenith">Zenith</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input placeholder="Account number" size="number" type="text" required></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input placeholder="Add a note (optional)"></ion-input>
+      </ion-item> 
+      <div class="ion-text-center">
+        <ion-button color="primary" (click)="goToService('transfer2')" mode="ios">
+          Continue
+        </ion-button>
+      </div>
+  </div>
+</ion-content>

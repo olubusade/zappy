@@ -1,0 +1,98 @@
+
+
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons mode="ios">
+      <ion-button (click)="goBack()">
+        <ion-icon ios="arrow-back-outline" md="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-button></ion-button>
+    </ion-buttons>
+    <ion-title >My Cards</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="slides" id="slides">
+    <ion-slides pager="true" [options]="slideOpts" mode="md">
+      <ion-slide>
+        <ion-card mode="ios" color="primary">  
+          <ion-card-content class="debit-card">
+            <div class="caption text-white">
+              <h5>xxxx xxxx xxxx 6743</h5>
+              <div class="bottom">
+                <h5>25/05/2020</h5>
+                <span class="d-flexs mr-2">
+                  <img src="../../assets/icon/mastercard_circles_icon.svg" alt="">                  
+                </span>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide> 
+
+      <ion-slide>
+        <ion-card mode="ios" class="bg-secondary-light">  
+          <ion-card-content class="debit-card">
+            <div class="caption text-primary">
+              <h5>xxxx xxxx xxxx 6743</h5>
+              <div class="bottom">
+                <h5>25/05/2020</h5>
+                <span class="d-flexs mr-2">
+                  <img src="../../assets/icon/mastercard_circles_icon.svg" alt="">                  
+                </span>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>       
+      </ion-slide>
+
+      <ion-slide>
+          <ion-card mode="ios" class="bg-purple">  
+            <ion-card-content class="debit-card">
+              <div class="caption text-white">
+                <h5>xxxx xxxx xxxx 6743</h5>
+                <div class="bottom">
+                  <h5>25/05/2020</h5>
+                  <span class="d-flexs mr-2">
+                    <img src="../../assets/icon/mastercard_circles_icon.svg" alt="">                  
+                  </span>
+                </div>
+              </div>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+
+    <div class="details">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="label">Issuer Bank</ion-col>
+          <ion-col class="text-right">
+            Guaranty Trust Bank
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="label">Added on</ion-col>
+          <ion-col class="text-right">
+            May 25, 2020
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="label">Expiry Date</ion-col>
+          <ion-col class="text-right">
+            25/05/2024
+          </ion-col>
+        </ion-row>
+      </ion-grid>  <br>
+      <div class="ion-text-center">
+        <button class="btn btn-danger text-white" mode="ios" (click)="navigatePage('add-card')">
+          Delete Card
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>

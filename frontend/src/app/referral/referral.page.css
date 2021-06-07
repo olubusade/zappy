@@ -1,0 +1,42 @@
+ion-content {
+	--background: rgba(0, 0, 92, 0.02);
+}
+
+.referral {
+	margin: 20px 20px;
+	padding: 0px 40px;
+}
+
+.referral ion-card {
+	width: 264px;
+	padding: 0;
+	margin-top: 100px;
+	border-radius: 4px;
+	background: rgba(0, 54, 121, 0.6);
+}
+
+.ref-link {
+	width: 264px;
+	font-size: 12px;
+	background: rgba(0, 28, 2, 1);
+	padding: 10px 5px;
+	align-items: center;
+	border-radius: 4px;
+	opacity: 0.5;
+	font-weight: 900;
+	line-height: 25px;
+	color: white;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	border-radius: 4px;
+	opacity: .5;
+	font-weight: 900;
+}
+
+button {
+	width: 264px !important;
+	height: 40px;
+	margin-top: 30px !important;
+}
+/*# sourceMappingURL=referral.page.css.map */

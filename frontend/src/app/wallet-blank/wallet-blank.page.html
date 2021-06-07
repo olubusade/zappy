@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons mode="ios">
+      <ion-button>
+      </ion-button>
+      <ion-button></ion-button>
+    </ion-buttons>
+    <ion-title >Wallet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-segment (ionChange)="segmentChanged($event)" value="empty" mode="ios">
+      <ion-segment-button value="all">
+        <ion-label>All</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="empty">
+        <ion-label>Debit</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="credit">
+        <ion-label>Credit</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-buttons class="ion-align-items-center" mode="ios">
+      <ion-button  fill="clear"> 
+      </ion-button>
+      <ion-button slot="end" class="tool-text" fill="clear" (click)="navigatePage('add-money')">          
+        Add money
+        <img src="../../assets/icon/add_money_icon.svg" alt="add-money" class="ml-1">
+      </ion-button>
+    </ion-buttons>
+    
+    <div class="signup">
+      <p>You haven't funded <br> your wallet yet</p>
+    </div>
+  </div>
+</ion-content>

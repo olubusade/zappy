@@ -1,0 +1,117 @@
+
+ion-title {
+  text-align: center;
+}
+
+ion-toolbar {
+  --paddin-end: 0px;
+  --padding-start: 0px;
+}
+
+ion-button {
+  width: 241px;
+  --border-radius: 6px;
+  margin: 0 auto;
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 22px !important;
+  
+}
+
+ion-bottons {
+  ion-button {
+    text-transform: lowercase !important;
+  }
+}
+
+ion-row {
+  padding: 18px 20px !important;
+}
+.wrapper {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-top: -0px;
+}
+.inner {
+  padding: 30px !important;
+}
+.d-flex {
+  justify-content: space-evenly;
+  margin-top: -10px !important;
+}
+.field-sm {
+  width: 116px;
+}
+.label {
+  margin: 0;
+}
+
+.item-inner {
+  padding-right: 0px!important;
+}
+ion-item {
+  color: #003679;
+  border-radius: 6px;
+  //--background: rgba(0, 54, 121, 0.1);
+  --min-height: 40px !important;
+    margin: 10px 0px !important;
+    border: 1px solid #003679;
+    // --inner-padding-bottom: 0px !important;
+    // --inner-padding-top: 0px !important;
+
+  ion-label {
+    --color: rgba(0, 54, 121, 0.6);
+    font-family: 'Poppins';
+    font-style: normal;
+   font-weight: 500;
+    font-size: 7px;
+    line-height: 12px;
+    padding: 0px !important;
+    --min-height: 10px !important;
+  }
+
+  ion-input {
+    font-family: 'Poppins';
+    font-style: normal;
+   font-weight: 500 !important;
+    font-size: 12px !important;
+    line-height: 18px !important;
+   --padding-top: 0px !important;
+   --padding-bottom: 2px !important;
+    color: #003679 !important;
+  }
+}
+
+h6 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px !important;
+  line-height: 16px !important;
+
+  color: #003679 !important;
+}
+
+h4 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #003679;
+}
+
+.brand {
+  margin-top: 40px;
+}
+.paystack {
+  box-shadow: 2px 2px 19px rgba(0, 0, 0, 0.06);
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;  
+  text-align: center;  
+  color: #003679;
+}

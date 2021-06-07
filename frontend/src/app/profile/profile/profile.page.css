@@ -1,0 +1,42 @@
+.details {
+  padding-right: 0 !important;
+}
+
+.details h5 {
+  height: 12px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 12px;
+  color: rgba(42, 43, 42, 0.6);
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.first_name {
+  text-transform: uppercase;
+}
+
+ion-input {
+  font-size: 10px;
+  line-height: 12px;
+  --placeholder-color: rgba(42, 43, 42, 0.6) !important;
+  --placeholder-font-size: 10px !important;
+  --placeholder-font-style: normal;
+  --placeholder-font-weight: 500;
+}
+
+.avatar-main .caption {
+  height: 12px;
+  font-weight: normal;
+  font-size: 8px;
+  line-height: 12px;
+  color: rgba(0, 54, 121, 0.6);
+  text-align: center;
+}
+
+button {
+  margin: 0 auto !important;
+}
+/*# sourceMappingURL=profile.page.css.map */

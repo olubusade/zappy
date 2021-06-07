@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons mode="ios">
+      <ion-button>
+      </ion-button>
+      <ion-button></ion-button>
+    </ion-buttons>
+    <ion-title >Transactions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-segment (ionChange)="segmentChanged($event)" value="empty" mode="ios">
+      <ion-segment-button value="empty">
+        <ion-label>All</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="debit">
+        <ion-label>Debit</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="credit">
+        <ion-label>Credit</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div class="signup-upper">
+    <img src="../../assets/icon/transaction_empty_state_icon.svg" alt="">
+    <h6 class="text-primary">Opps! no history of <br> transaction yet</h6>
+  </div>
+</ion-content>
+ 

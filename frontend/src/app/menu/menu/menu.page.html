@@ -1,0 +1,52 @@
+<ion-menu side="start" menuId="mainMenu" contentId="main">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <span class="avatar">
+        <img src="../../assets/imgs/passport2.png" alt="photo">
+      </span>
+      <ion-button>Edit profile</ion-button>
+      <ion-title>Start Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <img src="../../assets/icon/referal_icon.svg" alt="referal">
+        Referral
+      </ion-item>
+      <ion-item>
+        <img src="../../assets/icon/contact_us_icon.svg" alt="contact">
+        Contact us
+      </ion-item>
+      <ion-item>
+        <img src="../../assets/icon/about_rulpay_icon.svg" alt="about">
+        About Zappy
+      </ion-item>
+      <ion-item>
+        <img src="../../assets/icon/logout_icon.svg" alt="logout">
+        Log out
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>
+
+  <!-- <ion-menu contentId="main-content" side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let page of pages">
+          <ion-item [routerLink]="page.path" routerDirection="root" [class.active-menu]="activePath === page.path">
+            {{page.name}}
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content" main></ion-router-outlet> -->

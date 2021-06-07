@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons mode="ios"  slot="start">
+      <ion-icon class="icon" [routerLink]="['/home']" name="arrow-back-sharp"></ion-icon>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="brand">
+    <img src="../../assets/imgs/logo.png" alt="zappy-logo">
+  </div>
+  <div id = "welcome_note" style = "margin-left: 20px; font-size:14px;">
+    <h2>Hi,</h2>
+    <p>Let's start with your mobile number.</p>
+    <p>We advise that you use an active mobile number</p>
+  </div>
+  <div class="signup">
+    <ion-item>
+      <ion-icon style="margin-left:0px;" name="call-outline"></ion-icon>&nbsp;&nbsp;
+      <ion-input ion-input 
+                 inputmode="numeric"
+                 pattern= "{{mobile_pattern}}"
+                 onKeyPress="if(this.value.length == 13) return false;"
+                 type="number" 
+                 [(ngModel)] = "registerForm.mobile_no"  
+                 placeholder="Mobile Number"
+                 maxlength="13">
+      </ion-input>
+    </ion-item>
+    <button ion-button mode="ios" (click)="verifyMobileNo()">
+      Validate My Mobile No.
+    </button>
+
+    
+   </div>
+   <div id = "privacy_policy" class="text-center" style="margin-top:-10px">
+    <span  style = "color:grey; font-size:10px;">By signing up, you are agreeing to our</span><br>
+    <a href="#" style= "text-decoration:none"><span style = "color:black; font-size:10px;"><strong>Terms of Service & Privacy Policy</strong></span></a>
+  </div>
+</ion-content>

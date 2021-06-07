@@ -1,0 +1,53 @@
+ion-content {
+  --background: rgba(0, 0, 92, 0.02);
+}
+ion-card {
+  background: #ffffff;
+  border-radius: 4px;
+  margin: 0px 17px;
+  height: auto !important;
+  padding: 0px !important;
+}
+ion-card-content {
+  color: #003679;
+  padding: 0 !important;
+  span {
+    align-items: center;
+    margin: 10px 0;
+    font-size: 12px;
+    font-weight: 550;
+  }
+  h6 {
+    font-weight: 600;
+    margin: 20px 0px 20px 0 !important;
+  }
+  p {
+    font-size: 13px !important;
+    text-align: left;
+    margin: 0px;
+    padding: 0px 20px 20px 20px;
+  }
+}
+
+.brand {
+  margin: 20px 101px;
+
+  img {
+    width: 100% !important;
+  }
+}
+
+ion-row {
+  padding: 20px;
+}
+
+#details {
+  ion-row {
+    padding: 15px 20px;
+  }
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}

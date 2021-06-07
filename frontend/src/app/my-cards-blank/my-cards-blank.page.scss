@@ -1,0 +1,143 @@
+ion-card {
+  text-align: center;
+  color: #003679;
+}
+
+ion-card {
+  text-align: center;
+  padding: 20px;
+  margin: 0 20px;
+  color: #ffffff;
+
+  strong {
+    margin-top: 20rem;
+    font-size: 26px;
+  }
+}
+.tool-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.m-recent {
+  margin: 1px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #003679 !important;
+
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 14px;
+  }
+}
+
+.most-recent {
+  padding: 10px 0px;
+  h4 {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 8px;
+    line-height: 14px;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 2;
+    width: 70px;
+  }
+
+}
+
+.circle-sm {
+  width: 40px !important;
+  height: 40px !important;
+  background: rgba(0, 54, 121, 0.6);
+  margin: 0 auto !important;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 12px;
+}
+
+ion-title {
+  text-align: center;
+}
+
+ion-toolbar {
+  --paddin-end: 0px;
+  --padding-start: 0px;
+}
+
+ion-buttons {
+  justify-content: space-between;
+  padding: 15px 0px;
+  ion-button {
+    width: auto;
+    margin: 0 !important;
+    --padding-end: 0px !important;
+    --padding-start: 0px !important;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 15px;
+    color: #003679;
+  }
+}
+
+ion-button {
+  width: 241px;
+  --border-radius: 6px;
+  margin: 0 auto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 12px;
+}
+
+ion-item {
+  color: #003679;
+  border-radius: 6px;
+  --background: rgba(0, 54, 121, 0.1);
+  --min-height: 40px;
+  --background-hover: #ffffff;
+  margin: 0px;
+
+  ion-label {
+    --font-size: 12px !important;
+    line-height: 18px;
+    --font-weight: 500;
+    --color: rgba(0, 54, 121, 0.6);
+  }
+}
+
+ion-input, ion-select {
+  --placeholder-color: rgba(0, 54, 121, 0.6);
+  --placeholder-font-weight: 500;
+  --padding-top: 0;
+  --padding-bottom: 0;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  color: rgba(0, 54, 121, 0.6);
+  margin-top: 20vh;
+}

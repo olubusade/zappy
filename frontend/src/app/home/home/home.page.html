@@ -1,0 +1,17 @@
+
+  <ion-toolbar mode="ios">
+    <ion-buttons mode="ios"  slot="start">
+      <ion-icon class="icon back-arrow"[routerLink]="['/walk-through']" name="arrow-back-sharp"></ion-icon>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+
+<ion-content [fullscreen]="true" id="page-bg">
+  <div class="brand">
+    <img src="../../assets/imgs/logo.png" alt="Zappy Logo">
+  </div>
+  <div id="container" class="signup">
+    <button mode = "ios" id = "signupbtn" class="btn btn-secondary text-primary" (click)="showSignup()">I am new to Zappy<i class="zmdi zmdi-tap-and-play"></i></button>
+    <button mode = "ios" id = "loginbtn" class="btn btn-transparent text-color" (click)="showLogin()">Login</button>
+  </div>
+</ion-content>

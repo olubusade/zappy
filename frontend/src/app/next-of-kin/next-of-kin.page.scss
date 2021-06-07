@@ -1,0 +1,11 @@
+.signup-upper {
+  margin-top: 30px;
+}
+
+input {
+  &:focus {
+    outline: none !important;
+    border: solid 1px #003679;
+    background: #ffffff !important;
+  }
+}

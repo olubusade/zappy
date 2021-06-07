@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons mode="ios">
+      <ion-button  (click)="goBack()">
+        <ion-icon name="arrow-back" ></ion-icon>
+      </ion-button>
+      <ion-button></ion-button>
+    </ion-buttons>
+    <ion-title >Payment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="brand">
+    <img src="../../assets/imgs/logo.png" alt="logo">
+  </div>
+  <div class="layout-center">
+    <ion-card color="white">
+      <ion-card-content>
+        <h6 class="text-primary text-center">Transfer Instructions</h6>
+        <div class="">
+          <p>By selecting the Bank Transfer option, you agree to
+            make an Internet Transfer as payment for your 
+            transaction.
+          </p>
+            <ion-row class="ion-justify-content-between ion-align-items-center">
+              Click to accept Bank Transfer terms
+              <input type="checkbox" name="accept" id="accept" (click)="acceptTransfer()">
+            </ion-row>
+        </div>
+        <div id="details" class="hidden">
+          <div class="divider"></div>
+          <ion-row>   
+            Bank: First Bank Nigeria        
+          </ion-row>
+          <ion-row>   
+            Name: AdikpoPay        
+          </ion-row>
+          <ion-row>   
+            Account no: 0032156789        
+          </ion-row>
+          <ion-row>   
+            Amount: NGN5,000.00        
+          </ion-row>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  
+  <div class="paystack">
+    <img src="../../assets//icon/paystack_icon.svg" alt="paystack">
+    <h6 class="text-primary ml-1">
+      Secured by Paystack
+    </h6>
+  </div>
+</ion-content>

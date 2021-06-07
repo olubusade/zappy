@@ -1,0 +1,47 @@
+<ion-header class="header-bg">
+  <ion-toolbar mode="ios" color="none" class="text-white">
+    <ion-buttons mode="ios">
+      <ion-button (click)="goBack()" slot="start">
+        <ion-icon ios="arrow-back-outline" md="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-button slot="end">
+        <ion-icon name="alert-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title >Mobile Airtime</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="container">
+    <div class="brand">
+      <img src="../../assets/imgs/logo.png" alt="adikpopay-logo" />
+    </div>
+    <div>
+      <ion-item lines="none">
+        <ion-label *ngIf="!isSelected">Select a Network</ion-label>
+        <ion-select okText="Okay" cancelText="Dismiss" required (ionChange)="onChnage()">
+          <ion-select-option value="GLO">GLO</ion-select-option>
+          <ion-select-option value="MTN">MTN</ion-select-option>
+          <ion-select-option value="9MOBILE">9MOBILE</ion-select-option>
+          <ion-select-option value="AIRTEL">AIRTEL</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-item lines="none">
+        <ion-input placeholder="Mobile Number" type="tel" required></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-input placeholder="Amount" type="number" required></ion-input>
+      </ion-item>
+
+    </div>
+    <div class="ion-text-center">      
+      <ion-button color="primary" (click)="subscribeToService()" mode='ios'>
+        Continue
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

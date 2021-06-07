@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAC;EACN,MAAM,EAAE,IAAI;CACb;;AACD,AAAA,eAAe,CAAC;EACd,OAAO,EAAE,oBAAoB;CAC9B",
+    "sources": [
+        "wallet-blank.page.scss"
+    ],
+    "names": [],
+    "file": "wallet-blank.page.css"
+}

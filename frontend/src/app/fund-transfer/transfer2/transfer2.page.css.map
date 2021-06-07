@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,MAAM,EAAE,4BAA4B;EACpC,YAAY,CAAA,mBAAC;CACd",
+    "sources": [
+        "transfer2.page.scss"
+    ],
+    "names": [],
+    "file": "transfer2.page.css"
+}

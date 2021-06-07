@@ -1,0 +1,50 @@
+<ion-content>
+  <div class="brand">
+    <img src="../../assets/imgs/logo.png" alt="logo">
+  </div>
+  <div class="slides" id="slides">
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <div class="main-layout">            
+          <img src="../../assets/imgs/vector1.png" alt="vector1">
+          <span>
+            Make easy payments on all transactions
+          </span>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="main-layout">            
+          <img src="../../assets/imgs/vector2.png" alt="vector2">
+          <span>
+            Enjoy best rates for your Mobile Recharge, 
+            Electricity Bill payment, Data Top-up, 
+            Cable TV subscription.
+          </span>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="main-layout">            
+          <img src="../../assets/imgs/vector3.png" alt="vector3">
+          <span>
+            <strong>Zappy</strong> gives you upto 5% cashback 
+            on Data and Airtime top upon every 
+            Purchases or Transactions.
+          </span>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="main-layout">            
+          <img src="../../assets/imgs/vector4.png" alt="vector4">
+          <span>
+            Become a <strong>Zappy</strong> bills App Agent and make
+            money on every purchase or transaction
+          </span>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div> 
+  <div class="pull-right" (click)="skip()">          
+    Skip
+    <img style = "color:#9ACD32;" src="../../assets/icon/skip_icon.svg" alt="skip">
+  </div>        
+</ion-content>

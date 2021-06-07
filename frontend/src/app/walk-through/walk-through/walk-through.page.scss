@@ -1,0 +1,45 @@
+.main-layout {
+	align-items: center !important;
+	margin: 60px 30px 0px 30px;
+
+	span {
+		font-family: 'Poppins';
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		line-height: 18px;
+		text-align: center;
+		color: #3b3b3b;
+		padding: 82px 25px 35px 25px;
+	}
+}
+
+ion-button {
+	text-align: right !important;
+}
+
+.pull-right {
+	margin: 40px 30px 0px 30px;
+	text-align: right;
+	color: #9ACD32;
+	letter-spacing: 2px;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.brand {
+	margin: 40px 110px 0px 110px !important;
+
+	img {
+		margin-top: 10px;
+		width: 100% !important;
+	}
+}
+
+// .slides {
+//   //position: absolute;
+//   margin: 60px 0px 30px;
+// }

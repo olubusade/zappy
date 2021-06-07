@@ -1,0 +1,82 @@
+ion-content {
+  --ion-background-color: linear-gradient(90deg, #ff00ff 0%, #ff00ff 157.2%) !important;
+}
+
+.signup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  height: 40vh;
+  margin-top: 150px;
+}
+
+ion-item {
+  color: #ff00ff;
+  border-radius: 6px;
+  --background: #ffffff;
+  width: 311px;
+  --min-height: 40px;
+  --padding-left: 0;
+  --padding-right: 0;
+}
+
+ion-input {
+  color: #ff00ff;
+  width: 311px !important;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  --placeholder-color: #ff00ff; /*rgba(0, 54, 121, 0.6)*/
+}
+
+button {
+  width: 311px;
+  border-radius: 6px;
+  color: #ff00ff !important;
+  min-height: 40px;
+  font-family: 'Poppins';
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 18px;
+  background: #DDAB14;
+  margin: 10px 0px;
+}
+
+button ::-webkit-input-placeholder {
+  color: rgba(0, 54, 121, 0.6);
+}
+
+button :-ms-input-placeholder {
+  color: rgba(0, 54, 121, 0.6);
+}
+
+button ::-ms-input-placeholder {
+  color: rgba(0, 54, 121, 0.6);
+}
+
+button ::placeholder {
+  color: rgba(0, 54, 121, 0.6);
+}
+
+.brand {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.brand img {
+  width: 40% !important;
+}
+/*# sourceMappingURL=register.page.css.map */

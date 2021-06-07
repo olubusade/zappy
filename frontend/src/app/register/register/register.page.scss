@@ -1,0 +1,70 @@
+ion-content {
+  --ion-background-color: linear-gradient(90deg, #ffffff 0%, #ffffff 157.2%) !important; 
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 40vh;
+  margin-top: 150px;
+}
+
+ion-item {
+  color: #9ACD32;
+  border-radius: 6px;
+  --background: #ffffff;
+   width: 311px;
+  --min-height: 40px;
+  --padding-left: 0;
+  --padding-right: 0;
+}
+
+
+ion-input {
+  color: #808080;  //003679
+  width: 311px !important;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  --placeholder-color: #808080bd; //rgba(0, 54, 121, 0.6)
+}
+
+button {
+  width: 300px;
+  border-radius: 20px;
+  color: #ffffff !important; //#  003679
+  min-height: 40px;
+  font-family: 'Poppins';
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 20px;
+  background: #9ACD32;  // DDAB14
+  margin: 10px 0px;
+  margin-top: 140px;
+
+  ::placeholder {
+    color: #808080;
+    font-weight: 400 !important;
+    padding-left: 20px;
+  }
+}
+
+.brand {
+  text-align: center;
+  padding-top: 40px;
+  img {
+    width: 40% !important;
+  }
+
+}
+
+.icon {
+  margin-left:10px;
+  font-size:20px;
+  color:#9ACD32;
+}

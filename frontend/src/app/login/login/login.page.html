@@ -1,0 +1,43 @@
+<ion-toolbar mode="ios">
+  <ion-buttons mode="ios"  slot="start">
+    <ion-icon class="icon back-arrow"[routerLink]="['/home']" name="arrow-back-sharp"></ion-icon>
+  </ion-buttons>
+  <ion-title></ion-title>
+</ion-toolbar>
+<ion-content>
+  <div class="brand">
+    <img src="../../assets/imgs/logo.png" alt="zappy-logo">
+  </div>
+  <div id="container" class="container">
+    <div *ngIf = "showName" class="page-title">
+      <small>Welcome Back!</small>
+      <h2>{{user_fullname}}</h2>
+    </div>
+    <ion-item>
+      <ion-icon *ngIf = "!showName" name="call-outline"></ion-icon>&nbsp;&nbsp;
+      <ion-input *ngIf = "!showName" ion-input 
+                 inputmode="numeric"
+                 pattern= "{{mobile_pattern}}"
+                 onKeyPress="if(this.value.length == 13) return false;"
+                 type="number" 
+                 [(ngModel)] = "loginData.mobile_no"  
+                 placeholder="Mobile No."
+                 maxlength="13">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock-closed-outline"></ion-icon>&nbsp;&nbsp;
+      <ion-input ion-input type="password" [(ngModel)]="loginData.password"  name="password" placeholder="Password"></ion-input>
+    </ion-item>
+      <button class="btn btn-primary" (click)="login()">
+        Login
+      </button>
+      <span class="text-primary" (click)="register()"> No, I am not {{user_first_name}}!</span>
+      <label class="text-link" (click)="forgotPassword()">
+        Forgot password
+      </label>
+      <span>
+        <img src="../../assets/icon/thumbprint_icon.svg" alt="" (click)="login()">
+      </span>
+  </div>
+</ion-content>

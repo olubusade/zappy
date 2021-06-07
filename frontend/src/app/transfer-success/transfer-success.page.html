@@ -1,0 +1,24 @@
+<ion-header class="header-bg">
+  <div class="container ion-align-items-center ion-justify-content-center">    
+    <ion-toolbar color="none" class="text-white" mode="ios">
+      <ion-buttons slot="start" (click)="goBack()">
+        <ion-icon ios="arrow-back-outline" md="arrow-back"></ion-icon>
+      </ion-buttons>
+      <ion-title color="primary">Success</ion-title>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="container full-height">
+    <h6 class="text-center text-primary">
+      Hurray!! your transaction <br>
+      was successfull
+    </h6>
+    <div class="circle-lg">
+      <img src="../../assets/icon/success.png" alt="success">
+    </div>
+    <ion-button color="primary">Share</ion-button>
+    <ion-button color="secondary" (click)="goToService('home')">Go Home</ion-button>
+  </div>
+</ion-content>

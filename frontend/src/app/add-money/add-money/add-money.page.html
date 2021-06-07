@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="none" class="text-white" mode="ios">
+    <ion-buttons  >
+      <ion-button (click)="goBack()">
+        <ion-icon ios="arrow-back-outline" md="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-button></ion-button>
+    </ion-buttons>
+    <ion-title >Wallet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container container-bg">
+    <ion-segment (ionChange)="segmentChanged($event)" mode="ios" value="wallet">
+      <ion-segment-button value="wallet">
+        <ion-label>My balance</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="cards">
+        <ion-label>My cards</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-card color="primary" mode="ios">  
+      <ion-card-content >
+         <p class="text">Available Balance</p>
+        <div class="amount">N 5000.00</div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div class="wrapper">
+    <div class="inner">      
+      <h4>Add money</h4>
+      <ion-item lines="none">
+        <ion-input placeholder="Amount" type="text" required></ion-input>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-input placeholder="Password" type="pasword" required></ion-input>
+      </ion-item>  
+  
+      <div class="ion-text-center">      
+        <ion-button color="primary" (click)="addMoney()" mode='ios'>
+          Fund my wallet
+        </ion-button>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

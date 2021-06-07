@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons mode="ios">
+      <ion-button>
+      </ion-button>
+      <ion-button></ion-button>
+    </ion-buttons>
+    <ion-title >Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="container">
+    <ion-segment (ionChange)="segmentChanged($event)" value="features" mode="ios">
+      <ion-segment-button value="personal">
+        <ion-label>Personal</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="security">
+        <ion-label>Security</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="features">
+        <ion-label>Features</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div class="avatar-main text-center">
+    <img src="../../assets//imgs/passport2.png" alt="">
+    <div class="text-primary caption" (click)="navigatePage('change-photo')">
+      <label>
+        Tap to change picture
+        <input type="file" name="photo" hidden>
+      </label>
+    </div>
+  </div>
+
+  <div class="details">
+    <ion-grid>
+      <ion-row (click)="navigatePage('payment-methods')">
+        <ion-col >Cards & Payment Methods</ion-col>
+        <ion-col size="1">
+          <img src="../../assets/icon/right_arrow_icon.svg" alt="">
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="navigatePage('download')">
+        <ion-col>Download Statement of Accounts</ion-col>
+        <ion-col size="1">
+          <img src="../../assets/icon/right_arrow_icon.svg" alt="">
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="navigatePage('support')">
+        <ion-col>Support</ion-col>
+        <ion-col size="1">
+          <img src="../../assets/icon/right_arrow_icon.svg" alt="">
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="navigatePage('terms')">
+        <ion-col>Terms & Conditions</ion-col>
+        <ion-col size="1">
+          <img src="../../assets/icon/right_arrow_icon.svg" alt="">
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="navigatePage('privacy-policy')">
+        <ion-col>Privacy & Policy</ion-col>
+        <ion-col size="1">
+          <img src="../../assets/icon/right_arrow_icon.svg" alt="">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  
+</ion-content>

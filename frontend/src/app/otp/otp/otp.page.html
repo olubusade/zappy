@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons mode="ios"  slot="start">
+      <ion-icon class="icon" [routerLink]="['/register']" name="arrow-back-sharp"></ion-icon>
+    </ion-buttons>
+    <ion-title >OTP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div class="text-center">   
+    <p style="font-size:14px; margin-top:30px">We have sent an OTP to <strong>{{stored_mobile_no}}</strong></p>
+  </div>
+
+  <h4 class="title text-center">Enter your OTP here</h4>
+  <div class="otp">
+    <form action="#">
+      <div class="otp-input">
+        <input ion-input inputmode="numeric" onKeyPress="if(this.value.length == 1) return false;" [(ngModel)] = "otpForm.digit1" type="number" pattern="\d*" name="otp1" id="otp1" maxlength="1"/>
+        <input ion-input inputmode="numeric" onKeyPress="if(this.value.length == 1) return false;" [(ngModel)] = "otpForm.digit2" type="text" pattern="\d*"  name="otp2" id="otp2" maxlength="1"/>
+        <input ion-input inputmode="numeric" onKeyPress="if(this.value.length == 1) return false;" [(ngModel)] = "otpForm.digit3" type="text" pattern="\d*" name="otp3" id="otp3" maxlength="1"/>
+        <input ion-input inputmode="numeric" onKeyPress="if(this.value.length == 1) return false;" [(ngModel)] = "otpForm.digit4" type="text" pattern="\d*" name="otp4" id="otp4" maxlength="1"/>
+      </div>
+      <h6 class="text-center text-primary py-4">
+        Automatically send OTP
+      </h6>
+      <div class="text-center ">
+        <button mode = "ios" class="btn btn-primary text-white" (click)="submitOTP()">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="divider mt-2"></div>
+    <div class="d-flex mr-2 ml-2 p-2">
+      <h6 class="text-center text-primary" style="font-weight:600;">Didn't get OTP?</h6>
+      <button class="btn-outline text-primary" (click)="resendOTP()">Resend</button>
+    </div>
+  <div class="divider"></div>
+</ion-content>

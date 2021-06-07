@@ -1,0 +1,8 @@
+{
+  "name": "Zappy",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

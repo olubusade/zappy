@@ -1,0 +1,59 @@
+<ion-header>
+  <div class="containner">    
+    <ion-toolbar color="none" mode="ios">
+      <ion-buttons  (click)="goBack()">
+      <ion-button >
+        <ion-icon ios="arrow-back-outline" md="arrow-back"></ion-icon>
+      </ion-button>
+      </ion-buttons>
+      <ion-title color="primary">Pay with Card</ion-title>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="brand">
+      <img src="../../assets/imgs/logo.png" alt="">
+    </div>
+  </div>
+  <div class="container">
+    <div class="innner">
+      <ion-buttons class="justify-content-between">
+        <h6>Add your debit card here</h6>
+        <ion-button>      
+        </ion-button>
+      </ion-buttons>
+
+      <ion-item lines="none">
+        <ion-label position='stacked'>Card number</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position='stacked'>Card holder name</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <div class="d-flex">
+        <ion-item lines="none" class="field-sm">
+          <ion-label position='stacked'>Expiry Date</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="none" class="field-sm">
+          <ion-label position='stacked'>CVV (Security code)</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="ion-text-center">
+        <ion-button color='primary' mode='ios'>Submit</ion-button>
+      </div>
+    </div>
+  </div>
+  <div class="paystack text-primary">
+    <img src="../../assets/icon/paystack_icon.svg" alt="">
+    <h6 class="ml-2">Secured by Paystack</h6>
+    
+  </div>
+</ion-content>

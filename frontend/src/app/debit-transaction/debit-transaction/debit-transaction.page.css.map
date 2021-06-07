@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACV,YAAY,CAAA,qBAAC;CACd;;AAED,AAAA,OAAO,CAAC;EACN,OAAO,EAAE,oBAAoB;CAC9B;;AACD,AAAA,YAAY,CAAC;EACX,KAAK,EAAE,KAAK;CACb",
+    "sources": [
+        "debit-transaction.page.scss"
+    ],
+    "names": [],
+    "file": "debit-transaction.page.css"
+}

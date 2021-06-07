@@ -1,0 +1,138 @@
+<ion-content>
+  <div class="container">
+    <div class="container-fixed">      
+      <ion-buttons class="ion-align-items-center" mode='ios'>
+        <ion-button slot="start" class="tool-text" fill="clear" (click)="gotoService('fund-transfer')">          
+          <div class="avatar">
+            <img src="../../assets/imgs/passport2.png" alt="avatar">
+            <span>Hi, {{userData.first_name}}</span>
+          </div>
+        </ion-button>
+        <ion-button slot="end" class="tool-text" fill="clear" (click)="gotoService('add-money')">          
+          Add money
+          <img src="../../assets/icon/add_money_icon.svg" alt="add-money" class="ml-1">
+        </ion-button>
+      </ion-buttons>
+      <ion-row>
+        <ion-card color="primary" mode="ios">  
+          <ion-card-content >
+            <p class="text">Available Balance</p> 
+            <div class="amount"> &#x20A6; {{userData.wallet_amount}}</div>
+          </ion-card-content>
+        </ion-card>
+        <ion-card color="primary" mode="ios">  
+          <ion-card-content >
+            <p class="text">Available Points</p> 
+            <div class="amount">{{userData.points}}</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </div>
+  </div>
+  <div class="container container-bg">
+    <ion-buttons class="ion-align-items-center " mode="ios">
+      <ion-button slot="start" class="tool-text" fill="clear" (click)="gotoService('fund-transfer')">          
+        <h6>Services</h6>
+      </ion-button>
+      <ion-button slot="end">          
+      </ion-button>
+    </ion-buttons>
+
+    <ion-grid > 
+      <ion-row class="products">
+        <div class="box-sm" (click)="gotoService('mobile-airtime')">
+          <img src="../../assets/icon/mobile_airtime_icon.svg" alt=""> <br>
+          Mobile Airtime
+        </div>
+        <div class="box-sm" (click)="gotoService('data-bundle')">
+          <img src="../../assets/icon/data_bundles_icon.svg" alt=""> <br>
+          Data Bundle
+        </div>
+      </ion-row>
+      <ion-row class="products">
+        <div class="box-sm" (click)="gotoService('add-money')">
+          <img src="../../assets/icon/fund_wallet_icon.svg" alt=""> <br>
+          Fund Wallet
+        </div>
+        <div class="box-sm" (click)="gotoService('data-bundle')">
+          <img src="../../assets/icon/data_bundles_icon.svg" alt=""> <br>
+          Share Data (MTN only)
+        </div>
+      </ion-row>
+      <ion-row class="products">
+        <div class="box-sm" (click)="gotoService('electricity')">
+          <img src="../../assets/icon/electricity_bill_icon.svg" alt=""> <br>
+          Electricity Bill
+        </div>
+        <div class="box-sm" (click)="gotoService('cable-tv')">
+          <img src="../../assets/icon/cable_tv_icon.svg" alt=""> <br>
+          Cable TV
+        </div>
+      </ion-row>
+      <ion-row class="products">
+      <div class="box-sm" (click)="gotoService('add-money')">
+        <img src="../../assets/icon/fund_wallet_icon.svg" alt=""> <br>
+        Bulk SMS
+      </div>
+      <div class="box-sm" (click)="gotoService('coming-soon')">
+        <img src="../../assets/icon/graduation-cap-1.svg" alt=""> <br>
+        SIM Hosting
+      </div>
+      </ion-row>
+      <ion-row class=" products">
+     
+      <div class="box-sm" (click)="gotoService('fund-transfer')">
+        <img src="../../assets/icon/funds_transfer_icon.svg" alt=""> <br>
+        Share Data (MTN only)
+      </div>
+        <div class="box-sm" (click)="gotoService('coming-soon')">
+          <img src="../../assets/icon/international_topup_icon.svg" alt=""> <br>
+          Load Voucher for wallet
+        </div>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <div class="box-md bg-primary">
+          <span>MTN 1GB <br>
+          for 30days <br>
+          N475</span> <br>
+          <button ion-button (click)="gotoService('data-bundle')">Top up</button>
+        </div>
+        <div class="box-md bg-purple">
+          <span>MTN 2GB <br>
+            for 30days <br>
+            N950</span> <br>
+            <button ion-button (click)="gotoService('data-bundle')">Top up</button>
+        </div>
+      </ion-row>
+      <ion-row>
+        <div class="box-md bg-secondary">
+          <span>MTN 5GB <br>
+          for 30days 
+          N2375</span> <br>
+          <button ion-button (click)="gotoService('data-bundle')">Top up</button>
+        </div>
+        <div class="box-md bg-light">
+         <span>Up to 5% off <br>
+          on mobile 
+          recharge</span> <br>
+          <button ion-button (click)="gotoService('mobile-airtime')">Recharge</button>
+        </div>
+      </ion-row>
+    </ion-grid>
+    <div class="slides" id="slides">
+      <ion-slides pager="false" [options]="slideOpts">
+        <ion-slide>
+         <img src="../../assets/imgs/Banner1.jpg" alt="banner1">
+        </ion-slide>
+        <ion-slide>
+          <img src="../../assets/imgs/Banner2.jpg" alt="banner2">
+        </ion-slide>
+        <ion-slide>
+          <img src="../../assets/imgs/Banner3.jpg" alt="banner3">
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+</ion-content>

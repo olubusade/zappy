@@ -1,0 +1,38 @@
+ion-item {
+  margin-left: 0 !important;
+}
+
+ion-header {
+  --background: #ffffff !important;
+  --padding: 20px !important;
+}
+
+h6 {
+  color: #9ACD32;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+}
+button {
+  border-radius: 20px !important;
+  background: #9ACD32;
+  color: #ffffff;
+  padding: 5px 7px;
+}
+
+ion-toolbar {
+  text-align: center !important;
+}
+
+.avatar-main {
+  margin-bottom: 0px !important;
+}
+
+.paystack {
+  color: #1e1f1d !important;
+  box-shadow: none !important;
+}
+
+.brand {
+  padding: 30px 0px;
+}
