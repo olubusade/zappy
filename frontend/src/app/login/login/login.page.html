@@ -13,9 +13,9 @@
       <small>Welcome Back!</small>
       <h2>{{user_fullname}}</h2>
     </div>
-    <ion-item>
-      <ion-icon *ngIf = "!showName" name="call-outline"></ion-icon>&nbsp;&nbsp;
-      <ion-input *ngIf = "!showName" ion-input 
+    <ion-item *ngIf = "!showName">
+      <ion-icon name="call-outline"></ion-icon>&nbsp;&nbsp;
+      <ion-input ion-input 
                  inputmode="numeric"
                  pattern= "{{mobile_pattern}}"
                  onKeyPress="if(this.value.length == 13) return false;"

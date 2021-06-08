@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
   showName: boolean = true;
   ngOnInit() {
     this.loginData.user_id = localStorage.getItem(`setting:user_id`);
-    this.user_mobile_no = localStorage.getItem(`setting:user_mobile_no`);
+    this.user_mobile_no = localStorage.getItem(`setting:mobile_no`);
     this.user_first_name = localStorage.getItem(`setting:first_name`);
     this.user_last_name = localStorage.getItem(`setting:last_name`);
     
