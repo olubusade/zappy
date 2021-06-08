@@ -9,7 +9,7 @@
           </div>
         </ion-button>
         <ion-button slot="end" class="tool-text" fill="clear" (click)="gotoService('add-money')">          
-          Add money
+          Fund
           <img src="../../assets/icon/add_money_icon.svg" alt="add-money" class="ml-1">
         </ion-button>
       </ion-buttons>
@@ -20,19 +20,21 @@
             <div class="amount"> &#x20A6; {{userData.wallet_amount}}</div>
           </ion-card-content>
         </ion-card>
+        <!--
         <ion-card color="primary" mode="ios">  
           <ion-card-content >
             <p class="text">Available Points</p> 
             <div class="amount">{{userData.points}}</div>
           </ion-card-content>
         </ion-card>
+      -->
       </ion-row>
     </div>
   </div>
   <div class="container container-bg">
     <ion-buttons class="ion-align-items-center " mode="ios">
       <ion-button slot="start" class="tool-text" fill="clear" (click)="gotoService('fund-transfer')">          
-        <h6>Services</h6>
+        <h6 slot="center">Services</h6>
       </ion-button>
       <ion-button slot="end">          
       </ion-button>
@@ -40,6 +42,27 @@
 
     <ion-grid > 
       <ion-row class="products">
+      <!--
+        <div>
+          <ion-chip>
+            <ion-icon name="heart" color="dark"></ion-icon>    
+          </ion-chip><br>
+          <ion-label>Avatar Chip</ion-label>
+        </div>
+        <div>
+          <ion-chip>
+            <ion-icon name="heart" color="dark"></ion-icon>    
+          </ion-chip><br>
+          <ion-label>Avatar Chip</ion-label>
+        </div>
+        <div>
+          <ion-chip>
+            <ion-icon name="heart" color="dark"></ion-icon>    
+          </ion-chip><br>
+          <ion-label>Avatar Chip</ion-label>
+        </div>
+      -->
+        
         <div class="box-sm" (click)="gotoService('mobile-airtime')">
           <img src="../../assets/icon/mobile_airtime_icon.svg" alt=""> <br>
           Mobile Airtime
@@ -48,6 +71,7 @@
           <img src="../../assets/icon/data_bundles_icon.svg" alt=""> <br>
           Data Bundle
         </div>
+     
       </ion-row>
       <ion-row class="products">
         <div class="box-sm" (click)="gotoService('add-money')">

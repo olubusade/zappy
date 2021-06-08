@@ -1,7 +1,7 @@
 ion-card {
   text-align: center;
   margin: 10px auto auto 0px !important;
-//  width: 299px !important;
+  width: 299px !important;
 }
 h6 {
    width: 72px !important;
@@ -102,4 +102,12 @@ ion-row {
   background-color: #ffffff;
   z-index: 99;
   width: 100%;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+ion-chip {
+  height: 50px;
+  width: 50px;
+  border-radius:10px;
 }
