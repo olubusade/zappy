@@ -44,7 +44,7 @@ export class LoginPage implements OnInit {
   }
 
   async login() {
-    let converted_mobile = this.loginData.mobile_no.toString();
+    let converted_mobile = this.user_mobile_no ? this.user_mobile_no : this.loginData.mobile_no.toString();
     if(this.loginData.password == '' || this.loginData.password == null) {
       const alert = await this.alertCtrl.create({
         cssClass: 'my-alert',
