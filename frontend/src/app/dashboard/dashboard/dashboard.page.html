@@ -40,81 +40,87 @@
       </ion-button>
     </ion-buttons>
 
-    <ion-grid > 
-      <ion-row class="products">
-      <!--
-        <div>
-          <ion-chip>
-            <ion-icon name="heart" color="dark"></ion-icon>    
+    <ion-grid>
+      <ion-row class="chip" style="padding-right:-60px;">
+        <ion-col>
+          <div>
+          <ion-chip (click)="gotoService('mobile-airtime')" color="secondary">
+              <ion-icon name="archive" color="primary"></ion-icon>
           </ion-chip><br>
-          <ion-label>Avatar Chip</ion-label>
-        </div>
-        <div>
-          <ion-chip>
-            <ion-icon name="heart" color="dark"></ion-icon>    
+          <ion-label color="dark" style="padding-left:10px;">Airtime</ion-label>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+          <ion-chip color="secondary" (click)="gotoService('data-bundle')">
+              <ion-icon name="wallet" color="primary"></ion-icon>
           </ion-chip><br>
-          <ion-label>Avatar Chip</ion-label>
-        </div>
-        <div>
-          <ion-chip>
-            <ion-icon name="heart" color="dark"></ion-icon>    
+          <ion-label color="dark" style="padding-left:0px;">Data Bundle</ion-label>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-chip color="secondary" (click)="gotoService('data-bundle')">
+              <ion-icon name="archive" color="primary"></ion-icon>
           </ion-chip><br>
-          <ion-label>Avatar Chip</ion-label>
-        </div>
-      -->
-        
-        <div class="box-sm" (click)="gotoService('mobile-airtime')">
-          <img src="../../assets/icon/mobile_airtime_icon.svg" alt=""> <br>
-          Mobile Airtime
-        </div>
-        <div class="box-sm" (click)="gotoService('data-bundle')">
-          <img src="../../assets/icon/data_bundles_icon.svg" alt=""> <br>
-          Data Bundle
-        </div>
-     
+          <ion-label color="dark" style="padding-left:0px;">Share Data</ion-label>
+          </div>
+        </ion-col>
       </ion-row>
-      <ion-row class="products">
-        <div class="box-sm" (click)="gotoService('add-money')">
-          <img src="../../assets/icon/fund_wallet_icon.svg" alt=""> <br>
-          Fund Wallet
-        </div>
-        <div class="box-sm" (click)="gotoService('data-bundle')">
-          <img src="../../assets/icon/data_bundles_icon.svg" alt=""> <br>
-          Share Data (MTN only)
-        </div>
+      <ion-row class="chip">
+        <ion-col>
+          <div>
+          <ion-chip (click)="gotoService('electricity')" color="secondary">
+              <ion-icon name="archive" color="primary"></ion-icon>
+          </ion-chip><br>
+          <ion-label color="dark" style="padding-left:0px;">Electricity</ion-label>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+          <ion-chip color="secondary" (click)="gotoService('cable-tv')">
+              <ion-icon name="wallet" color="primary"></ion-icon>
+          </ion-chip><br>
+          <ion-label color="dark" style="padding-left:12px;">Cable TV</ion-label>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-chip color="secondary" (click)="gotoService('data-bundle')">
+              <ion-icon name="archive" color="primary"></ion-icon>
+          </ion-chip><br>
+          <ion-label color="dark" style="padding-left:0px;">Load Voucher</ion-label>
+          </div>
+        </ion-col>
       </ion-row>
-      <ion-row class="products">
-        <div class="box-sm" (click)="gotoService('electricity')">
-          <img src="../../assets/icon/electricity_bill_icon.svg" alt=""> <br>
-          Electricity Bill
-        </div>
-        <div class="box-sm" (click)="gotoService('cable-tv')">
-          <img src="../../assets/icon/cable_tv_icon.svg" alt=""> <br>
-          Cable TV
-        </div>
-      </ion-row>
-      <ion-row class="products">
-      <div class="box-sm" (click)="gotoService('add-money')">
-        <img src="../../assets/icon/fund_wallet_icon.svg" alt=""> <br>
-        Bulk SMS
-      </div>
-      <div class="box-sm" (click)="gotoService('coming-soon')">
-        <img src="../../assets/icon/graduation-cap-1.svg" alt=""> <br>
-        SIM Hosting
-      </div>
-      </ion-row>
-      <ion-row class=" products">
-     
-      <div class="box-sm" (click)="gotoService('fund-transfer')">
-        <img src="../../assets/icon/funds_transfer_icon.svg" alt=""> <br>
-        Share Data (MTN only)
-      </div>
-        <div class="box-sm" (click)="gotoService('coming-soon')">
-          <img src="../../assets/icon/international_topup_icon.svg" alt=""> <br>
-          Load Voucher for wallet
-        </div>
+      <ion-row class="chip">
+        <ion-col>
+          <div>
+          <ion-chip (click)="gotoService('mobile-airtime')" color="secondary">
+              <ion-icon name="archive" color="primary"></ion-icon>
+          </ion-chip><br>
+          <ion-label color="dark" style="padding-left:0px;">Bulk SMS</ion-label>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+          <ion-chip color="secondary" (click)="gotoService('data-bundle')">
+              <ion-icon name="wallet" color="primary"></ion-icon>
+          </ion-chip><br>
+          <ion-label color="dark" style="margin-left:-10px;">Bulk Voice SMS</ion-label>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-chip color="secondary" (click)="gotoService('data-bundle')">
+              <ion-icon name="archive" color="primary"></ion-icon>
+          </ion-chip><br>
+          <ion-label color="dark" style="margin-left:-1px;">SIM Hosting</ion-label>
+          </div>
+        </ion-col>
       </ion-row>
     </ion-grid>
+    
     <ion-grid>
       <ion-row>
         <div class="box-md bg-primary">
