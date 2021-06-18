@@ -21,4 +21,9 @@ export class UserService {
     let data = {userData};
     return this.http.post(appConfig.apiURL + '/login', data)
   }
+
+  storePaymentDetails(paymentData: any): Observable<any> {
+    //let data = {paymentData};
+    return this.http.post(appConfig.apiURL + '/finish_wallet_payment', paymentData)
+  }
 }

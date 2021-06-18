@@ -24,7 +24,7 @@
     <ion-card color="primary" mode="ios">  
       <ion-card-content >
          <p class="text">Available Balance</p>
-        <div class="amount">N 5000.00</div>
+        <div class="amount">&#x20A6; {{wallet_amount}}</div>
       </ion-card-content>
     </ion-card>
   </div>
@@ -33,7 +33,7 @@
     <div class="inner">      
       <h4>Add money</h4>
       <ion-item lines="none">
-        <ion-input placeholder="Amount" type="text" required></ion-input>
+        <ion-input placeholder="Amount" type="text" [(ngModel)] = "fund_amount" required></ion-input>
       </ion-item>
   
       <ion-item lines="none">
@@ -41,7 +41,31 @@
       </ion-item>  
   
       <div class="ion-text-center">      
-        <ion-button color="primary" (click)="addMoney()" mode='ios'>
+        <!--ion-button color="primary" (click)="addMoney()" mode='ios'>
+          Fund my wallet
+        </ion-button-->
+        <!--angular4-paystack
+          [email]="'mailexample@mail.com'"
+          [amount]="fund_amount"
+          [ref]="reference"
+          [channels]="['bank']"
+          [class]="'btn btn-primary'"
+          (close)="paymentCancel()"
+          (callback)="paymentDone($event)"
+        >
+          Fund my wallet
+        </angular4-paystack-->
+        <ion-button
+          angular4-paystack
+          [key]="pKey"
+          [email]="'mailexample@mail.com'"
+          [amount]="fund_amount * 100"
+          [ref]="reference"
+          [color]="'primary'"
+          (paymentInit)="paymentInit()"
+          (close)="paymentCancel()"
+          (callback)="paymentDone($event)"
+        >
           Fund my wallet
         </ion-button>
       </div>

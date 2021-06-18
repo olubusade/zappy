@@ -7,4 +7,5 @@ exports.userRoutes = function (app) {
     app.post('/register_new_user', UserController.userController.registerNewUser);
     app.post('/login', [UserController.userController.login]);
     app.post('/get_users', [UserController.userController.getUsers]);
+    app.post('/finish_wallet_payment', [UserController.userController.finishWalletPayment]);
 };

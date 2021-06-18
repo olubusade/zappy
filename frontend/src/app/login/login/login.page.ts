@@ -107,6 +107,7 @@ export class LoginPage implements OnInit {
             localStorage.setItem(`setting:role_id`,resp.data.role_id);
             localStorage.setItem(`setting:first_name`,resp.data.first_name);
             localStorage.setItem(`setting:last_name`,resp.data.last_name);
+            localStorage.setItem(`setting:email`,resp.data.email);
             localStorage.setItem(`setting:mobile_no`,resp.data.mobile_no);
             localStorage.setItem(`setting:wallet_amount`,resp.data.wallet_amount);
             localStorage.setItem(`setting:points`,resp.data.points);

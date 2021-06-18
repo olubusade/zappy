@@ -3,6 +3,7 @@ const multer = require('multer');
 
 const sequelize = require('../../configs/connection');
 const User = require('../models/user')(sequelize, Sequelize);
+const WalletTnxRef = require('../models/wallet-tnx-ref')(sequelize, Sequelize);
 const { Op } = require("sequelize");
 const { QueryTypes } = require('sequelize');
 const { reject, result } = require('lodash');
@@ -12,6 +13,7 @@ const user = require('../models/user');
 const saltRounds = 10;
 
 User.sync();
+WalletTnxRef.sync();
 
 exports.userModel = {
     registerUser: async(userData) => {
@@ -72,6 +74,29 @@ exports.userModel = {
             }, err => {
                 reject({error: err});
             })
+        });
+    },
+    finishWalletPayment: (walletAmount, reference, userId) => {
+        return new Promise((resolve, reject) => {
+            User.update({wallet_amount: walletAmount}, {
+                where: {
+                    id: userId
+                }
+            }).then(user => {
+                //console.log(user);
+                resolve(user);
+            }, err => {
+                reject({error: err});
+            })
+        });
+    },
+    saveTnxRef: (reference, userId, amount) => {
+        return new Promise((resolve, reject) => {
+            WalletTnxRef.create({user_id: userId, amount: amount, ref: reference}).then(tnxRef => {
+                resolve(tnxRef);
+            },err=>{
+                reject({error:err});
+            });
         });
     },
     saveOTP: (userData) => {
