@@ -38,6 +38,9 @@
         </ion-card>
       -->
       </ion-row>
+      <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed" pullFactor="1" pullMin="50" pullMax="200">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
     </div>
   </div>
   <div class="container container-bg">

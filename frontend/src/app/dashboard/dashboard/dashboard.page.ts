@@ -13,7 +13,10 @@ export class DashboardPage implements OnInit {
     slidesPerView: 1.2,
     spaceBetween: 16,
   }
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    console.log('Persistent A');
+    
+  }
   
   userData = {
     first_name:'',
@@ -22,6 +25,7 @@ export class DashboardPage implements OnInit {
     points: ''
   }
   ngOnInit() {
+    console.log('Persistent B');
     this.userData.first_name = localStorage.getItem(`setting:first_name`);
     this.userData.wallet_amount = localStorage.getItem(`setting:wallet_amount`);
     this.userData.points = localStorage.getItem(`setting:points`);
@@ -39,4 +43,10 @@ export class DashboardPage implements OnInit {
      this.router.navigate(['user-dashboard/home/'+data])
   }
 
+  doRefresh(event) {
+    this.userData.wallet_amount = localStorage.getItem(`setting:wallet_amount`);
+    setTimeout(() => {
+      event.target.complete();
+    }, 2000);
+  }
 }
