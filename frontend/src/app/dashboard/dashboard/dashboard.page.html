@@ -18,6 +18,15 @@
           <ion-card-content >
             <p class="text">Available Balance</p> 
             <div class="amount"> &#x20A6; {{userData.wallet_amount}}</div>
+            <ion-fab vertical="edge" horizontal="start" edge slot="fixed">
+              <ion-fab-button class="ion-fab-button">
+                <ion-icon name="wallet" class="wallet"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-list class="list" side="end">
+                <ion-fab-button><ion-icon name="logo-vimeo"></ion-icon><ion-label>&#x20A6; {{userData.points}}</ion-label></ion-fab-button>
+                 <ion-fab-button><ion-icon name="logo-vimeo"></ion-icon><ion-label>&#x20A6; {{userData.points}}</ion-label></ion-fab-button>
+              </ion-fab-list>
+            </ion-fab>
           </ion-card-content>
         </ion-card>
         <!--

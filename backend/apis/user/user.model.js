@@ -88,4 +88,49 @@ exports.userModel = {
 
         });
     },
+    updateUserProfile: (userData) => {
+        return new Promise((resolve, reject) => {
+            if (userData.nickname) {
+                User.update(
+                    {nickname:userData.nickname},
+                    {where: {id: userData.user_id}}
+                ).then(user => {
+                   resolve(user[0]);
+                }, err => {
+                    reject({error: err});
+                })
+            }
+            if (userData.address) {
+                User.update(
+                    {address:userData.address},
+                    {where: {id: userData.user_id}}
+                ).then(user => {
+                   resolve(user[0]);
+                }, err => {
+                    reject({error: err});
+                })
+            }
+            if (userData.security_question) {
+                User.update(
+                    {security_question:userData.security_question},
+                    {where: {id: userData.user_id}}
+                ).then(user => {
+                   resolve(user[0]);
+                }, err => {
+                    reject({error: err});
+                })
+            }
+            if (userData.sq_answer) {
+                User.update(
+                    {security_answer:userData.sq_answer},
+                    {where: {id: userData.user_id}}
+                ).then(user => {
+                   resolve(user[0]);
+                }, err => {
+                    reject({error: err});
+                })
+            }
+            
+        });
+    }
 }

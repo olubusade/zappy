@@ -1,13 +1,9 @@
-<ion-header>
   <ion-toolbar mode="ios">
-    <ion-buttons mode="ios">
-      <ion-button>
-      </ion-button>
-      <ion-button></ion-button>
+    <ion-buttons mode="ios"  slot="start">
+      <ion-icon class="icon back-arrow"[routerLink]="['/walk-through']" name="arrow-back-sharp"></ion-icon>
     </ion-buttons>
-    <ion-title >Profile</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
-</ion-header>
 
 <ion-content>
   <div class="container">
@@ -25,64 +21,80 @@
   </div>
 
   <div class="avatar-main text-center">
-    <img src="../../assets//imgs/passport2.png" alt="">
-    <div class="text-primary caption">
+    <div class="text-primary caption" style="padding-bottom:25px;">
       <label>
-        Tap to change picture
+      <ion-icon class= "avatar" size = "" name="person-circle"></ion-icon>
         <input type="file" name="photo" hidden>
       </label>
     </div>
   </div>
-
-  <div class="details">
-    <ion-grid fixed>
-      <ion-row>
-        <ion-col class="label">Firstname</ion-col>
-        <ion-col size="8" class="text-right first_name">
-          Peter Onuh
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="label">Lastname</ion-col>
-        <ion-col size="8" class="text-right">
-          Demmah
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="label">Gender</ion-col>
-        <ion-col size="8" class="text-right">
-          Male
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="label">Date of Birth</ion-col>
-        <ion-col size="8" class="text-right">
-          May 8, 1990
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="label">BVN</ion-col>
-        <ion-col size="8" class="text-right">
-          21092632840
-        </ion-col>
-      </ion-row>
-      <ion-row class="d-flex" (click)="navigatePage('next-of-kin')">
-        <ion-col class="label">Next of kin</ion-col>
-        <ion-col size="8" class="text-right">
-          <img src="../../assets/icon/right_arrow_icon.svg" alt="">
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <h5>POSTAL ADDRESS</h5>        
-      </ion-row>
-      <ion-input placeholder="Type address here"></ion-input>
-    </ion-grid> <br>
-    <div class="ion-text-center">
-      <button class="btn btn-primary text-white">
-        Update
-      </button> 
-    </div>
-
-  </div> 
-  
+<div class="details">
+  <!-- List of Text Items -->
+  <ion-list>
+    <ion-item>
+        <ion-label class="title">Nickname</ion-label>
+        <ion-note>{{userData.nickname}}</ion-note>
+        <ion-icon slot="end" (click)="updateUserData('nickname')" name="create-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-label class="title">First name</ion-label>
+        <ion-note>{{userData.first_name}}</ion-note>
+        <!--
+        <ion-icon slot="end" (click)="updateUserData('first_name')" name="create-outline"></ion-icon>
+        -->
+    </ion-item>
+    <ion-item>
+        <ion-label class="title">Last name</ion-label>
+        <ion-note slot="end">{{userData.last_name}}</ion-note>
+        <!--
+        <ion-icon slot="end"  (click)="updateUserData('last_name')" name="create-outline"></ion-icon>
+        -->
+    </ion-item>
+    <ion-item>
+        <ion-label class="title">Date of Birth</ion-label>
+        <!--<ion-note slot="end">{{userData.dob}}</ion-note>-->
+        <ion-datetime value="{{userData.dob}}" displayFormat="DD MMM, YYYY" display-timezone="Africa/Lagos"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label class="title">Mobile</ion-label>
+        <ion-note slot="end">{{userData.mobile_no}}</ion-note>
+        <!--
+            <ion-icon slot="end" (click)="updateUserData('mobile_no')" name="create-outline"></ion-icon>
+        -->
+    </ion-item>
+    <ion-item>
+        <ion-label class="title">Email Address</ion-label>
+        <ion-note slot="end">{{userData.email}}</ion-note>
+<!--
+        <ion-icon slot="end" (click)="updateUserData('email')" name="create-outline"></ion-icon>
+-->
+    </ion-item>
+    <ion-item>
+        <ion-label class="title">Address</ion-label>
+        <ion-note slot="end">{{userData.address}}</ion-note>
+        <ion-icon slot="end" (click)="updateUserData('address')" name="create-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-label class="title">Security Question (SQ)</ion-label>
+        <ion-note slot="end">{{userData.security_question}}</ion-note>
+        <ion-icon slot="end" (click)="updateUserData('security_question')" name="create-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-label class="title">Answer to SQ</ion-label>
+        <ion-note slot="end">{{userData.sq_answer}}</ion-note>
+        <ion-icon slot="end" (click)="updateUserData('sq_answer')" name="create-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-label class="title">Zappy Level</ion-label>
+        <ion-note [ngSwitch] = "userData.role_id" slot="end">
+            <span *ngSwitchCase = "1">Casual User</span>
+            <span *ngSwitchCase = "2">Paypoint Agent</span>
+            <span *ngSwitchCase = "3">Custom Seller</span>
+            <span *ngSwitchCase = "4">API Seller</span>
+            <span *ngSwitchCase = "5">Super Admin</span>
+        </ion-note>
+        <ion-icon slot="end" name="create-outline"></ion-icon>
+    </ion-item>
+ </ion-list>
+</div>
 </ion-content>

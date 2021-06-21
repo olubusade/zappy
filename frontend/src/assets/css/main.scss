@@ -231,7 +231,7 @@ span .text-link {
 		font-family: 'Poppins';
 		font-style: normal;
 		font-weight: 500;
-		font-size: 12px;
+		font-size: 10px;
 		line-height: 16px;
 		color: #1e1f1d;
 		//color: rgba(0, 54, 121, 0.6);
@@ -267,7 +267,7 @@ span .text-link {
 		color: #9ACD32;
 		left: 72px;
 		top: 61px;
-		border-radius: 6px;
+		border-radius: 20px;
 		min-height: 20px;
 		background: #ffffff;
 		// padding: 0px !important;
@@ -330,8 +330,8 @@ ion-segment-button {
 	padding: 0;
 	font-family: 'Poppins';
 	font-style: normal;
-	font-weight: 600;
-	font-size: 12px;
+	font-weight: 400;
+	font-size: 10px;
 	line-height: 16px;
 	color: #9ACD32;
 
@@ -349,8 +349,8 @@ ion-segment-button {
 	ion-label {
 		font-family: 'Poppins';
 		font-style: normal;
-		font-weight: 600;
-		font-size: 12px;
+		font-weight: 400;
+		font-size: 10px;
 		line-height: 16px;
 		color: #9ACD32;
 	}
@@ -373,7 +373,7 @@ ion-segment-button {
 			font-family: 'Poppins';
 			font-style: normal;
 			font-weight: 500;
-			font-size: 14px;
+			font-size: 10px;
 			line-height: 12px;
 		}
 
@@ -383,7 +383,7 @@ ion-segment-button {
 			font-family: 'Poppins' !important;
 			font-style: normal !important;
 			font-weight: 500;
-			font-size: 14px;
+			font-size: 10px;
 			line-height: 12px;
 			color: rgba(0, 54, 121, 0.6);
 		}
@@ -433,7 +433,7 @@ ion-segment-button {
 				font-family: 'Poppins';
 				font-style: normal;
 				font-weight: 500;
-				font-size: 12px;
+				font-size: 10px;
 				line-height: 18px;
 				color: #808080;
 			}
@@ -608,8 +608,8 @@ ion-toolbar {
 		font-family: 'Poppins';
 		font-style: normal;
 		font-weight: 600;
-		font-size: 18px;
-		line-height: 24px;
+		font-size: 14px;
+		line-height: 30px;
 		color: #1e1f1d;
 		;
 	}
@@ -688,7 +688,7 @@ ion-item {
 		font-size: 16px;
 	}
 	small {
-		font-size: 12px;
+		font-size: 10px;
 		line-height: 30px;
 		color: #eb5757;
 		font-family: 'Poppins';
@@ -756,13 +756,13 @@ ion-buttons {
 	color: #fff;
   }
 
-  .back-arrow {
+  /*.back-arrow {
   padding-top:35px;
   text-align: left !important;
   margin-left: 10px !important;
   color: #424242;
 }
-
+*/
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 }
 

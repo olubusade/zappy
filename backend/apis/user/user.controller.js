@@ -16,8 +16,6 @@ exports.userController = {
           if (result > 0) {
               res.send({status:local_config.statusCode.conflict,message:"Oops! You're an existing user!"});
           }else {
-            
-           
             let user = {
               "id": result.id,
               "role_id": result.role_id,
@@ -91,6 +89,20 @@ exports.userController = {
       }, err => {
         console.log(err);
       });
+    },
+
+    updateUserProfile : (req, res) => {
+      let {user_id, nickname, address, security_question, sq_answer} = req.body.userData;
+          console.log(req.body.userData);
+          UserModel.userModel.updateUserProfile(req.body.userData).then(async (result) => {       
+            if (result == 1){
+               res.send({status:local_config.statusCode.ok, message: 'update successful.'});
+               console.log({status:local_config.statusCode.ok, message: 'update successful.'});       
+            }
+          })
+      , err => {
+        console.log(err);
+      };  
     }
   
 }

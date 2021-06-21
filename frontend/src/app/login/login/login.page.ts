@@ -102,16 +102,22 @@ export class LoginPage implements OnInit {
           }
           else if (resp.status == appConfig.statusCode.found) {
             console.log(resp);
-            
             localStorage.setItem(`setting:user_id`,resp.data.id);
             localStorage.setItem(`setting:role_id`,resp.data.role_id);
             localStorage.setItem(`setting:first_name`,resp.data.first_name);
             localStorage.setItem(`setting:last_name`,resp.data.last_name);
             localStorage.setItem(`setting:mobile_no`,resp.data.mobile_no);
+            localStorage.setItem(`setting:email`,resp.data.email);
             localStorage.setItem(`setting:wallet_amount`,resp.data.wallet_amount);
             localStorage.setItem(`setting:points`,resp.data.points);
             localStorage.setItem(`setting:access_token`,resp.data.access_token);
             localStorage.setItem(`setting:expiresIn`,resp.data.expiresIn);
+            localStorage.setItem(`setting:dob`,resp.data.dob);
+            localStorage.setItem(`setting:security_question`,resp.data.security_question);
+            localStorage.setItem(`setting:sq_answer`,resp.data.security_answer);
+            localStorage.setItem(`setting:nickname`,resp.data.nickname);
+            localStorage.setItem(`setting:gender`,resp.data.gender);
+            localStorage.setItem(`setting:address`,resp.data.address);
             this.router.navigate(['/user-dashboard'])
             //  await loading.onDidDismiss();
           //  console.log('Loading dismissed!');

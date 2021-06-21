@@ -29,7 +29,16 @@ export class SignupPage implements OnInit {
     mobile_no:'',
     role_id:'',
     access_token:'',
-    expiresIn:''
+    expiresIn:'',
+    email:'',
+    wallet_amount:'',
+    points:'',
+    dob:'',
+    security_question:'',
+    sq_answer:'',
+    nickname:'',
+    gender:'',
+    address:''
   }
 
   constructor(private userService: UserService,
@@ -70,9 +79,7 @@ export class SignupPage implements OnInit {
               text: 'Okay',
               role: 'yes',
               cssClass: 'secondary',
-              handler: () => {
-               
-              }
+              handler: () => {}
             }
           ]
         });
@@ -124,10 +131,17 @@ export class SignupPage implements OnInit {
                                localStorage.setItem(`setting:first_name`,this.userRespData.first_name);
                                localStorage.setItem(`setting:last_name`,this.userRespData.last_name);
                                localStorage.setItem(`setting:mobile_no`,this.userRespData.mobile_no);
+                               localStorage.setItem(`setting:email`,this.userRespData.email);
                                localStorage.setItem('setting:role_id',this.userRespData.role_id);
                                localStorage.setItem('setting:access_token',this.userRespData.access_token);
                                localStorage.setItem('setting:wallet_amount',this.userRespData.wallet_amount);
                                localStorage.setItem('setting:points',this.userRespData.points);
+                               localStorage.setItem(`setting:dob`,resp.data.dob);
+                               localStorage.setItem(`setting:security_question`,resp.data.security_question);
+                               localStorage.setItem(`setting:sq_answer`,resp.data.security_answer);
+                               localStorage.setItem(`setting:nickname`,resp.data.nickname);
+                               localStorage.setItem(`setting:gender`,resp.data.gender);
+                               localStorage.setItem(`setting:address`,resp.data.address);
                                //route to user-dashboard
                                this.router.navigate(['/user-dashboard'])
                            }
@@ -146,14 +160,12 @@ export class SignupPage implements OnInit {
                            text: 'Login',
                            role: 'yes',
                            cssClass: 'secondary',
-                           handler: (blah) => {
+                           handler: () => {
                              this.router.navigate(['/login'])
                            }
                          }, {
                            text: 'Cancel',
-                           handler: () => {
-                            
-                           }
+                           handler: () => {}
                          }
                        ]
                      });
@@ -167,9 +179,7 @@ export class SignupPage implements OnInit {
                text: 'Dismiss',
                role: 'cancel',
                cssClass: 'secondary',
-               handler: () => {
-                 
-               }
+               handler: () => {}
              }
            ]
          });

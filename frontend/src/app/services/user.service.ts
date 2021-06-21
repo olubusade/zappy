@@ -21,4 +21,10 @@ export class UserService {
     let data = {userData};
     return this.http.post(appConfig.apiURL + '/login', data)
   }
+
+  updateUserProfile(userData: any): Observable<any> {
+    let data = {userData};
+    console.log(data);
+    return this.http.post(appConfig.apiURL + '/update_user_profile', data)
+  }
 }

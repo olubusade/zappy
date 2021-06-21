@@ -64,6 +64,18 @@ module.exports = (sequelize, Sequelize) => {
         transaction_pin:{
             type: Sequelize.STRING,
             allowNull: false
+        },
+        dob:{
+            type: Sequelize.STRING,
+        },
+        security_question:{
+            type: Sequelize.STRING,
+        },
+        security_answer:{
+            type: Sequelize.STRING,
+        },
+        nickname:{
+            type: Sequelize.STRING
         }
     });
     return User;

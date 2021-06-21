@@ -6,5 +6,6 @@ var middlewares = [auth.tokenAuthorized];
 exports.userRoutes = function (app) {
     app.post('/register_new_user', UserController.userController.registerNewUser);
     app.post('/login', [UserController.userController.login]);
+    app.post('/update_user_profile', [UserController.userController.updateUserProfile]);
     app.post('/get_users', [UserController.userController.getUsers]);
 };
