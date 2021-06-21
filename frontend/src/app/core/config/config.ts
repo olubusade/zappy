@@ -12,6 +12,7 @@ export const appConfig = {
     date_format: 'DD-MM-YYYY',
     google_doc_path: window.location.protocol + "//docs.google.com/viewer?url=",
     yearRange: 100,
+    paystackPublicKey: 'pk_test_bda795695c65c62c6d922532a66d2c324ab16a3e',
     statusCode: {
         'ok':200,
         'created':201,

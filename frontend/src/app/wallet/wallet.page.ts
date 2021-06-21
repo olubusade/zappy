@@ -8,9 +8,22 @@ import { Router } from '@angular/router';
 })
 export class WalletPage implements OnInit {
 
+  userData = {
+    first_name:'',
+    last_name:'',
+    wallet_amount:'',
+    points: ''
+  }
+
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.userData.first_name = localStorage.getItem(`setting:first_name`);
+    this.userData.wallet_amount = localStorage.getItem(`setting:wallet_amount`);
+    this.userData.points = localStorage.getItem(`setting:points`);
+    if (!this.userData.first_name || !localStorage.getItem(`setting:user_id`)) {
+        this.router.navigate(['/logout'])
+    }
   }
 
   segmentChanged(ev: any) {

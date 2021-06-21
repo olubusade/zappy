@@ -22,9 +22,15 @@ export class UserService {
     return this.http.post(appConfig.apiURL + '/login', data)
   }
 
+<<<<<<< HEAD
   updateUserProfile(userData: any): Observable<any> {
     let data = {userData};
     console.log(data);
     return this.http.post(appConfig.apiURL + '/update_user_profile', data)
+=======
+  storePaymentDetails(paymentData: any): Observable<any> {
+    //let data = {paymentData};
+    return this.http.post(appConfig.apiURL + '/finish_wallet_payment', paymentData)
+>>>>>>> 1f8f3a872a29f983a03a0798507456c1086fdb79
   }
 }

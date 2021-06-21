@@ -28,7 +28,7 @@ export class DashboardPage implements OnInit {
     if (!this.userData.first_name || !localStorage.getItem(`setting:user_id`)) {
         this.router.navigate(['/logout'])
     }
-    
+    console.log(this.userData.wallet_amount);
   }
 
   buyData() {

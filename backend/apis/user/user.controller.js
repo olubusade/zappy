@@ -103,6 +103,26 @@ exports.userController = {
       , err => {
         console.log(err);
       };  
+    },
+    finishWalletPayment: (req, res) => {
+      console.log(req.body);
+
+      UserModel.userModel.saveTnxRef(req.body.paymentRef, req.body.userId, req.body.paymentAmount).then((result) => {
+        console.log(result);
+        UserModel.userModel.finishWalletPayment(req.body.walletAmount, req.body.paymentRef, req.body.userId).then(async (result) => {
+          console.log(result);
+          if(result[0] == 1){
+            res.send({status:local_config.statusCode.created}); 
+          }else{
+            res.send({status:local_config.statusCode.notAcceptable});
+          }
+        }, err => {
+          console.log(err);
+          res.send({status:local_config.statusCode.notAcceptable});
+        });
+      }, err => {
+        console.log(err);
+      });
     }
   
 }
