@@ -1,6 +1,7 @@
+import { async } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterEvent } from '@angular/router';
-import { MenuController } from '@ionic/angular';
+import { MenuController, ActionSheetController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 
 @Component({
@@ -22,12 +23,41 @@ export class UserDashboardPage implements OnInit {
   constructor(private router: Router,
               private route: ActivatedRoute,
               private menu: MenuController,
-              private storage: Storage ) { }
+              private storage: Storage,
+              private actionSheetCtrl: ActionSheetController ) { }
 
-  openMenu() {
+  async openMoreMenu () {
+    /*
     console.log('enu')
     this.menu.enable(true, 'first');
     this.menu.open('first');
+    */
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: 'More menu',
+      buttons: [
+        {
+          text: 'Referral',
+          icon: 'share-social-outline',
+          handler: () => {
+           
+            this.router.navigate(['/menu/referral'])
+          }
+        }, 
+        {
+          text: 'Logout',
+          icon: 'log-out',
+          handler: () => {
+           
+          }
+        }, 
+        {
+          icon: 'close',
+          role: 'cancel',
+          handler: () => {}
+        }
+      ]
+    });
+    await actionSheet.present();
   }
 
   ngOnInit() {

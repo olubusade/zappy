@@ -1,31 +1,56 @@
-<ion-header>
-  <ion-toolbar mode="ios">
-    <ion-buttons mode="ios">
-      <ion-button>
-      </ion-button>
-      <ion-button></ion-button>
-    </ion-buttons>
-    <ion-title >Referral</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-toolbar mode="ios">
+  <ion-buttons mode="ios"  slot="start">
+    <ion-icon class="icon back-arrow"[routerLink]="['/user-dashboard']" name="arrow-back-sharp"></ion-icon>
+  </ion-buttons>
+  <ion-title>Referral</ion-title>
+</ion-toolbar>
+
 
 <ion-content>
-  <div class="referral">
+  
     <ion-card>  
       <ion-card-content>
         <p class="text-center text-white">
-          Get up to N50 on your next transaction by inviting your friends to use AdikpoPay using tyhe link below.
+          Get up to N50 on your next transaction by inviting your friends to use Zappy using your referral link below.
         </p>
       </ion-card-content>
     </ion-card>
-    <div class="d-flex ref-link">
-      <span class="text-primary">https://adikpopay.com.ng/?ref=2394JE</span>
-      <span class="text-primary">
-        <img src="../../assets/icon/copy_icon.svg" alt="">
-      </span>
+    <div class="referral">
+      <ion-item detail>
+        <ion-icon size="medium" name="share-social"></ion-icon>
+        <ion-label class="ion-label">
+         Share Invitation Link
+        </ion-label>
+      </ion-item>  
+      <ion-item detail>
+        <ion-icon size="medium" name="phone-portrait-outline"></ion-icon>
+        <ion-label class="ion-label">
+          Send to mobile number
+        </ion-label>
+      </ion-item>
+      <ion-item detail (click)="copyReferralLink()">
+        <ion-icon size="medium" name="copy-outline"></ion-icon>
+        <ion-label class="ion-label">
+          Copy Invitation Link
+        </ion-label>
+      </ion-item>
+      <ion-item detail href="https://www.ionicframework.com">
+        <ion-icon size="medium" name="people"></ion-icon>
+        <ion-label class="ion-label">
+          Send to phone contact
+        </ion-label>
+      </ion-item>
+      <!--
+      <div class="d-flex ref-link">
+        <span class="text-primary">https://adikpopay.com.ng/?ref=2394JE</span>
+        <span class="text-primary">
+          <img src="../../assets/icon/copy_icon.svg" alt="">
+        </span>
+      </div>
+      <button class="btn btn-primary text-white">
+        Share
+      </button>
+    -->
     </div>
-    <button class="btn btn-primary text-white">
-      Share
-    </button>
-  </div>
+  
 </ion-content>

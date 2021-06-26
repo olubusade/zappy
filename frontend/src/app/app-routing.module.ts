@@ -66,7 +66,11 @@ const routes: Routes = [
   {
     path: 'transaction-pin',
     loadChildren: () => import('./signup/transaction-pin/transaction-pin.module').then( m => m.TransactionPinPageModule)
-  }
+  },
+  {
+    path: 'menu/referral',
+    loadChildren: () => import('./referral/referral.module').then( m => m.ReferralPageModule)
+  },
 ];
 
 @NgModule({

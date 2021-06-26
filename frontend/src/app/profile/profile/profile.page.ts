@@ -202,7 +202,7 @@ export class ProfilePage implements OnInit {
             }  
           }, 
           {
-            text: 'Cancel',
+            
             icon: 'close',
             role: 'cancel',
             handler: () => {}

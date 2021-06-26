@@ -1,4 +1,4 @@
-let baseApiUrl = 'http://localhost:3050';
+let baseApiUrl = 'http://192.168.8.101:3050';
 
 export const appConfig = {
     mobile: '',

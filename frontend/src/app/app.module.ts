@@ -13,7 +13,7 @@ import { GlobalErrorHandler } from './core/utils/GlobalErrorHandler';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './../app/core/utils/TokenInterceptor';
 import { IonicStorageModule } from '@ionic/storage-angular';
-
+import { Clipboard } from '@ionic-native/clipboard/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -27,6 +27,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
   providers: [
     StatusBar,
     SplashScreen,
+    Clipboard,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {
       provide: HTTP_INTERCEPTORS,
