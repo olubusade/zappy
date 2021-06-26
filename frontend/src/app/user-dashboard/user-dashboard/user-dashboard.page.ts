@@ -26,6 +26,18 @@ export class UserDashboardPage implements OnInit {
               private storage: Storage,
               private actionSheetCtrl: ActionSheetController ) { }
 
+  
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.userData.user_id = params['a'];
+      this.userData.mobile_no = params['b'];
+      this.userData.first_name = params['c'];
+      this.userData.last_name = params['d']; 
+     let first_name = localStorage.getItem(`setting:first_name`);
+     let last_name = localStorage.getItem(`setting:last_name`);
+     console.log('LOCAL:'+first_name+' '+last_name);
+    });
+  }
   async openMoreMenu () {
     /*
     console.log('enu')
@@ -47,7 +59,7 @@ export class UserDashboardPage implements OnInit {
           text: 'Logout',
           icon: 'log-out',
           handler: () => {
-           
+            this.router.navigate(['/logout'])
           }
         }, 
         {
@@ -58,18 +70,6 @@ export class UserDashboardPage implements OnInit {
       ]
     });
     await actionSheet.present();
-  }
-
-  ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.userData.user_id = params['a'];
-      this.userData.mobile_no = params['b'];
-      this.userData.first_name = params['c'];
-      this.userData.last_name = params['d']; 
-     let first_name = localStorage.getItem(`setting:first_name`);
-     let last_name = localStorage.getItem(`setting:last_name`);
-     console.log('LOCAL:'+first_name+' '+last_name);
-    });
   }
 
 

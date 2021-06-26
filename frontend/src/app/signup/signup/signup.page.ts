@@ -38,7 +38,8 @@ export class SignupPage implements OnInit {
     sq_answer:'',
     nickname:'',
     gender:'',
-    address:''
+    address:'',
+    referral_code:''
   }
 
   constructor(private userService: UserService,
@@ -91,10 +92,10 @@ export class SignupPage implements OnInit {
         this.registerUserData.transaction_pin = this.signUpForm.value['transaction_pin'].toString();
         // this.registerUserData.mobile_no = parseInt(this.mobile_no);
         this.registerUserData.mobile_no = this.mobile_no;
-         this.registerUserData.role_id = appConfig.role_type.casual_user.id;
-         console.log(this.registerUserData);
+        this.registerUserData.role_id = appConfig.role_type.casual_user.id;
+        this.registerUserData.referral_code = this.generateRefCode();
+        console.log(this.registerUserData);
          //Are you sure you want to save this record?
-         
          const alert = await this.alertCtrl.create({
            cssClass: 'my-alert',
            header: 'Zappy',
@@ -107,7 +108,29 @@ export class SignupPage implements OnInit {
                  let data = this.mobile_no;
                  this.userService.registerNewUser(this.registerUserData).subscribe(async(resp)=>{
                    console.log(resp);
-                   if (resp.status == appConfig.statusCode.created) {
+                   if (resp.status == appConfig.statusCode.conflict){
+                    const alert = await this.alertCtrl.create({
+                      cssClass: 'my-alert',
+                      header: 'Zappy',
+                      message: resp.message,
+                      buttons: [
+                        {
+                          text: 'Login',
+                          role: 'yes',
+                          cssClass: 'secondary',
+                          handler: () => {
+                            this.router.navigate(['/login'])
+                          }
+                        }, {
+                          text: 'Cancel',
+                          handler: () => {}
+                        }
+                      ]
+                    });
+                
+                    await alert.present();
+                  } 
+                  else if (resp.status == appConfig.statusCode.created) {
                      const alert = await this.alertCtrl.create({
                        cssClass: 'my-alert',
                        header: 'Zappy',
@@ -142,6 +165,7 @@ export class SignupPage implements OnInit {
                                localStorage.setItem(`setting:nickname`,resp.data.nickname);
                                localStorage.setItem(`setting:gender`,resp.data.gender);
                                localStorage.setItem(`setting:address`,resp.data.address);
+                               localStorage.setItem(`setting:referral_code`,resp.data.referral_code);
                                //route to user-dashboard
                                this.router.navigate(['/user-dashboard'])
                            }
@@ -150,28 +174,6 @@ export class SignupPage implements OnInit {
                      });
                      await alert.present();
                    }
-                   if (resp.status == appConfig.statusCode.conflict){
-                     const alert = await this.alertCtrl.create({
-                       cssClass: 'my-alert',
-                       header: 'Zappy',
-                       message: resp.message,
-                       buttons: [
-                         {
-                           text: 'Login',
-                           role: 'yes',
-                           cssClass: 'secondary',
-                           handler: () => {
-                             this.router.navigate(['/login'])
-                           }
-                         }, {
-                           text: 'Cancel',
-                           handler: () => {}
-                         }
-                       ]
-                     });
-                 
-                     await alert.present();
-                   } 
                  });
                }
              },
@@ -190,4 +192,11 @@ export class SignupPage implements OnInit {
     return this.signUpForm.controls;
   }
   
+  generateRefCode() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";  
+    for (var i = 0; i < 6; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    return text;
+  }
 }

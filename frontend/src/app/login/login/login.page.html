@@ -32,7 +32,8 @@
       <button class="btn btn-primary" (click)="login()">
         Login
       </button>
-      <span class="text-primary" (click)="register()"> No, I am not {{user_first_name}}!</span>
+      <span *ngIf = "showName" class="text-primary" (click)="register()"> No, I am not {{user_first_name}}!</span>
+      <span *ngIf = "!showName" class="text-primary" (click)="register()"> I am new to Zappy!</span>
       <label class="text-link" (click)="forgotPassword()">
         Forgot password
       </label>

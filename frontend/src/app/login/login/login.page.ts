@@ -119,6 +119,7 @@ export class LoginPage implements OnInit {
             localStorage.setItem(`setting:nickname`,resp.data.nickname);
             localStorage.setItem(`setting:gender`,resp.data.gender);
             localStorage.setItem(`setting:address`,resp.data.address);
+            localStorage.setItem(`setting:referral_code`,resp.data.referral_code);
             this.router.navigate(['/user-dashboard'])
             //  await loading.onDidDismiss();
           //  console.log('Loading dismissed!');
@@ -145,7 +146,7 @@ export class LoginPage implements OnInit {
   }
 
   register() {
-    this.router.navigate(['/newlogin'])
+    this.router.navigate(['/register'])
   }
 
 }

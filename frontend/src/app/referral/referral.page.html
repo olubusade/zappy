@@ -7,7 +7,6 @@
 
 
 <ion-content>
-  
     <ion-card>  
       <ion-card-content>
         <p class="text-center text-white">
@@ -16,41 +15,33 @@
       </ion-card-content>
     </ion-card>
     <div class="referral">
-      <ion-item detail>
+      <ion-item detail (click)="shareReferralLink()">
         <ion-icon size="medium" name="share-social"></ion-icon>
         <ion-label class="ion-label">
          Share Invitation Link
         </ion-label>
-      </ion-item>  
+      </ion-item> 
+    <!--
       <ion-item detail>
         <ion-icon size="medium" name="phone-portrait-outline"></ion-icon>
         <ion-label class="ion-label">
           Send to mobile number
         </ion-label>
       </ion-item>
+    -->
       <ion-item detail (click)="copyReferralLink()">
         <ion-icon size="medium" name="copy-outline"></ion-icon>
         <ion-label class="ion-label">
           Copy Invitation Link
         </ion-label>
       </ion-item>
-      <ion-item detail href="https://www.ionicframework.com">
+      <!--
+      <ion-item detail href="">
         <ion-icon size="medium" name="people"></ion-icon>
         <ion-label class="ion-label">
           Send to phone contact
         </ion-label>
       </ion-item>
-      <!--
-      <div class="d-flex ref-link">
-        <span class="text-primary">https://adikpopay.com.ng/?ref=2394JE</span>
-        <span class="text-primary">
-          <img src="../../assets/icon/copy_icon.svg" alt="">
-        </span>
-      </div>
-      <button class="btn btn-primary text-white">
-        Share
-      </button>
     -->
     </div>
-  
 </ion-content>

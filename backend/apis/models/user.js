@@ -76,6 +76,13 @@ module.exports = (sequelize, Sequelize) => {
         },
         nickname:{
             type: Sequelize.STRING
+        },
+        referral_code:{
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        referred_by:{
+            type: Sequelize.STRING
         }
     });
     return User;
