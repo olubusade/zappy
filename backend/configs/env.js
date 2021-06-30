@@ -13,5 +13,10 @@ module.exports = {
     "sms_api_username": "adeoyeadekoya@yahoo.com",
     "sms_api_sender": "ZAPPY",
     "sms_api_url": "http://api.ebulksms.com:8080/sendsms.json",
-    "sms_api_key": "8d51c946457f2a9b9e936735519e87b5206f2761"
+    "sms_api_key": "8d51c946457f2a9b9e936735519e87b5206f2761",
+    "email_host":"smtp.gmail.com",
+    "email_port":465,
+    "email_user":"noreply.zappy@gmail.com",
+    "email_password":"zappy@2021",
+    "email_from":"noreply.zappy@gmail.com"
 };

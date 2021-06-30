@@ -25,7 +25,13 @@ exports.userModel = {
                 bcrypt.hash(password, salt, (err, hash) => {
                     userData['password'] = hash;
                     console.log('Model2:', userData);
-                    User.count({ where: { mobile_no: userData.mobile_no } })
+                    User.count({ where: {
+                        [Op.or]: [
+                            { email: userData.email},
+                            { mobile_no: userData.mobile_no}
+                        ]}
+                    })
+                    //    mobile_no: userData.mobile_no } })
                     .then(count => {
                       if (count != 0 || count > 0) {
                         resolve(count);
@@ -156,6 +162,26 @@ exports.userModel = {
                 })
             }
             
+        });
+    },
+    resetUserPassword: async(userData) => {
+        return await new Promise((resolve, reject) => {
+            let password = userData.password;
+            bcrypt.genSalt(saltRounds, (err, salt) => {
+                bcrypt.hash(password, salt, (err, hash) => {
+                    userData['password'] = hash;
+                    User.update({password: userData.password}, {
+                        where: {
+                            email: userData.email
+                        }
+                    })
+                    .then(user => {  
+                        resolve(user);
+                    }).catch(function(e) {
+                        console.log("Password reset failed:", e);
+                    });    
+                });
+            }); 
         });
     }
 }

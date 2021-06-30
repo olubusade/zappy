@@ -20,6 +20,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.DATE,
         },
         updatedAt: Sequelize.DATE
+        
     });
     return Otp;
 };

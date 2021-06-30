@@ -22,6 +22,17 @@ export class UserService {
     return this.http.post(appConfig.apiURL + '/login', data)
   }
 
+  resetUserPassword(userData: any): Observable<any> {
+    let data = {userData};
+    return this.http.post(appConfig.apiURL + '/reset_user_password', data)
+  }
+  
+  passwordResetEmail(email: any,otp:any): Observable<any> {
+    let data = {email,otp};
+    console.log(data);
+    return this.http.post(appConfig.apiURL + '/user_password_reset_email', data)
+  }
+
   updateUserProfile(userData: any): Observable<any> {
     let data = {userData};
     console.log(data);

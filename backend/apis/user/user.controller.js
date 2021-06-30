@@ -5,6 +5,8 @@ const fs = require('fs');
 const { result } = require('lodash');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const { sendEmail } = require('../../libs/smtp/email');
+const { getMaxListeners } = require('process');
 
 exports.userController = {
     registerNewUser: (req, res) => {
@@ -41,7 +43,6 @@ exports.userController = {
         console.log(err);
       });  
     },
-
     login : (req, res) => {
       let {mobile_no, password} = req.body.userData;
       UserModel.userModel.login(req.body.userData).then(async (result) => {
@@ -90,7 +91,6 @@ exports.userController = {
         console.log(err);
       });
     },
-
     updateUserProfile : (req, res) => {
       let {user_id, nickname, address, security_question, sq_answer} = req.body.userData;
           console.log(req.body.userData);
@@ -103,6 +103,23 @@ exports.userController = {
       , err => {
         console.log(err);
       };  
+    },
+    resetUserPassword : (req, res) => {
+      delete req.body.userData.confirmpassword;
+      console.log(req.body.userData);
+      UserModel.userModel.resetUserPassword(req.body.userData).then(async (result) => {
+        if (result > 0) {
+          res.send({status:local_config.statusCode.accepted, message: `Password reset successfully for ${req.body.userData.email}`, data:result});
+          console.log({status:local_config.statusCode.accepted, message: `Password reset successfully for ${req.body.userData.email}`, data:result});  
+          
+        }else {
+          res.send({status:local_config.statusCode.conflict,message:`Oops! Password reset failed!`});  
+      }
+       
+      }, err => {
+            console.log(err);
+      });  
+      
     },
     finishWalletPayment: (req, res) => {
       console.log(req.body);
@@ -123,6 +140,5 @@ exports.userController = {
       }, err => {
         console.log(err);
       });
-    }
-  
+    } 
 }

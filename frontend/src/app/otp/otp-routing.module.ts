@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: OtpPage
+  },
+  {
+    path: 'password-reset-otp',
+    loadChildren: () => import('./password-reset-otp/password-reset-otp.module').then( m => m.PasswordResetOtpPageModule)
   }
 ];
 

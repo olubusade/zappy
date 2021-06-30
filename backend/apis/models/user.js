@@ -83,6 +83,9 @@ module.exports = (sequelize, Sequelize) => {
         },
         referred_by:{
             type: Sequelize.STRING
+        },
+        password_reset_otp:{
+            type: Sequelize.INTEGER
         }
     });
     return User;

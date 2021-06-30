@@ -20,6 +20,14 @@ export class OtpService {
     let data = {mobile, otp};
     return this.http.post(appConfig.apiURL + '/verify_otp', data)
   }
+  sendPasswordResetOtp(email: any, otp: any): Observable<any> { 
+    let data = {email, otp};
+    return this.http.post(appConfig.apiURL + '/send_password_reset_otp', data)
+  }
+  verifyPasswordResetOtp(email: any, otp: any): Observable<any> { 
+    let data = {email, otp};
+    return this.http.post(appConfig.apiURL + '/verify_password_reset_otp', data)
+  }
 /*
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
