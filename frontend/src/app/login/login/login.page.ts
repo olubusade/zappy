@@ -102,6 +102,8 @@ export class LoginPage implements OnInit {
           }
           else if (resp.status == appConfig.statusCode.found) {
             console.log(resp);
+            console.log(JSON.parse(resp.auxData));
+            const auxData = JSON.parse(resp.auxData);
             
             localStorage.setItem(`setting:user_id`,resp.data.id);
             localStorage.setItem(`setting:role_id`,resp.data.role_id);
@@ -111,8 +113,11 @@ export class LoginPage implements OnInit {
             localStorage.setItem(`setting:mobile_no`,resp.data.mobile_no);
             localStorage.setItem(`setting:wallet_amount`,resp.data.wallet_amount);
             localStorage.setItem(`setting:points`,resp.data.points);
+            localStorage.setItem(`setting:cashback`,resp.data.cashback==null ? '0' : resp.data.cashback);
             localStorage.setItem(`setting:access_token`,resp.data.access_token);
             localStorage.setItem(`setting:expiresIn`,resp.data.expiresIn);
+            localStorage.setItem(`setting:auxData`, JSON.stringify(auxData));
+            
             this.router.navigate(['/user-dashboard'])
             //  await loading.onDidDismiss();
           //  console.log('Loading dismissed!');

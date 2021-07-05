@@ -64,6 +64,9 @@ module.exports = (sequelize, Sequelize) => {
         transaction_pin:{
             type: Sequelize.STRING,
             allowNull: false
+        },
+        cashback:{
+            type: Sequelize.STRING,
         }
     });
     return User;

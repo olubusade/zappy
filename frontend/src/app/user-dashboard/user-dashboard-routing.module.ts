@@ -20,6 +20,8 @@ const routes: Routes = [
         ]
       },
       {path: 'home/mobile-airtime', loadChildren: () => import('../mobile-airtime/mobile-airtime.module').then(m => m.MobileAirtimePageModule)},
+      {path: 'home/mobile-airtime/payment-details', loadChildren: () => import('../payment-details/payment-details.module').then(m => m.PaymentDetailsPageModule)},
+      {path: 'home/mobile-airtime/payment-successful', loadChildren: () => import('../payment-successful/payment-successful.module').then(m => m.PaymentSuccessfulPageModule)},
       {path: 'home/cable-tv', loadChildren: () => import('../cable-tv/cable-tv.module').then(m => m.CableTvPageModule)},
       {path: 'home/data-bundle', loadChildren: () => import('../data-bundle/data-bundle.module').then(m => m.DataBundlePageModule)},
       {path: 'home/fund-transfer', loadChildren: () => import('../fund-transfer/fund-transfer.module').then(m => m.FundTransferPageModule)},

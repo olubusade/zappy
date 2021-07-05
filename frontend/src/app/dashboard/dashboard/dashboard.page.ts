@@ -13,15 +13,17 @@ export class DashboardPage implements OnInit {
     slidesPerView: 1.2,
     spaceBetween: 16,
   }
-  constructor(private router: Router) { }
-  
   userData = {
     first_name:'',
     last_name:'',
     wallet_amount:'',
     points: ''
   }
+
+  constructor(private router: Router) { }
+  
   ngOnInit() {
+    console.log(localStorage.getItem(`setting:first_name`));
     this.userData.first_name = localStorage.getItem(`setting:first_name`);
     this.userData.wallet_amount = localStorage.getItem(`setting:wallet_amount`);
     this.userData.points = localStorage.getItem(`setting:points`);
@@ -34,6 +36,7 @@ export class DashboardPage implements OnInit {
   buyData() {
     this.router.navigate(['/data-bundle'])
   }
+  
   gotoService(data:string) {
    // console.log(data)
      this.router.navigate(['user-dashboard/home/'+data])
