@@ -9,4 +9,6 @@ exports.userRoutes = function (app) {
     app.post('/update_user_profile', [UserController.userController.updateUserProfile]);
     app.post('/get_users', [UserController.userController.getUsers]);
     app.post('/finish_wallet_payment', [UserController.userController.finishWalletPayment]);
+    app.post('/verify_tnx_pin', [UserController.userController.verifyTnxPin]);
+    app.post('/recharge', [UserController.userController.recharge]);
 };

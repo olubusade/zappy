@@ -102,6 +102,9 @@ export class LoginPage implements OnInit {
           }
           else if (resp.status == appConfig.statusCode.found) {
             console.log(resp);
+            console.log(JSON.parse(resp.auxData));
+            const auxData = JSON.parse(resp.auxData);
+            
             localStorage.setItem(`setting:user_id`,resp.data.id);
             localStorage.setItem(`setting:role_id`,resp.data.role_id);
             localStorage.setItem(`setting:first_name`,resp.data.first_name);
@@ -111,14 +114,11 @@ export class LoginPage implements OnInit {
             localStorage.setItem(`setting:email`,resp.data.email);
             localStorage.setItem(`setting:wallet_amount`,resp.data.wallet_amount);
             localStorage.setItem(`setting:points`,resp.data.points);
+            localStorage.setItem(`setting:cashback`,resp.data.cashback==null ? '0' : resp.data.cashback);
             localStorage.setItem(`setting:access_token`,resp.data.access_token);
             localStorage.setItem(`setting:expiresIn`,resp.data.expiresIn);
-            localStorage.setItem(`setting:dob`,resp.data.dob);
-            localStorage.setItem(`setting:security_question`,resp.data.security_question);
-            localStorage.setItem(`setting:sq_answer`,resp.data.security_answer);
-            localStorage.setItem(`setting:nickname`,resp.data.nickname);
-            localStorage.setItem(`setting:gender`,resp.data.gender);
-            localStorage.setItem(`setting:address`,resp.data.address);
+            localStorage.setItem(`setting:auxData`, JSON.stringify(auxData));
+            
             this.router.navigate(['/user-dashboard'])
             //  await loading.onDidDismiss();
           //  console.log('Loading dismissed!');

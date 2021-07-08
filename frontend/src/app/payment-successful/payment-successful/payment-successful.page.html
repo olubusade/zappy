@@ -1,0 +1,88 @@
+<ion-header class="header-bg">
+  <ion-toolbar mode="ios" color="none" class="text-white">
+    <!--ion-buttons mode="ios">
+      <ion-button (click)="goBack()" slot="start">
+        <ion-icon ios="arrow-back-outline" md="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons-->
+    <ion-title >Payment Successful</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="main-container">
+      <div style="margin-top: 20px; text-align: center; font-weight: bolder; color: #9acd32; font-size: 16px;">Payment Successful!</div>
+      <div style="margin-top: 35px; text-align: center; font-weight: bolder; color: #000000; font-size: 22px;">&#8358; {{purchaseParams.reward ? purchaseParams.amount - purchaseParams.reward : purchaseParams.amount}}</div>
+      <div style="margin-top: 30px; text-align: center; color: lightgray; font-size: 10px;">2021-06-11 12:06:24</div>
+      <div style="margin-top: 20px; text-align: center; font-weight: bolder; color: #9acd32; font-size: 10px;">View transaction details &#8594;</div>
+
+      <ion-card style="border-radius: 10px; box-shadow: none; margin-top: 30px;" button="true" mode="ios">
+        <ion-card-content style="padding-top: 15px; padding-bottom: 15px;">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="7" style="padding-top: 8px; padding-bottom: 8px;">
+                <h6 style="font-size: 12px; font-weight: bold;">Cashback is in your account</h6>
+              </ion-col>
+              <ion-col size="3" style="text-align: right; padding-top: 8px; padding-bottom: 8px;">
+                <h6 style="font-size: 12px; font-weight: bold;">&#8358; {{purchaseParams.reward ? purchaseParams.reward : 0}}</h6>
+              </ion-col>
+              <ion-col size="2" style="font-weight: bold; text-align: center;">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </ion-col>
+            </ion-row>
+            <ion-row style="margin-top: 10px;">
+              <ion-col size="12">
+                <h6 style="font-size: 12px; color:#9acd32;">Receive cashback bonus for each transaction</h6>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card style="border-radius: 10px; box-shadow: none; margin-top: 15px;" button="true" mode="ios">
+        <ion-card-content style="padding-top: 15px; padding-bottom: 15px;">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12" style="padding-top: 8px; padding-bottom: 8px;">
+                <h6 style="font-size: 12px; font-weight: bold;">0 coins has been sent</h6>
+              </ion-col>
+              <!--ion-col size="3" style="text-align: right; padding-top: 8px; padding-bottom: 8px;">
+                <h6 style="font-size: 12px; font-weight: bold;">1 </h6>
+              </ion-col>
+              <ion-col size="2" style="font-weight: bold; text-align: center;">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </ion-col-->
+            </ion-row>
+            <ion-row style="margin-top: 10px;">
+              <ion-col size="12">
+                <h6 style="font-size: 12px; color:#9acd32;">Click to collect</h6>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+      
+      <div style="margin-top: 60px;">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12">
+              <div style="color: black; font-size: 20px; font-weight: bolder; text-align: center;">Add number to benficiary group?</div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-top: 20px;">
+            <ion-col size="6" class="ion-text-center">
+              <ion-button color="danger" shape="round" mode="ios" (click)="goHome()">
+                No, Proceed
+              </ion-button>
+            </ion-col>
+            <ion-col size="6"class="ion-text-center">
+              <ion-button color="primary" shape="round" mode="ios">
+                Add number
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+</ion-content>

@@ -32,4 +32,12 @@ export class UserService {
     //let data = {paymentData};
     return this.http.post(appConfig.apiURL + '/finish_wallet_payment', paymentData)
   }
+
+  verifyTnxPin(data: any): Observable<any> {
+    return this.http.post(appConfig.apiURL + '/verify_tnx_pin', data);
+  }
+
+  recharge(data: any): Observable<any> {
+    return this.http.post(appConfig.apiURL + '/recharge', data);
+  }
 }
