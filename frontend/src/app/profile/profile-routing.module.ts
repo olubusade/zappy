@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: ProfilePage
+  },
+  {
+    path: 'user-upgrade',
+    loadChildren: () => import('./user-upgrade/user-upgrade.module').then( m => m.UserUpgradePageModule)
   }
 ];
 

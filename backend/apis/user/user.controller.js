@@ -17,6 +17,9 @@ exports.userController = {
         
           if (result > 0) {
               res.send({status:local_config.statusCode.conflict,message:"Oops! You're an existing user!"});
+              console.log({status:local_config.statusCode.conflict,message:"Oops! You're an existing user!"});
+          }else if (result.referral_code <= 0) {
+            res.send({status:local_config.statusCode.notFound,message:"Oops! Incorrect referrer code!"});
           }else {
             let user = {
               "id": result.id,
@@ -46,7 +49,7 @@ exports.userController = {
     login : (req, res) => {
       let {mobile_no, password} = req.body.userData;
       UserModel.userModel.login(req.body.userData).then(async (result) => {
-        console.log('RESULT:',result);
+       // console.log('RESULT:',result);
 
           if (result) {
             // if the user exists, let's compare their hashed password to a new hash from req.body.password
@@ -80,6 +83,35 @@ exports.userController = {
       }, err => {
         console.log(err);
       });  
+    },
+    loginUserWithBiometric : (req, res) => {
+      let {mobile_no, password} = req.body.userData;
+      delete req.body.user_id;
+      delete req.body.password;
+      console.log(req.body.userData);
+      
+      UserModel.userModel.login(req.body.userData).then(async (result) => {
+       // console.log('RESULT:',result);
+
+          if (result) {
+              const  accessToken  =  jwt.sign(
+                {user_id: result.id }, 
+                local_config.auth_secret,
+                {expiresIn: local_config.expiresIn}
+              ); 
+
+              result.expiresIn = local_config.expiresIn;
+              result.access_token = accessToken;
+              res.send({status:local_config.statusCode.found, message: 'Login successful.', data:result});
+              console.log({status:local_config.statusCode.found, message: 'Login successful.', data:result});
+          }else{
+            res.send({status:local_config.statusCode.notFound, message: 'Oops! Invalid Mobile No.'});
+            console.log({status:local_config.statusCode.notFound, message: 'Oops! Invalid Mobile No.'});
+          }
+      }, err => {
+        console.log(err);
+      }); 
+      
     },
     getUsers: (req, res) => {
       

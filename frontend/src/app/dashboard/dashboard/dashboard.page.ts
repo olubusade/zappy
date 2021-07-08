@@ -22,11 +22,13 @@ export class DashboardPage implements OnInit {
     first_name:'',
     last_name:'',
     wallet_amount:'',
-    points: ''
+    points: '',
+    nickname:''
   }
   ngOnInit() {
     console.log('Persistent B');
     this.userData.first_name = localStorage.getItem(`setting:first_name`);
+    this.userData.nickname = localStorage.getItem(`setting:nickname`);
     this.userData.wallet_amount = localStorage.getItem(`setting:wallet_amount`);
     this.userData.points = localStorage.getItem(`setting:points`);
     if (!this.userData.first_name || !localStorage.getItem(`setting:user_id`)) {

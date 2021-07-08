@@ -14,6 +14,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './../app/core/utils/TokenInterceptor';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { Clipboard } from '@ionic-native/clipboard/ngx';
+import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -28,6 +30,7 @@ import { Clipboard } from '@ionic-native/clipboard/ngx';
     StatusBar,
     SplashScreen,
     Clipboard,
+    FingerprintAIO,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {
       provide: HTTP_INTERCEPTORS,

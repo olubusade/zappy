@@ -31,14 +31,55 @@ exports.otpModel = {
             
         });
     },
-    verifyOTP: async(otpData) => {
-        console.log('VERIFY OTP in model:',otpData);
+    emailOTP: async(otpData) => {
+        console.log('Email OTP in model:',otpData);
+        return await new Promise((resolve, reject) => {
+            User.count({ where: { email: otpData.email } })
+            .then(count => {
+              if (count != 0 || count > 0) {
+                resolve(count);
+              }else{
+                Otp.update(
+                    {email:otpData.email, otp: otpData.otp},
+                    {where: {mobile_no: otpData.mobile_no}}
+                ).then(email_otp => {
+                   resolve({update:email_otp[0]});
+                }, err => {
+                    reject({error: err});
+                })
+              }
+             
+            });
+            
+        });
+    },
+    verifyMobileOtp: async(otpData) => {
+        console.log('VERIFY MOBILE OTP in model:',otpData);
         return await new Promise((resolve, reject) => {
         let {mobile} = otpData;
         console.log('converted:', mobile);
         sequelize.query(
             `SELECT * FROM otps 
              WHERE mobile_no = ${mobile}
+             AND created::date = now()::date ORDER BY id DESC LIMIT 1`
+        )
+        .then(otp => {
+                resolve(otp[0][0]);
+                console.log('check me:',otp[0][0]); 
+            },err=>{
+                reject({error:err});
+            });
+           
+      });
+    },
+    verifyEmailOTP: async(otpData) => {
+        console.log('VERIFY EMAIL OTP in model:',otpData);
+        return await new Promise((resolve, reject) => {
+        let {email} = otpData;
+        console.log('converted:', email);
+        sequelize.query(
+            `SELECT * FROM otps 
+             WHERE email = '${email}'
              AND created::date = now()::date ORDER BY id DESC LIMIT 1`
         )
         .then(otp => {

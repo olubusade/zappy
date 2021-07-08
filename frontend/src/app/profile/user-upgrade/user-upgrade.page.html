@@ -1,0 +1,64 @@
+<ion-toolbar mode="ios">
+  <ion-buttons mode="ios"  slot="start">
+    <ion-icon class="icon back-arrow"[routerLink]="['/user-dashboard/profile']" name="arrow-back-sharp"></ion-icon>
+  </ion-buttons>
+  <ion-title>User Upgrade</ion-title>
+</ion-toolbar>
+
+<ion-content>
+  <div class="upgrade">
+    <ion-item detail>
+      <ion-icon size="medium" name="share-social"></ion-icon>
+      <ion-label class="ion-label">
+       Share Invitation Link
+      </ion-label>
+    </ion-item> 
+  </div>
+  <ion-card class="ion-card casual">  
+    <ion-card-content>
+      <h2>Casual</h2>
+      <label>Daily Transaction Limit</label>
+      <p class="text-white">
+        &#x20A6;50,000
+      </p>
+      <label>Maximum Balance</label>
+      <p class="text-white max-balance">
+        No limit
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="ion-card agent">  
+    <ion-card-content>
+      <h2>Agent</h2>
+      <label>Daily Transaction Limit</label>
+      <p class="text-white">
+        No limit
+      </p>
+      <label>Maximum Balance</label>
+      <p class="text-white max-balance">
+        No Limit
+      </p>
+    </ion-card-content>
+  </ion-card>
+<!--
+  <ion-card class="ion-card">  
+    <ion-card-content>
+      <h2>Casual User</h2>
+      <label>Daily Transaction Limit</label>
+      <p class="text-white">
+        &#x20A6;50,000
+      </p>
+      <label>Maximum Balance</label>
+      <p class="text-white max-balance">
+        &#x20A6;300,000
+      </p>
+    </ion-card-content>
+  </ion-card>
+-->
+  
+  <button ion-button mode="ios" (click)="upgrade()">
+    Upgrade
+  </button>
+  
+</ion-content>
+

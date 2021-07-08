@@ -59,7 +59,7 @@ export class RegisterPage implements OnInit {
         console.log('Mobile No: ', this.registerForm.mobile_no);
           var otp = Math.floor(1000 + Math.random() * 9000);
           this.otpservice
-          .otpVerifyMobileNo(converted_mobile, otp)
+          .otpValidateMobileNo(converted_mobile, otp)
           .subscribe(async (resp) => {
             
             console.log(resp);

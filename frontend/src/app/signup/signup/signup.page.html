@@ -25,13 +25,18 @@
       <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.last_name.errors?.minlength">
         Min 3 chars long.
       </span>
+      <!--
       <ion-item lines="full">
-        <ion-label position="floating">Email</ion-label>
-        <ion-input formControlName="email" type="email" Placeholder="(Optional)"></ion-input>
+        <ion-label position="floating">Email<span class="required"><sup>*</sup></span></ion-label>
+        <ion-input formControlName="email" type="email"></ion-input>
       </ion-item>
       <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.email.errors?.pattern">
         Enter valid email.
       </span>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.email.errors?.required">
+        Email is required.
+      </span>
+    -->
     <!--
       <ion-item lines="full">
         <ion-label position="floating">Mobile</ion-label>
@@ -74,14 +79,19 @@
                  formControlName="transaction_pin"
                  pattern= "{{pinPattern}"
                  onKeyPress="if(this.value.length == 4) return false;"
-                 type="number" 
-                 
-                 placeholder="Transaction Pin"
+                 type="number"
                  maxlength="4">
-      </ion-input>
+        </ion-input>
       </ion-item>
       <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.transaction_pin.errors?.required">
         Transaction pin is required.
+      </span>
+      <ion-item lines="full">
+        <ion-label position="floating">Referrer Code</ion-label>
+        <ion-input formControlName="referrer_code" type="text"></ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="submitted && signUpFormCtrl.referrer_code.errors?.minlength">
+        Min 6 chars long.
       </span>
       <br>
       <button class="btn btn-primary text-white" ion-button mode="ios">

@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
+    path: 'validate-email/:m',
+    loadChildren: () => import('./register/validate-email/validate-email.module').then( m => m.ValidateEmailPageModule)
+  },
+  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
@@ -60,6 +64,10 @@ const routes: Routes = [
     loadChildren: () => import('./otp/otp.module').then( m => m.OtpPageModule)
   }, 
   {
+    path: 'email-otp/:m/:e',
+    loadChildren: () => import('./otp/email-otp/email-otp.module').then( m => m.EmailOtpPageModule)
+  }, 
+  {
     path: 'resetpassword/:e',
     loadChildren: () => import('./login/resetpassword/resetpassword.module').then( m => m.ResetpasswordPageModule)
   },
@@ -68,7 +76,7 @@ const routes: Routes = [
     loadChildren: () => import('./otp/password-reset-otp/password-reset-otp.module').then( m => m.PasswordResetOtpPageModule)
   },
   {
-    path: 'signup/:m',
+    path: 'signup/:m/:e',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
   {
@@ -79,6 +87,10 @@ const routes: Routes = [
     path: 'menu/referral',
     loadChildren: () => import('./referral/referral.module').then( m => m.ReferralPageModule)
   },
+  {
+    path: 'user-upgrade',
+    loadChildren: () => import('./profile/user-upgrade/user-upgrade.module').then( m => m.UserUpgradePageModule)
+  }
 ];
 
 @NgModule({

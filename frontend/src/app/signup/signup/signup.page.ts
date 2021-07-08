@@ -18,6 +18,7 @@ import { UserService } from '../../services/user.service';
 export class SignupPage implements OnInit {
  
   mobile_no:any;
+  email:any;
   pinPattern = appConfig.pattern.TRANSACTION_PIN;
   signUpForm: FormGroup;
   registerUserData:any;
@@ -52,15 +53,16 @@ export class SignupPage implements OnInit {
 
   ngOnInit() {
       this.route.params.subscribe(params => {
-        this.mobile_no = params['m']; 
+        this.mobile_no = params['m'];
+        this.email = params['e']; 
       });
       
       this.signUpForm = this.fb.group({
         first_name: ['', [Validators.required, Validators.minLength(3)]],
         last_name: ['', [Validators.required, Validators.minLength(3)]],
-      //  mobile: [this.mobile_no, [Validators.required, Validators.pattern('^[0-9]+$')]],
-        email: ['', [Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-        password: ['', [Validators.required, Validators.minLength(6)],Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')],
+        referrer_code: ['', [Validators.required, Validators.minLength(6)]],
+       // email: ['', [Validators.required, Validators.pattern(appConfig.pattern.EMAIL)]],
+        password: ['', [Validators.required, Validators.minLength(6)],Validators.pattern(appConfig.pattern.PASSWORD)],
         confirmpassword: ['', [Validators.required, Validators.minLength(6)]],
         transaction_pin: ['', [Validators.required, Validators.minLength(4)]]
       }, {
@@ -74,6 +76,7 @@ export class SignupPage implements OnInit {
         const alert = await this.alertCtrl.create({
           cssClass: 'my-alert',
           header: 'Zappy',
+          mode: 'ios',
           message: `All fields are required`,
           buttons: [
             {
@@ -92,13 +95,16 @@ export class SignupPage implements OnInit {
         this.registerUserData.transaction_pin = this.signUpForm.value['transaction_pin'].toString();
         // this.registerUserData.mobile_no = parseInt(this.mobile_no);
         this.registerUserData.mobile_no = this.mobile_no;
+        this.registerUserData.email = this.email;
         this.registerUserData.role_id = appConfig.role_type.casual_user.id;
         this.registerUserData.referral_code = this.generateRefCode();
         console.log(this.registerUserData);
+        
          //Are you sure you want to save this record?
          const alert = await this.alertCtrl.create({
            cssClass: 'my-alert',
            header: 'Zappy',
+           mode: 'ios',
            message: 'Are you sure you want to save this record?',
            buttons: [
              {
@@ -108,10 +114,11 @@ export class SignupPage implements OnInit {
                  let data = this.mobile_no;
                  this.userService.registerNewUser(this.registerUserData).subscribe(async(resp)=>{
                    console.log(resp);
-                   if (resp.status == appConfig.statusCode.conflict){
+                  if (resp.status == appConfig.statusCode.conflict){
                     const alert = await this.alertCtrl.create({
                       cssClass: 'my-alert',
                       header: 'Zappy',
+                      mode: 'ios',
                       message: resp.message,
                       buttons: [
                         {
@@ -129,11 +136,32 @@ export class SignupPage implements OnInit {
                     });
                 
                     await alert.present();
-                  } 
+                  }
+                  else if (resp.status == appConfig.statusCode.notFound){
+                    const alert = await this.alertCtrl.create({
+                      cssClass: 'my-alert',
+                      header: 'Zappy',
+                      mode: 'ios',
+                      message: resp.message,
+                      buttons: [
+                        {
+                          text: 'Ok',
+                          role: 'yes',
+                          cssClass: 'secondary',
+                          handler: () => {
+                            
+                          }
+                        }
+                      ]
+                    });
+                
+                    await alert.present();
+                  }  
                   else if (resp.status == appConfig.statusCode.created) {
                      const alert = await this.alertCtrl.create({
                        cssClass: 'my-alert',
                        header: 'Zappy',
+                       mode: 'ios',
                        message: resp.message,
                        buttons: [
                          {
@@ -166,6 +194,8 @@ export class SignupPage implements OnInit {
                                localStorage.setItem(`setting:gender`,resp.data.gender);
                                localStorage.setItem(`setting:address`,resp.data.address);
                                localStorage.setItem(`setting:referral_code`,resp.data.referral_code);
+                               localStorage.setItem(`setting:referrer_code`,resp.data.referrer_code);
+                               localStorage.setItem(`setting:referred_by`,resp.data.referred_by);
                                //route to user-dashboard
                                this.router.navigate(['/user-dashboard'])
                            }
@@ -194,9 +224,10 @@ export class SignupPage implements OnInit {
   
   generateRefCode() {
     var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";  
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";  
     for (var i = 0; i < 6; i++)
       text += possible.charAt(Math.floor(Math.random() * possible.length));
-    return text;
+      let zappy =  'ZAPPY';
+      return text;
   }
 }

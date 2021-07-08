@@ -76,6 +76,7 @@ export class ProfilePage implements OnInit {
       const alert = await this.alertCtrl.create({
         cssClass: 'alert-zappy',
         mode:'ios',
+animated:true,
         header: 'Zappy',
         inputs: [
           {
@@ -117,6 +118,7 @@ export class ProfilePage implements OnInit {
       const alert = await this.alertCtrl.create({
         cssClass: 'alert-zappy',
         mode:'ios',
+animated:true,
         header: 'Zappy',
         inputs: [
           {
@@ -214,11 +216,13 @@ export class ProfilePage implements OnInit {
       const alert = await this.alertCtrl.create({
         cssClass: 'alert-zappy',
         mode:'ios',
+animated:true,
         header: 'Zappy',
         inputs: [
           {
             name: 'security_question',
             mode:'ios',
+animated:true,
             type: 'select'
           }
         ],
@@ -253,11 +257,11 @@ export class ProfilePage implements OnInit {
       const alert = await this.alertCtrl.create({
         cssClass: 'alert-zappy',
         mode:'ios',
+animated:true,
         header: 'Zappy',
         inputs: [
           {
             name: 'sq_answer',
-           // mode:'ios',
            // type: 'text'
           }
         ],
@@ -297,5 +301,7 @@ export class ProfilePage implements OnInit {
     });
     await toast.present();
   }
-  
+  userUpgrade(){
+    this.router.navigate(['/user-upgrade']);
+  }
 }

@@ -81,6 +81,9 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
+        referrer_code:{
+            type: Sequelize.STRING
+        },
         referred_by:{
             type: Sequelize.STRING
         },

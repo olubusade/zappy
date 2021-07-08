@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: RegisterPage
+  },
+  {
+    path: 'validate-email',
+    loadChildren: () => import('./validate-email/validate-email.module').then( m => m.ValidateEmailPageModule)
   }
 ];
 

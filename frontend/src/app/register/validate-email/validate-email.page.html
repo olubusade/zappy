@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar mode="ios">
     <ion-buttons mode="ios"  slot="start">
-      <ion-icon class="icon" [routerLink]="['/home']" name="arrow-back-sharp"></ion-icon>
+      <ion-icon class="icon" [routerLink]="['/register']" name="arrow-back-sharp"></ion-icon>
     </ion-buttons>
     <ion-title></ion-title>
   </ion-toolbar>
@@ -12,24 +12,24 @@
   </div>
   <div id = "welcome_note" style = "margin-left: 20px; font-size:14px;">
     <h2>Hi,</h2>
-    <p>Let's start with your mobile number.</p>
-    <p>We advise that you use an active mobile number</p>
+    <p>Let's proceed with your email address.</p>
+    <p>We advise that you use an active email address</p>
   </div>
   <div class="signup">
     <ion-item class="ion-item">
       <ion-icon style="margin-left:0px;" name="call-outline"></ion-icon>&nbsp;&nbsp;
       <ion-input ion-input 
-                 inputmode="numeric"
-                 pattern= "{{mobile_pattern}}"
-                 onKeyPress="if(this.value.length == 13) return false;"
-                 type="number" 
-                 [(ngModel)] = "registerForm.mobile_no"  
-                 placeholder="Mobile Number"
-                 maxlength="13">
+                 
+                 pattern= "{{email_pattern}}"
+                 type="email" 
+                 [(ngModel)] = "validateEmailForm.email"  
+                 placeholder="Email"
+                 >
       </ion-input>
     </ion-item>
-    <button ion-button mode="ios" (click)="verifyMobileNo()">
-      Validate My Mobile No.
+    
+    <button ion-button mode="ios" (click)="verifyEmail()">
+      Validate My Email.
     </button>
 
     

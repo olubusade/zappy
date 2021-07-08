@@ -2,7 +2,6 @@ import { Plugins } from '@capacitor/core';
 import { ToastController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Clipboard } from '@ionic-native/clipboard/ngx';
-import { async } from 'rxjs/internal/scheduler/async';
 const { Share } = Plugins;
 @Component({
   selector: 'app-referral',
@@ -18,7 +17,7 @@ export class ReferralPage implements OnInit {
   }
 
   copyReferralLink(){
-    this.clipboard.copy(`I use Zappy to save money on airtime and more. Kindly signup with my link to get up to N250 free. https://accessbankplc.com/?ref=${this.referralCode}`);
+    this.clipboard.copy(`I use Zappy to save money on airtime and more. Kindly signup with my link to get up to N200 free on your first transaction. https://accessbankplc.com/?ref=${this.referralCode}`);
     this.clipboard.paste().then(
       async (resolve: string) => {
             const toast = await this.toastCtrl.create({

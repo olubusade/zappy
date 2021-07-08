@@ -7,34 +7,31 @@ import { appConfig } from "./../../core/config/config";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-otp',
-  templateUrl: './otp.page.html',
-  styleUrls: ['./otp.page.scss', '../../../assets/css/main.scss'],
+  selector: 'app-email-otp',
+  templateUrl: './email-otp.page.html',
+  styleUrls: ['./email-otp.page.scss', '../../../assets/css/main.scss'],
 })
-export class OtpPage implements OnInit {
-
+export class EmailOtpPage implements OnInit {
   otpForm = {
     digit1 : '',
     digit2 : '',
     digit3 : '',
     digit4 : ''
   }
-  stored_mobile_no :any;
+  mobile_no :any;
+  email: any;
   
   constructor(private router: Router,
-              private otpservice: OtpService,
-              private alertCtrl: AlertController,
-              private storageservice: StorageService,
-              private route: ActivatedRoute
-              ) { 
-               
-              }
+    private otpservice: OtpService,
+    private alertCtrl: AlertController,
+    private storageservice: StorageService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
-       this.route.params.subscribe(params => {
-        this.stored_mobile_no = params['m']; 
-      });
-      console.log('MY MOBILE NUMBER: ', this.stored_mobile_no);
+    this.route.params.subscribe(params => {
+      this.mobile_no = params['m']; 
+      this.email = params['e']; 
+    });
   }
 
   async submitOTP() {
@@ -57,7 +54,7 @@ export class OtpPage implements OnInit {
       //Convert the array to string and remove the comma 
       let otp_value = joined_otp.toString().replace(/,/g, '')
       this.otpservice
-      .verifyMobileNoOtp(this.stored_mobile_no, otp_value)
+      .verifyEmailOtp(this.email, otp_value)
       .subscribe(async (resp) => {
         
         if (resp.status == appConfig.statusCode.accepted) {
@@ -70,9 +67,10 @@ export class OtpPage implements OnInit {
                   buttons: ['OK']
                 });
                 await alert.present();
-                let m = this.stored_mobile_no;
-               // this.router.navigate(['/signup',m]);
-               this.router.navigate(['/validate-email',m]);
+                let m = this.mobile_no;
+                let e = this.email;
+                this.router.navigate(['/signup',m,e]);
+               
         }else {
                 console.log(resp);
                 const alert = await this.alertCtrl.create({
@@ -94,14 +92,12 @@ export class OtpPage implements OnInit {
     
       var otp = Math.floor(1000 + Math.random() * 9000);
       this.otpservice
-      .otpValidateMobileNo(this.stored_mobile_no, otp)
+      .otpValidateEmail(this.mobile_no,this.email, otp)
       .subscribe(async (resp) => {
         
         console.log(resp);
           if (resp.status == appConfig.statusCode.created) {
               //save the mobile number and it's token in the local storage
-              this.storageservice.set('user_mobile_no', resp.user_mobile_no);
-              this.storageservice.set('access_token', resp.access_token);
               const alert = await this.alertCtrl.create({
                 cssClass: 'my-alert',
                 header: 'Zappy',
@@ -124,5 +120,11 @@ export class OtpPage implements OnInit {
             await alert.present(); 
           }
       });
+    }
+
+    moveOnMax(otp2){
+      
+        document.getElementById('#otp2').focus();
+      
     }
 }

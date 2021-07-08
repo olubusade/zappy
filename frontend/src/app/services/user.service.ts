@@ -21,6 +21,10 @@ export class UserService {
     let data = {userData};
     return this.http.post(appConfig.apiURL + '/login', data)
   }
+  loginUserWithBiometric(userData: any): Observable<any> {
+    let data = {userData};
+    return this.http.post(appConfig.apiURL + '/login_user_with_biometric', data)
+  }
 
   resetUserPassword(userData: any): Observable<any> {
     let data = {userData};

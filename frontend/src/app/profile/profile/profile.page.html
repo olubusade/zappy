@@ -28,73 +28,75 @@
       </label>
     </div>
   </div>
-<div class="details">
-  <!-- List of Text Items -->
-  <ion-list>
+  <div class="personal">
     <ion-item>
-        <ion-label class="title">Nickname</ion-label>
-        <ion-note>{{userData.nickname}}</ion-note>
-        <ion-icon slot="end" (click)="updateUserData('nickname')" name="create-outline"></ion-icon>
+      <ion-label class="property">Nickname</ion-label>
+      <span>{{userData.nickname}}</span>
+      <ion-icon slot="end" (click)="updateUserData('nickname')" name="create-outline"></ion-icon>
     </ion-item>
     <ion-item>
-        <ion-label class="title">First name</ion-label>
-        <ion-note>{{userData.first_name}}</ion-note>
-        <!--
-        <ion-icon slot="end" (click)="updateUserData('first_name')" name="create-outline"></ion-icon>
-        -->
+      <ion-label class="property">First name</ion-label>
+      <span>{{userData.first_name}}</span>
+      <!--
+      <ion-icon slot="end" (click)="updateUserData('first_name')" name="create-outline"></ion-icon>
+      -->
     </ion-item>
     <ion-item>
-        <ion-label class="title">Last name</ion-label>
-        <ion-note slot="end">{{userData.last_name}}</ion-note>
-        <!--
-        <ion-icon slot="end"  (click)="updateUserData('last_name')" name="create-outline"></ion-icon>
-        -->
+      <ion-label class="property">Last name</ion-label>
+      <span slot="end">{{userData.last_name}}</span>
+      <!--
+      <ion-icon slot="end"  (click)="updateUserData('last_name')" name="create-outline"></ion-icon>
+      -->
     </ion-item>
     <ion-item>
-        <ion-label class="title">Date of Birth</ion-label>
+        <ion-label class="property">Date of Birth</ion-label>
         <!--<ion-note slot="end">{{userData.dob}}</ion-note>-->
         <ion-datetime value="{{userData.dob}}" displayFormat="DD MMM, YYYY" display-timezone="Africa/Lagos"></ion-datetime>
     </ion-item>
     <ion-item>
-        <ion-label class="title">Mobile</ion-label>
-        <ion-note slot="end">{{userData.mobile_no}}</ion-note>
+        <ion-label class="property">Mobile</ion-label>
+        <span slot="end">{{userData.mobile_no}}</span>
         <!--
             <ion-icon slot="end" (click)="updateUserData('mobile_no')" name="create-outline"></ion-icon>
         -->
     </ion-item>
     <ion-item>
-        <ion-label class="title">Email Address</ion-label>
-        <ion-note slot="end">{{userData.email}}</ion-note>
-<!--
+        <ion-label class="property">Email Address</ion-label>
+        <span slot="end">{{userData.email}}</span>
+  <!--
         <ion-icon slot="end" (click)="updateUserData('email')" name="create-outline"></ion-icon>
--->
+  -->
     </ion-item>
     <ion-item>
-        <ion-label class="title">Address</ion-label>
-        <ion-note slot="end">{{userData.address}}</ion-note>
+        <ion-label class="property">Address</ion-label>
+        <span slot="end">{{userData.address}}</span>
         <ion-icon slot="end" (click)="updateUserData('address')" name="create-outline"></ion-icon>
     </ion-item>
     <ion-item>
-        <ion-label class="title">Security Question (SQ)</ion-label>
-        <ion-note slot="end">{{userData.security_question}}</ion-note>
+        <ion-label class="property">Security Question (SQ)</ion-label>
+        <span slot="end">{{userData.security_question}}</span>
         <ion-icon slot="end" (click)="updateUserData('security_question')" name="create-outline"></ion-icon>
     </ion-item>
     <ion-item>
-        <ion-label class="title">Answer to SQ</ion-label>
-        <ion-note slot="end">{{userData.sq_answer}}</ion-note>
+        <ion-label class="property">Answer to SQ</ion-label>
+        <span slot="end">{{userData.sq_answer}}</span>
         <ion-icon slot="end" (click)="updateUserData('sq_answer')" name="create-outline"></ion-icon>
     </ion-item>
     <ion-item>
-        <ion-label class="title">Zappy Level</ion-label>
-        <ion-note [ngSwitch] = "userData.role_id" slot="end">
+        <ion-label class="property">Zappy Level</ion-label>
+        <span [ngSwitch] = "userData.role_id" slot="end">
             <span *ngSwitchCase = "1">Casual User</span>
             <span *ngSwitchCase = "2">Paypoint Agent</span>
             <span *ngSwitchCase = "3">Custom Seller</span>
             <span *ngSwitchCase = "4">API Seller</span>
             <span *ngSwitchCase = "5">Super Admin</span>
-        </ion-note>
-        <ion-icon slot="end" name="create-outline"></ion-icon>
+        </span>
+        <ion-icon (click)="userUpgrade()"slot="end" name="create-outline"></ion-icon>
     </ion-item>
- </ion-list>
-</div>
+  </div>
+  
+
+
+
+ 
 </ion-content>

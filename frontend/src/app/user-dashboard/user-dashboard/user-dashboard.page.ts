@@ -46,6 +46,8 @@ export class UserDashboardPage implements OnInit {
     */
     const actionSheet = await this.actionSheetCtrl.create({
       header: 'More menu',
+      animated: true,
+      cssClass: 'my-alert',
       buttons: [
         {
           text: 'Referral',

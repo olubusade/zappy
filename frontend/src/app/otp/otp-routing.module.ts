@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'password-reset-otp',
     loadChildren: () => import('./password-reset-otp/password-reset-otp.module').then( m => m.PasswordResetOtpPageModule)
+  },
+  {
+    path: 'email-otp',
+    loadChildren: () => import('./email-otp/email-otp.module').then( m => m.EmailOtpPageModule)
   }
 ];
 

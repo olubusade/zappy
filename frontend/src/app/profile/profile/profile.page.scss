@@ -1,5 +1,4 @@
 .details {
- 
   padding-right: 0 !important;
 
   h5 {
@@ -48,11 +47,12 @@ button {
   margin-left: -5px !important;
   color: #424242;
 }
-
+/*
 .title {
   font-weight: 600;
   font-size:10px;
 }
+*/
 
 ion-list {
   margin-left:-50px;
@@ -64,15 +64,16 @@ ion-item {
 }
 
 ion-icon {
-  height: 2.5vh;
-  margin-right: -5px;
+  height: 1.8vh;
+  //margin-right: -5px;
   color:#9ACD32;
 }
 
-ion-note {
+span{
   font-size:8px;
-  font-weight: 100;
-  margin-right: 0vh;
+  font-weight: normal;
+  color:#1e1f1d;
+ // margin-right: 0vh;
 }
 ion-datetime{
   font-size:8px;
@@ -86,4 +87,11 @@ ion-datetime{
 }
 ion-title {
   font-size:0.5vh;
+}
+.property{
+  font-size:12px;
+  font-weight:500;
+}
+.personal{
+  margin-top: 25px !important;
 }

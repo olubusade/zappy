@@ -11,14 +11,22 @@ import { appConfig } from '../core/config/config'
 export class OtpService {
   constructor(private http: HttpClient) {}
 
-  otpVerifyMobileNo(mobile_no: any, otp: any): Observable<any> { 
+  otpValidateMobileNo(mobile_no: any, otp: any): Observable<any> { 
     let data = {mobile_no, otp};
-    return this.http.post(appConfig.apiURL + '/otp_verify_mobile_no', data)
+    return this.http.post(appConfig.apiURL + '/otp_validate_mobile', data)
+  }
+  otpValidateEmail(mobile_no:any, email: any, otp: any): Observable<any> { 
+    let data = {mobile_no, email, otp};
+    return this.http.post(appConfig.apiURL + '/otp_validate_email', data)
   }
 
-  verifyOtp(mobile: any, otp: any): Observable<any> { 
+  verifyMobileNoOtp(mobile: any, otp: any): Observable<any> { 
     let data = {mobile, otp};
-    return this.http.post(appConfig.apiURL + '/verify_otp', data)
+    return this.http.post(appConfig.apiURL + '/verify_mobile_otp', data)
+  }
+  verifyEmailOtp(email:any, otp: any): Observable<any> { 
+    let data = {email, otp};
+    return this.http.post(appConfig.apiURL + '/verify_email_otp', data)
   }
   sendPasswordResetOtp(email: any, otp: any): Observable<any> { 
     let data = {email, otp};
@@ -28,18 +36,5 @@ export class OtpService {
     let data = {email, otp};
     return this.http.post(appConfig.apiURL + '/verify_password_reset_otp', data)
   }
-/*
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error);
-      this.log(`${operation} failed: ${error.message}`);
 
-      return of(result as T);
-    };
-  }
-
-  private log(message: string) {
-    console.log(message);
-  }
-  */
 }

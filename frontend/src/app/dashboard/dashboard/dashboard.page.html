@@ -5,7 +5,7 @@
         <ion-button slot="start" class="tool-text" fill="clear" (click)="gotoService('fund-transfer')">          
           <div class="avatar">
             <img src="../../assets/imgs/passport2.png" alt="avatar">
-            <span>Hi, {{userData.first_name}}</span>
+            <span>Hi,{{userData.nickname?userData.nickname:userData.first_name}}</span>
           </div>
         </ion-button>
         <ion-button slot="end" class="tool-text" fill="clear" (click)="gotoService('add-money')">          
@@ -51,7 +51,7 @@
       <ion-button slot="end">          
       </ion-button>
     </ion-buttons>
-
+    <h6 slot="center">Services</h6>
     <ion-grid>
       <ion-row class="chip" style="padding-right:-60px;">
         <ion-col>
