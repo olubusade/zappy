@@ -65,7 +65,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
-        dob:{
+        cashback:{
             type: Sequelize.STRING,
         },
         security_question:{

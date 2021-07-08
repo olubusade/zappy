@@ -104,7 +104,6 @@ export class LoginPage implements OnInit {
             await alert.present(); 
           }
           else if (resp.status == appConfig.statusCode.found) {
-            console.log(resp);
             this.localstorageData(resp);
             //  await loading.onDidDismiss();
           //  console.log('Loading dismissed!');
@@ -234,7 +233,7 @@ export class LoginPage implements OnInit {
   } 
 
   async localstorageData(resp){
-    console.log('yea');
+    const auxData = JSON.parse(resp.auxData);
     localStorage.setItem(`setting:user_id`,resp.data.id);
     localStorage.setItem(`setting:role_id`,resp.data.role_id);
     localStorage.setItem(`setting:first_name`,resp.data.first_name);
@@ -253,6 +252,7 @@ export class LoginPage implements OnInit {
     localStorage.setItem(`setting:gender`,resp.data.gender);
     localStorage.setItem(`setting:address`,resp.data.address);
     localStorage.setItem(`setting:referral_code`,resp.data.referral_code);
+    localStorage.setItem(`setting:auxData`, JSON.stringify(auxData));
     const toast = await this.toastCtrl.create({
       message: `Log in successful`,
       duration: 2000

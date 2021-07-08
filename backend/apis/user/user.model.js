@@ -5,6 +5,7 @@ const sequelize = require('../../configs/connection');
 const User = require('../models/user')(sequelize, Sequelize);
 const WalletTnxRef = require('../models/wallet-tnx-ref')(sequelize, Sequelize);
 const Referrals = require('../models/referrals')(sequelize, Sequelize);
+const AuxData = require('../models/aux-data')(sequelize, Sequelize);
 const { Op } = require("sequelize");
 const { QueryTypes } = require('sequelize');
 const { reject, result } = require('lodash');
@@ -16,6 +17,7 @@ const saltRounds = 10;
 User.sync();
 WalletTnxRef.sync();
 Referrals.sync();
+AuxData.sync();
 
 exports.userModel = {
     registerUser: async(userData) => {
@@ -66,7 +68,13 @@ exports.userModel = {
                               //  `INSERT INTO users (first_name, last_name,email, password, mobile_no, role_id) VALUES 
                               //  (${userData.first_name},${userData.last_name},${userData.email},${userData.password},${userData.mobile_no},${userData.role_id})`)
                               .then(user => {
-                                resolve(user.dataValues);
+                                //resolve(user.dataValues);
+                                AuxData.findAll().then(auxData => {
+                                    let resp = {user: user.dataValues, auxData: auxData[0].dataValues};
+                                    resolve(resp);  
+                                }, err => {
+                                    reject({error: err});
+                                })
                               //Insert in to referrals table
                             console.log('Valid Referrer', valid_referrer);
                             if (valid_referrer == true) {
@@ -131,10 +139,34 @@ exports.userModel = {
                 },
                 limit: 1,
             }).then(user => {
-                let resp = user == null ? user : user.dataValues;
-                resolve(resp);
+                if(user === null){
+                    let resp = null;
+                    resolve(resp);
+                }else{
+                    console.log({modelUser: user});
+                    AuxData.findAll().then(auxData => {
+                        let resp = {user: user.dataValues, auxData: auxData[0].dataValues};
+                        resolve(resp);  
+                    }, err => {
+                        reject({error: err});
+                    })
+                }   
             }, err => {
                 reject({error: err});
+            })
+        });
+    },
+    verifyTnxPin: (data) => {
+        return new Promise((resolve, reject) => {
+            User.findOne({
+                where: {
+                    id: data.userId,
+                    transaction_pin: data.enteredPin
+                }
+            }).then(resp => {
+                resolve(resp);
+            }, err => {
+                reject(err);
             })
         });
     },
@@ -186,49 +218,20 @@ exports.userModel = {
 
         });
     },
-    updateUserProfile: (userData) => {
-        return new Promise((resolve, reject) => {
-            if (userData.nickname) {
-                User.update(
-                    {nickname:userData.nickname},
-                    {where: {id: userData.user_id}}
-                ).then(user => {
-                   resolve(user[0]);
-                }, err => {
-                    reject({error: err});
-                })
-            }
-            if (userData.address) {
-                User.update(
-                    {address:userData.address},
-                    {where: {id: userData.user_id}}
-                ).then(user => {
-                   resolve(user[0]);
-                }, err => {
-                    reject({error: err});
-                })
-            }
-            if (userData.security_question) {
-                User.update(
-                    {security_question:userData.security_question},
-                    {where: {id: userData.user_id}}
-                ).then(user => {
-                   resolve(user[0]);
-                }, err => {
-                    reject({error: err});
-                })
-            }
-            if (userData.sq_answer) {
-                User.update(
-                    {security_answer:userData.sq_answer},
-                    {where: {id: userData.user_id}}
-                ).then(user => {
-                   resolve(user[0]);
-                }, err => {
-                    reject({error: err});
-                })
-            }
-            
+    updateWalletAfterRecharge: (data) => {
+        return new Promise(async (resolve, reject) => {
+            await sequelize.query(
+                'UPDATE users SET wallet_amount = wallet_amount - $1, cashback = cashback + $2 WHERE id = $3',
+                { 
+                    bind: [data.amount, data.reward, data.userId], 
+                    type: QueryTypes.UPDATE 
+                }
+            ).then(user => {
+                //console.log(user);
+                resolve(user);
+            }, err => {
+                reject({error: err});
+            })
         });
     },
     resetUserPassword: async(userData) => {

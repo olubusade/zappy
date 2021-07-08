@@ -31,16 +31,9 @@ export class SignupPage implements OnInit {
     role_id:'',
     access_token:'',
     expiresIn:'',
-    email:'',
-    wallet_amount:'',
-    points:'',
-    dob:'',
-    security_question:'',
-    sq_answer:'',
-    nickname:'',
-    gender:'',
-    address:'',
-    referral_code:''
+    wallet_amount: '',
+    cashback: '',
+    points: ''
   }
 
   constructor(private userService: UserService,
@@ -171,33 +164,30 @@ export class SignupPage implements OnInit {
                            handler: () => {
                              
                              //set the ffg into local storage user_id, mobile_no, first_name, last_name, access_token, role_id
-                               this.userRespData.user_id = resp.data.id;
-                               this.userRespData.mobile_no = resp.data.mobile_no;
-                               this.userRespData.first_name = resp.data.first_name;
-                               this.userRespData.last_name = resp.data.last_name;
-                               this.userRespData.role_id = resp.data.role_id;
-                               this.userRespData.access_token = resp.data.access_token;
-                           
-                               localStorage.setItem(`setting:user_id`,this.userRespData.user_id);
-                               localStorage.setItem(`setting:first_name`,this.userRespData.first_name);
-                               localStorage.setItem(`setting:last_name`,this.userRespData.last_name);
-                               localStorage.setItem(`setting:mobile_no`,this.userRespData.mobile_no);
-                               localStorage.setItem(`setting:email`,this.userRespData.email);
-                               localStorage.setItem('setting:role_id',this.userRespData.role_id);
-                               localStorage.setItem('setting:access_token',this.userRespData.access_token);
-                               localStorage.setItem('setting:wallet_amount',this.userRespData.wallet_amount);
-                               localStorage.setItem('setting:points',this.userRespData.points);
-                               localStorage.setItem(`setting:dob`,resp.data.dob);
-                               localStorage.setItem(`setting:security_question`,resp.data.security_question);
-                               localStorage.setItem(`setting:sq_answer`,resp.data.security_answer);
-                               localStorage.setItem(`setting:nickname`,resp.data.nickname);
-                               localStorage.setItem(`setting:gender`,resp.data.gender);
-                               localStorage.setItem(`setting:address`,resp.data.address);
-                               localStorage.setItem(`setting:referral_code`,resp.data.referral_code);
-                               localStorage.setItem(`setting:referrer_code`,resp.data.referrer_code);
-                               localStorage.setItem(`setting:referred_by`,resp.data.referred_by);
-                               //route to user-dashboard
-                               this.router.navigate(['/user-dashboard'])
+                            const auxData = JSON.parse(resp.auxData);
+                             
+                            this.userRespData.user_id = resp.data.id;
+                            this.userRespData.mobile_no = resp.data.mobile_no;
+                            this.userRespData.first_name = resp.data.first_name;
+                            this.userRespData.last_name = resp.data.last_name;
+                            this.userRespData.role_id = resp.data.role_id;
+                            this.userRespData.access_token = resp.data.access_token;
+                            this.userRespData.wallet_amount = resp.data.wallet_amount;
+                            this.userRespData.cashback = resp.data.cashback;
+                            this.userRespData.points = resp.data.points;
+                        
+                            localStorage.setItem(`setting:user_id`,this.userRespData.user_id);
+                            localStorage.setItem(`setting:first_name`,this.userRespData.first_name);
+                            localStorage.setItem(`setting:last_name`,this.userRespData.last_name);
+                            localStorage.setItem(`setting:mobile_no`,this.userRespData.mobile_no);
+                            localStorage.setItem('setting:role_id',this.userRespData.role_id);
+                            localStorage.setItem('setting:access_token',this.userRespData.access_token);
+                            localStorage.setItem('setting:wallet_amount',this.userRespData.wallet_amount);
+                            localStorage.setItem('setting:cashback',this.userRespData.cashback);
+                            localStorage.setItem('setting:points',this.userRespData.points);
+                            localStorage.setItem(`setting:auxData`, JSON.stringify(auxData));
+                            //route to user-dashboard
+                            this.router.navigate(['/user-dashboard'])
                            }
                          }
                        ]

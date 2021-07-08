@@ -1,0 +1,57 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-10:12
+INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-10:12
+INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-10:12
+INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-10:12
+INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-10:12
+INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-10:12
+INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-10:12
+	xmlns:amazon
+		ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:4:1-57
+	package
+		ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:11-46
+		INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-10:12
+		INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-10:12
+		INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:3:1-59
+application
+ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-7:15
+activity#de.niklasmerz.cordova.biometric.BiometricActivity
+ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-141
+	android:exported
+		ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:116-139
+	android:theme
+		ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:76-115
+	android:name
+		ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:11-75
+uses-permission#android.permission.USE_BIOMETRIC
+ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:1-67
+	android:name
+		ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:18-65
+uses-permission#android.permission.USE_FINGERPRINT
+ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:1-69
+	android:name
+		ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:18-67
+uses-sdk
+INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml

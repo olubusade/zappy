@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="353f4e15-fc1a-4031-9138-3c866e937c13" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/apis/models/otp.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/apis/models/otp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/apis/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/apis/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/apis/otp/otp.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/apis/otp/otp.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/apis/otp/otp.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/apis/otp/otp.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/apis/otp/otp.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/apis/otp/otp.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/apis/user/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/apis/user/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/apis/user/user.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/apis/user/user.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/apis/user/user.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/apis/user/user.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/capacitor.build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/capacitor.build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/capacitor.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/capacitor.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../capacitor.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../capacitor.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/core/config/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/core/config/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/dashboard/dashboard/dashboard.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/dashboard/dashboard/dashboard.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/dashboard/dashboard/dashboard.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/dashboard/dashboard/dashboard.page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/dashboard/dashboard/dashboard.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/dashboard/dashboard/dashboard.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/login/login/login.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/login/login/login.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/login/login/login.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/login/login/login.page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/login/login/login.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/login/login/login.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/otp/otp-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/otp/otp-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/otp/otp/otp.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/otp/otp/otp.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/profile/profile-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/profile/profile-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/profile/profile/profile.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/profile/profile/profile.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/profile/profile/profile.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/profile/profile/profile.page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/profile/profile/profile.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/profile/profile/profile.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/referral/referral.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/referral/referral.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/referral/referral.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/referral/referral.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/register/register-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/register/register-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/register/register/register.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/register/register/register.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/register/register/register.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/register/register/register.page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/register/register/register.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/register/register/register.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/services/otp-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/services/otp-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/signup/signup/signup.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/signup/signup/signup.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/signup/signup/signup.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/signup/signup/signup.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/user-dashboard/user-dashboard/user-dashboard.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/user-dashboard/user-dashboard/user-dashboard.page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/user-dashboard/user-dashboard/user-dashboard.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/user-dashboard/user-dashboard/user-dashboard.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/global.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="A7PRO205152303" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1uUZJQCgub8xZ0DboIZyTjererX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="353f4e15-fc1a-4031-9138-3c866e937c13" name="Default Changelist" comment="" />
+      <created>1624722067257</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624722067257</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="59" y="5" width="916" height="715" key="SettingsEditor" timestamp="1624723443235">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="59" y="5" width="916" height="715" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1624723443235" />
+    <state x="604" y="100" width="649" height="531" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1624723474974">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="604" y="100" width="649" height="531" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.768@0.0.1366.768" timestamp="1624723474974" />
+    <state x="625" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1625740471265">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="625" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1625740471265" />
+  </component>
+</project>

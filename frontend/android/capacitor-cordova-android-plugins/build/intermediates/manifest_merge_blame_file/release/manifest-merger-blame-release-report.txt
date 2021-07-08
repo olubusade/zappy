@@ -1,0 +1,33 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:amazon="http://schemas.amazon.com/apk/res/android"
+3    xmlns:android="http://schemas.android.com/apk/res/android"
+4    package="capacitor.android.plugins"
+5    android:versionCode="1"
+6    android:versionName="1.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="21"
+9-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+10        android:targetSdkVersion="29" />
+10-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+11
+12    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+12-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:1-67
+12-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:18-65
+13    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+13-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:1-69
+13-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:18-67
+14
+15    <application>
+15-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-7:15
+16        <activity
+16-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-141
+17            android:name="de.niklasmerz.cordova.biometric.BiometricActivity"
+17-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:11-75
+18            android:exported="true"
+18-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:116-139
+19            android:theme="@style/TransparentTheme" />
+19-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:76-115
+20    </application>
+21
+22</manifest>
