@@ -127,4 +127,11 @@ export class AddMoneyPage implements OnInit {
     alert(this.fund_amount);
     //this.router.navigate(['/user-dashboard/wallet/success'])
   }
+
+  doRefresh(event) {
+    this.wallet_amount = parseInt(localStorage.getItem(`setting:wallet_amount`));
+    setTimeout(() => {
+      event.target.complete();
+    }, 1000);
+  }
 }

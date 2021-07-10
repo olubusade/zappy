@@ -46,6 +46,8 @@ export class DashboardPage implements OnInit {
 
   doRefresh(event) {
     this.userData.wallet_amount = localStorage.getItem(`setting:wallet_amount`);
+    this.userData.nickname = localStorage.getItem(`setting:nickname`);
+    this.userData.first_name = localStorage.getItem(`setting:first_name`);
     setTimeout(() => {
       event.target.complete();
     }, 2000);

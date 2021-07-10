@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-toolbar color="none" class="text-white" mode="ios">
     <ion-buttons  >
@@ -28,12 +29,14 @@
       </ion-card-content>
     </ion-card>
   </div>
-
+  <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed" pullFactor="1" pullMin="50" pullMax="200">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <div class="wrapper">
     <div class="inner">      
       <h4>Add money</h4>
       <ion-item lines="none">
-        <ion-input placeholder="Amount" type="text" [(ngModel)] = "fund_amount" required></ion-input>
+        <ion-input placeholder="Amount" inputmode="numeric" [(ngModel)] = "fund_amount" required></ion-input>
       </ion-item>
   
       <!--ion-item lines="none">

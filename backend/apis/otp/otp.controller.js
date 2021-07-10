@@ -22,7 +22,7 @@ exports.otpController = {
             //console.log('TESTING OTP:',result.toJSON())
             
             let msg = `Your Zappy Mobile validation OTP is:${req.body.otp}`;
-           // sms.sendSMS(req.body.mobile_no,msg);
+            sms.sendSMS(req.body.mobile_no,msg);
           }         
         }, err => {
           console.log(err);
@@ -88,6 +88,7 @@ exports.otpController = {
       console.log('Controller:',req.body);
       let otp = req.body.otp;
       OtpModel.otpModel.savePasswordResetOTP(req.body).then((result) => {  
+        console.log('check result',result);
         if (result && result > 0) {
           let msg = `Use this OTP to reset your password:${otp}`;
           sendEmail(req.body.email,'Password Reset','', msg);

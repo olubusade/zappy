@@ -58,13 +58,14 @@ exports.userController = {
     login : (req, res) => {
       let {mobile_no, password} = req.body.userData;
       UserModel.userModel.login(req.body.userData).then(async (result) => {
-       // console.log('RESULT:',result);
-
+      
           if (result) {
+            console.log(password);
+            console.log(result.user);
             // if the user exists, let's compare their hashed password to a new hash from req.body.password
             const hashedPassword = await bcrypt.compare(
               password,
-              result.password
+              result.user.password
             );
             // bcrypt.compare returns a boolean to us, if it is false the passwords did not match!
             if ( hashedPassword === false ) {
@@ -79,14 +80,12 @@ exports.userController = {
                 {expiresIn: local_config.expiresIn}
               ); 
 
-              result.expiresIn = local_config.expiresIn;
-              result.access_token = accessToken;
+              result.user.expiresIn = local_config.expiresIn;
+              result.user.access_token = accessToken;
               await result.auxData.aux_value.map((obj) => {
                 obj.replace(/\r?\n|\r/g, "");
                 auxValueConverter.push(JSON.parse(obj));
               });
-  
-              console.log({auxValueConverter});
               
               result.auxData.aux_value = auxValueConverter;
   
@@ -110,19 +109,24 @@ exports.userController = {
       console.log(req.body.userData);
       
       UserModel.userModel.login(req.body.userData).then(async (result) => {
-       // console.log('RESULT:',result);
-
+      
           if (result) {
+              let auxValueConverter = [];
               const  accessToken  =  jwt.sign(
                 {user_id: result.id }, 
                 local_config.auth_secret,
                 {expiresIn: local_config.expiresIn}
               ); 
 
-              result.expiresIn = local_config.expiresIn;
-              result.access_token = accessToken;
-              res.send({status:local_config.statusCode.found, message: 'Login successful.', data:result});
-              console.log({status:local_config.statusCode.found, message: 'Login successful.', data:result});
+              result.user.expiresIn = local_config.expiresIn;
+              result.user.access_token = accessToken;
+              await result.auxData.aux_value.map((obj) => {
+                obj.replace(/\r?\n|\r/g, "");
+                auxValueConverter.push(JSON.parse(obj));
+              });
+              result.auxData.aux_value = auxValueConverter;
+              res.send({status:local_config.statusCode.found, message: 'Login successful.', data: result.user, auxData: JSON.stringify(result.auxData)});
+              console.log({status:local_config.statusCode.found, message: 'Login successful.', data: result.user, auxData: JSON.stringify(result.auxData)});
           }else{
             res.send({status:local_config.statusCode.notFound, message: 'Oops! Invalid Mobile No.'});
             console.log({status:local_config.statusCode.notFound, message: 'Oops! Invalid Mobile No.'});

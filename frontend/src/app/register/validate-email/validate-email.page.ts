@@ -53,54 +53,7 @@ export class ValidateEmailPage implements OnInit {
     }else {
         this.validateEmail();
     }
-    /*
-    else if (converted_mobile.length < 13) {
-          const alert = await this.alertCtrl.create({
-          cssClass: 'my-alert',
-          header: `Zappy`,
-          subHeader: '',
-          mode:'ios',
-          message: `<p>Invalid Mobile No.</p><p>Valid Format: 234XXXXXXXXXX</p>`,
-          buttons: ['OK']
-        });
-
-        await alert.present();    
-    }*//*
-    else{
-      
-      this.userData = this.validateEmailForm;
-      this.userData.mobile_no = parseInt(this.mobile_no);
-
-        console.log('USER DATA', this.userData);
-          var otp = Math.floor(1000 + Math.random() * 9000);
-          this.otpservice
-          .otpValidateEmail(this.userData.mobile_no,this.userData.email, otp)
-          .subscribe(async (resp) => {
-            
-            console.log(resp);
-              if (resp.status == appConfig.statusCode.created) {
-                 
-                 localStorage.setItem(`setting:mobile_no`,resp.user_mobile_no);
-                 localStorage.setItem(`setting:email`,resp.user_email);
-                 //console.log('PERSISTENT DATA', this.storageservice.get('user_mobile_no'));
-                  let e = this.validateEmailForm.email
-                  let m = this.mobile_no
-                  this.router.navigate(['/email-otp', m, e]);
-              } else {
-                const alert = await this.alertCtrl.create({
-                  cssClass: 'my-alert',
-                  header: 'Zappy',
-                  subHeader: '',
-                  mode:'ios',
-                  message: resp.message,
-                  buttons: ['OK']
-                });
-            
-                await alert.present(); 
-              }
-          });
-    }
-    */
+    
   }
 
   async validateEmail() {

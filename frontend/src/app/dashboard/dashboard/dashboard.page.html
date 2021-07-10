@@ -5,7 +5,7 @@
         <ion-button slot="start" class="tool-text" fill="clear" (click)="gotoService('fund-transfer')">          
           <div class="avatar">
             <img src="../../assets/imgs/passport2.png" alt="avatar">
-            <span>Hi,{{userData.nickname?userData.nickname:userData.first_name}}</span>
+            <span>Hi, {{userData.nickname && userData.nickname !== 'null'?userData.nickname:userData.first_name}}</span>
           </div>
         </ion-button>
         <ion-button slot="end" class="tool-text" fill="clear" (click)="gotoService('add-money')">          
@@ -16,8 +16,9 @@
       <ion-row>
         <ion-card color="primary" mode="ios">  
           <ion-card-content >
-            <p class="text">Available Balance</p> 
+            <p id="text">Available Balance</p> 
             <div class="amount"> &#x20A6; {{userData.wallet_amount}}</div>
+           
             <ion-fab vertical="edge" horizontal="start" edge slot="fixed">
               <ion-fab-button class="ion-fab-button">
                 <ion-icon name="wallet" class="wallet"></ion-icon>
@@ -51,23 +52,26 @@
       <ion-button slot="end">          
       </ion-button>
     </ion-buttons>
-    <h6 slot="center">Services</h6>
+    <h6 slot="center" id="service">Services</h6>
     <ion-grid>
       <ion-row class="chip" style="padding-right:-60px;">
         <ion-col>
           <div>
+            <!--
+          <ion-chip color="secondary" (click)="gotoService('data-bundle')"></ion-chip>
+          -->
           <ion-chip (click)="gotoService('mobile-airtime')" color="secondary">
-              <ion-icon name="archive" color="primary"></ion-icon>
+              <ion-icon name="cash" color="primary"></ion-icon>
           </ion-chip><br>
-          <ion-label color="dark" style="padding-left:10px;">Airtime</ion-label>
+          <ion-label color="dark" style="padding-left:0px;">Airtime & Data Bundle</ion-label>
           </div>
         </ion-col>
         <ion-col>
           <div>
-          <ion-chip color="secondary" (click)="gotoService('data-bundle')">
-              <ion-icon name="wallet" color="primary"></ion-icon>
+          <ion-chip color="secondary">
+              <ion-icon name="card" color="primary"></ion-icon>
           </ion-chip><br>
-          <ion-label color="dark" style="padding-left:0px;">Data Bundle</ion-label>
+          <ion-label color="dark" style="padding-left:0px;">SIM Hosting</ion-label>
           </div>
         </ion-col>
         <ion-col>
@@ -83,7 +87,7 @@
         <ion-col>
           <div>
           <ion-chip (click)="gotoService('electricity')" color="secondary">
-              <ion-icon name="archive" color="primary"></ion-icon>
+              <ion-icon name="logo-electron" color="primary"></ion-icon>
           </ion-chip><br>
           <ion-label color="dark" style="padding-left:0px;">Electricity</ion-label>
           </div>
@@ -91,7 +95,7 @@
         <ion-col>
           <div>
           <ion-chip color="secondary" (click)="gotoService('cable-tv')">
-              <ion-icon name="wallet" color="primary"></ion-icon>
+              <ion-icon name="globe" color="primary"></ion-icon>
           </ion-chip><br>
           <ion-label color="dark" style="padding-left:12px;">Cable TV</ion-label>
           </div>
@@ -109,7 +113,7 @@
         <ion-col>
           <div>
           <ion-chip (click)="gotoService('mobile-airtime')" color="secondary">
-              <ion-icon name="archive" color="primary"></ion-icon>
+              <ion-icon name="document-text" color="primary"></ion-icon>
           </ion-chip><br>
           <ion-label color="dark" style="padding-left:0px;">Bulk SMS</ion-label>
           </div>
@@ -117,17 +121,17 @@
         <ion-col>
           <div>
           <ion-chip color="secondary" (click)="gotoService('data-bundle')">
-              <ion-icon name="wallet" color="primary"></ion-icon>
+              <ion-icon name="recording" color="primary"></ion-icon>
           </ion-chip><br>
           <ion-label color="dark" style="margin-left:-10px;">Bulk Voice SMS</ion-label>
           </div>
         </ion-col>
         <ion-col>
           <div>
-            <ion-chip color="secondary" (click)="gotoService('data-bundle')">
-              <ion-icon name="archive" color="primary"></ion-icon>
+            <ion-chip color="secondary">
+              <ion-icon name="person-add" color="primary"></ion-icon>
           </ion-chip><br>
-          <ion-label color="dark" style="margin-left:-1px;">SIM Hosting</ion-label>
+          <ion-label color="dark" style="margin-left:-1px;">Beneficiary</ion-label>
           </div>
         </ion-col>
       </ion-row>

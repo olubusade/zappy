@@ -55,7 +55,9 @@ export class OtpPage implements OnInit {
       //Concatenate all the otp digits into an array
       let joined_otp =  Object.values(this.otpForm).reduce((r,c) => r.concat(c), [])
       //Convert the array to string and remove the comma 
+
       let otp_value = joined_otp.toString().replace(/,/g, '')
+      console.log('otp length:',otp_value.length)
       this.otpservice
       .verifyMobileNoOtp(this.stored_mobile_no, otp_value)
       .subscribe(async (resp) => {
@@ -92,37 +94,37 @@ export class OtpPage implements OnInit {
 
   async resendOTP() {
     
-      var otp = Math.floor(1000 + Math.random() * 9000);
-      this.otpservice
-      .otpValidateMobileNo(this.stored_mobile_no, otp)
-      .subscribe(async (resp) => {
-        
-        console.log(resp);
-          if (resp.status == appConfig.statusCode.created) {
-              //save the mobile number and it's token in the local storage
-              this.storageservice.set('user_mobile_no', resp.user_mobile_no);
-              this.storageservice.set('access_token', resp.access_token);
-              const alert = await this.alertCtrl.create({
-                cssClass: 'my-alert',
-                header: 'Zappy',
-                subHeader: '',
-                mode:'ios',
-                message: `OTP resent successfully`,
-                buttons: ['OK']
-              });
-              await alert.present(); 
-              
-          } else {
+    var otp = Math.floor(1000 + Math.random() * 9000);
+    this.otpservice
+    .otpValidateMobileNo(this.stored_mobile_no, otp)
+    .subscribe(async (resp) => {
+      
+      console.log(resp);
+        if (resp.status == appConfig.statusCode.created) {
+            //save the mobile number and it's token in the local storage
+            this.storageservice.set('user_mobile_no', resp.user_mobile_no);
+            this.storageservice.set('access_token', resp.access_token);
             const alert = await this.alertCtrl.create({
               cssClass: 'my-alert',
               header: 'Zappy',
               subHeader: '',
               mode:'ios',
-              message: resp.message,
+              message: `OTP resent successfully`,
               buttons: ['OK']
             });
             await alert.present(); 
-          }
-      });
-    }
+            
+        } else {
+          const alert = await this.alertCtrl.create({
+            cssClass: 'my-alert',
+            header: 'Zappy',
+            subHeader: '',
+            mode:'ios',
+            message: resp.message,
+            buttons: ['OK']
+          });
+          await alert.present(); 
+        }
+    });
+  }
 }

@@ -41,7 +41,8 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false
         },
         wallet_amount: {
-            type: Sequelize.STRING
+            type: Sequelize.DOUBLE,
+            DEFAULT:0
         },
         points: {
             type: Sequelize.STRING
@@ -66,7 +67,8 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false
         },
         cashback:{
-            type: Sequelize.STRING,
+            type: Sequelize.DOUBLE,
+            DEFAULT:0
         },
         security_question:{
             type: Sequelize.STRING,

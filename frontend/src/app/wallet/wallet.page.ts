@@ -40,5 +40,10 @@ export class WalletPage implements OnInit {
     this.router.navigate(['/user-dashboard/wallet/'+data])
   }
 
-
+  doRefresh(event) {
+    this.userData.wallet_amount = localStorage.getItem(`setting:wallet_amount`);
+    setTimeout(() => {
+      event.target.complete();
+    }, 1000);
+  }
 }

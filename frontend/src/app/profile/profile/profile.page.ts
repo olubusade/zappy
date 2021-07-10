@@ -48,6 +48,7 @@ export class ProfilePage implements OnInit {
   }
 
   ngOnInit() {
+    
   }
   segmentChanged(ev: any) {
     const page = ev.detail.value
@@ -257,7 +258,7 @@ animated:true,
       const alert = await this.alertCtrl.create({
         cssClass: 'alert-zappy',
         mode:'ios',
-animated:true,
+        animated:true,
         header: 'Zappy',
         inputs: [
           {
@@ -303,5 +304,22 @@ animated:true,
   }
   userUpgrade(){
     this.router.navigate(['/user-upgrade']);
+  }
+  doRefresh(event) {
+    this.userData.user_id = localStorage.getItem(`setting:user_id`);
+    this.userData.role_id = localStorage.getItem(`setting:role_id`);
+    this.userData.first_name = localStorage.getItem(`setting:first_name`);
+    this.userData.last_name = localStorage.getItem(`setting:last_name`);
+    this.userData.mobile_no = localStorage.getItem(`setting:mobile_no`);
+    this.userData.email = localStorage.getItem(`setting:email`);
+    this.userData.points = localStorage.getItem(`setting:points`);
+    this.userData.security_question = localStorage.getItem(`setting:security_question`);
+    this.userData.sq_answer = localStorage.getItem(`setting:sq_answer`);
+    this.userData.nickname = localStorage.getItem(`setting:nickname`);
+    this.userData.gender = localStorage.getItem(`setting:gender`);
+    this.userData.address = localStorage.getItem(`setting:address`);
+    setTimeout(() => {
+      event.target.complete();
+    }, 1000);
   }
 }

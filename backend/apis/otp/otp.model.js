@@ -109,6 +109,8 @@ exports.otpModel = {
                 },err=>{
                     reject({error:err});
                 });
+              }else{
+                    resolve(count);
               }
              
             }); 

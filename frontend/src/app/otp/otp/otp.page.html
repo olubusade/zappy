@@ -17,10 +17,10 @@
   <div class="otp">
     <form action="#">
       <div class="otp-input">
-        <input ion-input inputmode="numeric" onKeyPress="if(this.value.length == 1) return false;" [(ngModel)] = "otpForm.digit1" type="number" pattern="\d*" name="otp1" id="otp1" maxlength="1"/>
-        <input ion-input inputmode="numeric" onKeyPress="if(this.value.length == 1) return false;" [(ngModel)] = "otpForm.digit2" type="text" pattern="\d*"  name="otp2" id="otp2" maxlength="1"/>
-        <input ion-input inputmode="numeric" onKeyPress="if(this.value.length == 1) return false;" [(ngModel)] = "otpForm.digit3" type="text" pattern="\d*" name="otp3" id="otp3" maxlength="1"/>
-        <input ion-input inputmode="numeric" onKeyPress="if(this.value.length == 1) return false;" [(ngModel)] = "otpForm.digit4" type="text" pattern="\d*" name="otp4" id="otp4" maxlength="1"/>
+        <input ion-input mode = "ios" inputmode="numeric" autofocus (keyup)="otp2.focus()"  [(ngModel)] = "otpForm.digit1" type="number" pattern="\d*" name="otp1" id="otp1" maxlength="1"/>
+        <input ion-input mode = "ios" inputmode="numeric" autofocus (keyup)="otp3.focus()" #otp2  [(ngModel)] = "otpForm.digit2" type="text" pattern="\d*"  name="otp2" id="otp2" maxlength="1"/>
+        <input ion-input mode = "ios" inputmode="numeric" autofocus (keyup)="otp4.focus()" #otp3  [(ngModel)] = "otpForm.digit3" type="text" pattern="\d*" name="otp3" id="otp3" maxlength="1"/>
+        <input ion-input mode = "ios" inputmode="numeric" autofocus (keyup)="submitOTP()" #otp4 [(ngModel)] = "otpForm.digit4" type="text" pattern="\d*" name="otp4" id="otp4" maxlength="1"/>
       </div>
       <h6 class="text-center text-primary py-4">
         Automatically send OTP

@@ -36,6 +36,8 @@
       </ion-card-content>
     </ion-card>
   </div>
-
+  <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed" pullFactor="1" pullMin="50" pullMax="200">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
 </ion-content>

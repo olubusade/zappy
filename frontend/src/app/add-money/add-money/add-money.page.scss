@@ -17,10 +17,10 @@ ion-input {
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
-  --placeholder-color: rgba(0, 54, 121, 0.6) !important;
+  --placeholder-color: #808080 !important;
 }
 ion-item {
-  color: #003679;
+  color: #9ACD32;
   border-radius: 6px;
   --background: rgba(0, 54, 121, 0.1);
   --min-height: 40px;
@@ -31,13 +31,13 @@ ion-item {
     --font-size: 12px !important;
     line-height: 18px;
     --font-weight: 500;
-    --color: rgba(0, 54, 121, 0.6);
+    --color: #808080;
   }
 }
 ion-button {
   width: 241px;
   min-height: 40px;
-  --border-radius: 6px !important;
+  --border-radius: 20px !important;
   margin-top: 20px !important;
 }
 

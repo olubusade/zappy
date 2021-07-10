@@ -39,10 +39,18 @@ export class LoginPage implements OnInit {
     this.user_fullname = this.user_first_name+' '+this.user_last_name
     console.log('Mobile:', this.loginData.mobile_no);
 
-    if (!this.user_mobile_no || this.user_mobile_no == '' || this.user_mobile_no == null) {
-   // if (!this.user_first_name || this.user_first_name == '' || this.user_first_name == null) {
+    if (!this.user_mobile_no 
+        || this.user_mobile_no == null 
+        ||this.user_first_name == null 
+        ||this.user_last_name == null 
+        || !this.user_first_name 
+        || !this.user_last_name) 
+      {
         this.showName = false;
-    }
+      }
+    console.log('phone:',this.user_mobile_no);
+    console.log('first:',this.user_first_name);
+    console.log('last:',this.user_last_name);
     console.log(this.showName);
   }
 
@@ -82,16 +90,18 @@ export class LoginPage implements OnInit {
     } else {
         this.loginData.mobile_no = this.showName ? this.user_mobile_no : this.loginData.mobile_no.toString();
         console.log(this.loginData)
+        //loader
+        const loading = await this.loadingCtrl.create({
+          cssClass: 'loading',
+          message: '',
+          duration: 300,
+          animated: true,
+          spinner: 'bubbles'
+        });
+        await loading.present();
         this.userService.loginUser(this.loginData).subscribe(async(resp)=>{
-          //loader
-          const loading = await this.loadingCtrl.create({
-            cssClass: 'loading',
-            message: '',
-            duration: 300,
-            animated: true,
-            spinner: 'bubbles'
-          });
-          await loading.present();
+          
+          await loading.dismiss();
           if(!resp){
             const alert = await this.alertCtrl.create({
               cssClass: 'my-alert',
@@ -154,16 +164,18 @@ export class LoginPage implements OnInit {
                 //Data to be sent to backend for login starts here  
                 this.loginData.mobile_no = this.showName ? this.user_mobile_no : this.loginData.mobile_no.toString();
                 console.log(this.loginData)
+                //loader
+                const loading = await this.loadingCtrl.create({
+                  cssClass: 'loading',
+                  message: '',
+                  duration: 300,
+                  animated: true,
+                  spinner: 'bubbles'
+                });
+                await loading.present();
                 this.userService.loginUserWithBiometric(this.loginData).subscribe(async(resp)=>{
-                  //loader
-                  const loading = await this.loadingCtrl.create({
-                    cssClass: 'loading',
-                    message: '',
-                    duration: 300,
-                    animated: true,
-                    spinner: 'bubbles'
-                  });
-                  await loading.present();
+                  
+                  await loading.dismiss();
                   if(!resp){
                     const alert = await this.alertCtrl.create({
                       cssClass: 'my-alert',

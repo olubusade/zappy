@@ -5,6 +5,7 @@
         "localstorage",
         "minlength",
         "resetpassword",
+        "sendotp",
         "storageservice"
     ]
 }

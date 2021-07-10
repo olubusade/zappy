@@ -94,9 +94,8 @@
         <ion-icon (click)="userUpgrade()"slot="end" name="create-outline"></ion-icon>
     </ion-item>
   </div>
-  
-
-
-
+  <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed" pullFactor="1" pullMin="50" pullMax="200">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
  
 </ion-content>

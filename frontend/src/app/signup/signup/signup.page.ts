@@ -2,7 +2,7 @@ import { TransactionPinPage } from './../transaction-pin/transaction-pin.page';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController, LoadingController } from '@ionic/angular';
 import { StorageService } from '../../services/storage-service';
 import { appConfig } from "./../../core/config/config";
 import { PasswordMatch } from './../../core/utils/password.validator';
@@ -33,11 +33,14 @@ export class SignupPage implements OnInit {
     expiresIn:'',
     wallet_amount: '',
     cashback: '',
-    points: ''
+    points: '',
+    referral_code:''
   }
 
   constructor(private userService: UserService,
               private alertCtrl: AlertController,
+              private toastCtrl: ToastController,
+              private loadingCtrl: LoadingController,
               private storageservice: StorageService,
               private fb: FormBuilder,
               private route: ActivatedRoute,
@@ -102,11 +105,21 @@ export class SignupPage implements OnInit {
            buttons: [
              {
                text: 'Yes',
-               handler: () => {
+               handler: async () => {
                  //send data to backend
                  let data = this.mobile_no;
+                 //loader
+                  const loading = await this.loadingCtrl.create({
+                    cssClass: 'loading',
+                    message: '',
+                    duration: 300,
+                    animated: true,
+                    spinner: 'bubbles'
+                  });
+                  await loading.present();
                  this.userService.registerNewUser(this.registerUserData).subscribe(async(resp)=>{
                    console.log(resp);
+                   await loading.dismiss();
                   if (resp.status == appConfig.statusCode.conflict){
                     const alert = await this.alertCtrl.create({
                       cssClass: 'my-alert',
@@ -161,7 +174,7 @@ export class SignupPage implements OnInit {
                            text: 'Proceed to Dashboard',
                            role: 'yes',
                            cssClass: 'primary',
-                           handler: () => {
+                           handler: async () => {
                              
                              //set the ffg into local storage user_id, mobile_no, first_name, last_name, access_token, role_id
                             const auxData = JSON.parse(resp.auxData);
@@ -175,6 +188,7 @@ export class SignupPage implements OnInit {
                             this.userRespData.wallet_amount = resp.data.wallet_amount;
                             this.userRespData.cashback = resp.data.cashback;
                             this.userRespData.points = resp.data.points;
+                            this.userRespData.referral_code = resp.data.referral_code;
                         
                             localStorage.setItem(`setting:user_id`,this.userRespData.user_id);
                             localStorage.setItem(`setting:first_name`,this.userRespData.first_name);
@@ -184,8 +198,14 @@ export class SignupPage implements OnInit {
                             localStorage.setItem('setting:access_token',this.userRespData.access_token);
                             localStorage.setItem('setting:wallet_amount',this.userRespData.wallet_amount);
                             localStorage.setItem('setting:cashback',this.userRespData.cashback);
+                            localStorage.setItem(`setting:referral_code`,this.userRespData.referral_code);
                             localStorage.setItem('setting:points',this.userRespData.points);
                             localStorage.setItem(`setting:auxData`, JSON.stringify(auxData));
+                            const toast = await this.toastCtrl.create({
+                              message: `Log in successful`,
+                              duration: 2000
+                            });
+                            toast.present();
                             //route to user-dashboard
                             this.router.navigate(['/user-dashboard'])
                            }
