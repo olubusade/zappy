@@ -5,7 +5,7 @@ module.exports = {
     "environment": "dev",
     "db_name":"zappy_db",
     "db_username":"postgres",
-    "db_password":"Babalola4",
+    "db_password":"babalola4",
     "db_host":"localhost",
     "db_port":5432,
     "db_dialect":"postgres",

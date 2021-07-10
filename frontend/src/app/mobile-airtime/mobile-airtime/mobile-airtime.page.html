@@ -91,7 +91,7 @@
                           <ion-grid>
                             <ion-row>
                               <ion-col ion-text-center size="6">
-                                  <ion-input placeholder="Enter amount" type="text" [(ngModel)]="purchaseParams.amount" style="font-size: 14px;"></ion-input>
+                                  <ion-input placeholder="Enter amount" inputmode="numeric" [(ngModel)]="purchaseParams.amount" style="font-size: 14px;"></ion-input>
                               </ion-col>
                               <ion-col ion-text-center size="6">
                                 <ion-button (click)="buyAirtimeEnterAmount()" shape="round" mode="ios" strong="true" size="default" color="primary" style="font-size: 14px;">Pay &#8358; {{purchaseParams.amount}}</ion-button>
@@ -127,7 +127,7 @@
                           <ion-grid>
                             <ion-row>
                               <ion-col ion-text-center size="6">
-                                  <ion-input placeholder="Enter amount" type="text" [(ngModel)]="purchaseParams.amount" style="font-size: 14px;"></ion-input>
+                                  <ion-input placeholder="Enter amount" inputmode="numeric" [(ngModel)]="purchaseParams.amount" style="font-size: 14px;"></ion-input>
                               </ion-col>
                               <ion-col ion-text-center size="6">
                                 <ion-button (click)="buyDataEnterAmount()" shape="round" mode="ios" strong="true" size="default" color="primary" style="font-size: 14px;">Pay &#8358; {{purchaseParams.amount}}</ion-button>

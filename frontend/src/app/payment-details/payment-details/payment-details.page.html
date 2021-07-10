@@ -22,10 +22,10 @@
         <div style="text-align: center; font-weight: bold; font-size: 14px; margin-top: 40px;">Enter Payment PIN</div>
         
         <div class="pinInput">
-          <input ion-input inputmode="numeric" style="font-size: 12px; font-weight: bold;" [value]="!enteredPin[0] && enteredPin[0] != 0 ? '*' : enteredPin[0]" />
-          <input ion-input inputmode="numeric" style="font-size: 12px; font-weight: bold;" [value]="!enteredPin[1] && enteredPin[1] != 0 ? '*' : enteredPin[1]" />
-          <input ion-input inputmode="numeric" style="font-size: 12px; font-weight: bold;" [value]="!enteredPin[2] && enteredPin[2] != 0 ? '*' : enteredPin[2]" />
-          <input ion-input inputmode="numeric" style="font-size: 12px; font-weight: bold;" [value]="!enteredPin[3] && enteredPin[3] != 0 ? '*' : enteredPin[3]" />
+          <input ion-input inputmode="numeric" readonly style="font-size: 12px; font-weight: bold;" [value]="!enteredPin[0] && enteredPin[0] != 0 ? '*' : enteredPin[0]" />
+          <input ion-input inputmode="numeric" readonly style="font-size: 12px; font-weight: bold;" [value]="!enteredPin[1] && enteredPin[1] != 0 ? '*' : enteredPin[1]" />
+          <input ion-input inputmode="numeric" readonly style="font-size: 12px; font-weight: bold;" [value]="!enteredPin[2] && enteredPin[2] != 0 ? '*' : enteredPin[2]" />
+          <input ion-input inputmode="numeric" readonly style="font-size: 12px; font-weight: bold;" [value]="!enteredPin[3] && enteredPin[3] != 0 ? '*' : enteredPin[3]" />
         </div>
 
         <h6 style="color: #9acd32; text-align: center; font-size: 10px; margin-top: 20px; margin-bottom: 20px;">Forgot Payment PIN?</h6>
