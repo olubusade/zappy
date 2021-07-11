@@ -159,6 +159,21 @@ exports.userController = {
         console.log(err);
       };  
     },
+    upgradeUserLevel : (req, res) => {
+          console.log(req.body);
+          UserModel.userModel.upgradeUserLevel(req.body).then(async (result) => {       
+            if (result == 1){
+               res.send({status:local_config.statusCode.ok, message: 'Upgrade successful.'});
+               console.log({status:local_config.statusCode.ok, message: 'Upgrade successful.'});       
+            }else{
+              res.send({status:local_config.statusCode.conflict, message: 'Oops! Something went wrong!'});
+               console.log({status:local_config.statusCode.conflict, message: 'Oops! Something went wrong!'});       
+            }
+          })
+      , err => {
+        console.log(err);
+      };  
+    },
     resetUserPassword : (req, res) => {
       delete req.body.userData.confirmpassword;
       console.log(req.body.userData);

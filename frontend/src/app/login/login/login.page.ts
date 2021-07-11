@@ -62,6 +62,7 @@ export class LoginPage implements OnInit {
         header: 'Zappy',
         subHeader: '',
         mode:'ios',
+        animated:true,
         message: 'Password field is required!',
         buttons: ['OK']
       });
@@ -72,6 +73,7 @@ export class LoginPage implements OnInit {
           header: 'Zappy',
           subHeader: '',
           mode:'ios',
+          animated:true,
           message: 'Mobile No. field is required!',
           buttons: ['OK']
         });
@@ -82,6 +84,7 @@ export class LoginPage implements OnInit {
       header: `Zappy`,
       subHeader: '',
       mode:'ios',
+      animated:true,
       message: `<p>Invalid Mobile No.</p><p>Valid Format: 234XXXXXXXXXX</p>`,
       buttons: ['OK']
     });
@@ -108,6 +111,7 @@ export class LoginPage implements OnInit {
               header: 'Zappy',
               subHeader: '',
               mode:'ios',
+              animated:true,
               message: 'Oops! Something is wrong',
               buttons: ['OK']
             });
@@ -126,6 +130,7 @@ export class LoginPage implements OnInit {
               header: 'Zappy',
               subHeader: '',
               mode:'ios',
+              animated:true,
               message: resp.message,
               buttons: ['OK']
             });
@@ -143,6 +148,7 @@ export class LoginPage implements OnInit {
           header: 'Zappy',
           subHeader: '',
           mode:'ios',
+          animated:true,
           message: 'Mobile No. field is required!',
           buttons: ['OK']
         });
@@ -153,6 +159,7 @@ export class LoginPage implements OnInit {
         header: `Zappy`,
         subHeader: '',
         mode:'ios',
+        animated:true,
         message: `<p>Invalid Mobile No.</p><p>Valid Format: 234XXXXXXXXXX</p>`,
         buttons: ['OK']
       });
@@ -182,6 +189,7 @@ export class LoginPage implements OnInit {
                       header: 'Zappy',
                       subHeader: '',
                       mode:'ios',
+                      animated:true,
                       message: 'Oops! Something is wrong',
                       buttons: ['OK']
                     });
@@ -196,6 +204,7 @@ export class LoginPage implements OnInit {
                       header: 'Zappy',
                       subHeader: '',
                       mode:'ios',
+                      animated:true,
                       message: resp.message,
                       buttons: ['OK']
                     });
@@ -213,6 +222,7 @@ export class LoginPage implements OnInit {
                   header: 'Zappy',
                   subHeader: '',
                   mode:'ios',
+                  animated:true,
                   message: err.message,
                   buttons: ['OK']
                 });
@@ -226,6 +236,7 @@ export class LoginPage implements OnInit {
             header: 'Zappy',
             subHeader: '',
             mode:'ios',
+            animated:true,
             message: `Fingerprint not available!`,
             buttons: ['OK']
           });

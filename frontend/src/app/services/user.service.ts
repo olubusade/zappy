@@ -21,6 +21,10 @@ export class UserService {
     let data = {userData};
     return this.http.post(appConfig.apiURL + '/login', data)
   }
+  updateUserPassword(userData: any): Observable<any> {
+    let data = {userData};
+    return this.http.post(appConfig.apiURL + '/update_user_password', data)
+  }
   loginUserWithBiometric(userData: any): Observable<any> {
     let data = {userData};
     return this.http.post(appConfig.apiURL + '/login_user_with_biometric', data)
@@ -41,6 +45,11 @@ export class UserService {
     let data = {userData};
     console.log(data);
     return this.http.post(appConfig.apiURL + '/update_user_profile', data)
+  }
+  upgradeUser(userData: any): Observable<any> {
+    //let data = {userData};
+    console.log(userData);
+    return this.http.post(appConfig.apiURL + '/upgrade_user_level', userData)
   }
   
   storePaymentDetails(paymentData: any): Observable<any> {

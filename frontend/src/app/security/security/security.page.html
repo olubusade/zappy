@@ -1,67 +1,42 @@
-<!-- security html-->
 <ion-toolbar mode="ios">
-    <ion-buttons mode="ios"  slot="start">
-      <ion-icon class="icon back-arrow"[routerLink]="['/walk-through']" name="arrow-back-sharp"></ion-icon>
-    </ion-buttons>
-    <ion-title>Profile</ion-title>
+  <ion-buttons mode="ios"  slot="start">
+    <ion-icon class="icon back-arrow"[routerLink]="['/user-dashboard/profile']" name="arrow-back-sharp"></ion-icon>
+  </ion-buttons>
+  <ion-title>Profile</ion-title>
 </ion-toolbar>
+
 <ion-content>
-  <div class="container">
-    <ion-segment (ionChange)="segmentChanged($event)" value="security" mode="ios">
-      <ion-segment-button value="personal">
-        <ion-label>Personal</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="security">
-        <ion-label>Security</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="features">
-        <ion-label>Features</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-  </div>
+<div class="container">
+  <ion-segment (ionChange)="segmentChanged($event)" mode="ios" value="security">
+    <ion-segment-button value="personal">
+      <ion-label>Personal</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="security">
+      <ion-label>Security</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="features">
+      <ion-label>Features</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</div>
 
-  <div class="avatar-main text-center">
-    <img src="../../assets//imgs/passport2.png" alt="">
-    <div class="text-primary caption" (click)="navigatePage('change-photo')">
-      <label>
-        Tap to change picture
-        <input type="file" name="photo" hidden>
-      </label>
-    </div>
+<div class="avatar-main text-center">
+  <div class="text-primary caption" style="padding-bottom:25px;">
+    <label>
+    <ion-icon class= "avatar" size = "" name="person-circle"></ion-icon>
+      <input type="file" name="photo" hidden>
+    </label>
   </div>
+</div>
+<div class="personal">
+  <ion-item>
+    <ion-label class="property">Change Password</ion-label>
+    <span></span>
+    <ion-icon slot="end" (click)="navigatePage('change-password')" name="create-outline"></ion-icon>
+  </ion-item>
+</div>
+<ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed" pullFactor="1" pullMin="50" pullMax="200">
+  <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
 
-  <div class="details">
-    <ion-grid>
-      <ion-row>
-        <ion-col class="label">Email</ion-col>
-        <ion-col class="text-right">
-          peter@sample.com
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="label">Phone number</ion-col>
-        <ion-col class="text-right">
-          +2348012345678
-        </ion-col>
-      </ion-row>
-      <ion-row >
-        <ion-col>          
-          <h2>PASSWORD & PIN</h2>
-        </ion-col>
-      </ion-row>
-      <ion-row (click)="navigatePage('change-password')">
-        <ion-col class="label">Change Password</ion-col>
-        <ion-col class="text-right" >
-          <img src="../../assets/icon/right_arrow_icon.svg" alt="">
-        </ion-col>
-      </ion-row>
-      <ion-row (click)="navigatePage('bvn')">
-        <ion-col class="label">Verify BVN</ion-col>
-        <ion-col class="text-right" >
-          <img src="../../assets/icon/right_arrow_icon.svg" alt="">
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-  
 </ion-content>

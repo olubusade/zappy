@@ -16,27 +16,55 @@
     </ion-item> 
   </div>
 -->
-  <ion-card class="ion-card" [ngStyle]="{'background-color':role_id == 1 ? '#9ACD32' : '#DDAB14' }">  
+  <ion-card class="ion-card" [ngStyle]="{'background-color':role_id == casualUser ? '#9ACD32' : '#DDAB14' }">  
     <ion-card-content>
       <ion-row>
         <h2>Casual</h2>
-        <ion-badge [ngStyle]="{'background-color':role_id == 1 ? '#DDAB14' : '#9ACD32' }">Level 1</ion-badge>
+        <ion-badge [ngStyle]="{'background-color':role_id == casualUser ? '#DDAB14' : '#9ACD32' }">Level 1</ion-badge>
       </ion-row>
       <label>Daily Transaction Limit</label>
       <p class="text-white">
         &#x20A6;50,000
       </p>
-      <label>Maximum Balance</label>
-      <p class="text-white max-balance">
-        No limit
-      </p>
+      
+      <ion-row>
+        <ion-col style="margin-left:-5px;">
+          <label>Maximum Balance</label>
+          <p class="text-white max-balance">
+            No limit
+          </p>
+        </ion-col>
+        <ion-col style="margin-right:-140px;">
+          <label>Upgrade Fee</label>
+          <p class="text-white" [ngStyle]="{'color':role_id == casualUser ? '#DDAB14' : '#9ACD32' }">
+            &#x20A6;{{upgrade_to_agent_fee}}
+          </p>
+        </ion-col>
+      </ion-row>
+     
     </ion-card-content>
   </ion-card>
-  <ion-card class="ion-card" [ngStyle]="{'background-color':role_id == 2 ? '#9ACD32' : '#DDAB14' }">  
+  <ion-card class="ion-card" [ngStyle]="{'background-color':role_id == paypointAgent ? '#9ACD32' : '#DDAB14' }">  
     <ion-card-content>
       <ion-row>
         <h2>Paypoint Agent</h2>
-        <ion-badge class="ion-badge-agent" [ngStyle]="{'background-color':role_id == 1 ? '#9ACD32' : '#DDAB14' }">Level 2</ion-badge>
+        <ion-badge class="ion-badge-agent" [ngStyle]="{'background-color':role_id == casualUser ? '#9ACD32' : '#DDAB14' }">Level 2</ion-badge>
+      </ion-row>  
+      <label>Daily Transaction Limit</label>
+      <p class="text-white">
+        No limit
+      </p>
+      <label>Maximum Balance</label>
+      <p class="text-white max-balance">
+        No Limit
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="ion-card" [ngStyle]="{'background-color':role_id == customReseller ? '#9ACD32' : '#DDAB14' }">  
+    <ion-card-content>
+      <ion-row>
+        <h2>Custom Reseller</h2>
+        <ion-badge class="ion-badge-agent" [ngStyle]="{'background-color':role_id == customReseller ? '#DDAB14' : '#9ACD32' }">Level 3</ion-badge>
       </ion-row>  
       <label>Daily Transaction Limit</label>
       <p class="text-white">
@@ -51,21 +79,6 @@
   <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed" pullFactor="1" pullMin="50" pullMax="200">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-<!--
-  <ion-card class="ion-card">  
-    <ion-card-content>
-      <h2>Casual User</h2>
-      <label>Daily Transaction Limit</label>
-      <p class="text-white">
-        &#x20A6;50,000
-      </p>
-      <label>Maximum Balance</label>
-      <p class="text-white max-balance">
-        &#x20A6;300,000
-      </p>
-    </ion-card-content>
-  </ion-card>
--->
   
   <button ion-button mode="ios" (click)="upgrade()">
     Upgrade

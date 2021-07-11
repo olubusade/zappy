@@ -3,17 +3,11 @@ ion-content {
   }
   
   .ion-card{
-    height:140px;
+    height:150px;
     
-    padding: 5px 1em 5px 0;  /* top | right | bottom | left */
+    padding: 2px 1em 5px 0;  /* top | right | bottom | left */
   }
-  .casual {
-    background:#9ACD32;
-  }
-
-  .agent {
-    background:#DDAB14;
-  }
+ 
   ion-badge{
     margin-left:250px;
     margin-top: -30px;
@@ -29,7 +23,14 @@ ion-content {
     font-size: 10px;
   }
   
-
+  .ion-badge-reseller{
+    margin-left:250px;
+    margin-top: -30px;
+    height:20px;
+    width:50px;
+    font-size: 14px;
+    background-color:#808080;
+  }
 
   /*
   .ref-link {
@@ -58,7 +59,7 @@ ion-content {
     line-height: 20px;
     background: linear-gradient(#056608, #9ACD32);  // DDAB14
     //margin: 10px 0px;
-    margin-top: 200px;
+    margin-top: 85px;
     margin-left:30px;
     align-items:center;
   }  

@@ -156,7 +156,8 @@ exports.userModel = {
                 reject({error: err});
             })
         });
-    },updateUserProfile: (userData) => {
+    },
+    updateUserProfile: (userData) => {
         return new Promise((resolve, reject) => {
             if (userData.nickname) {
                 User.update(
@@ -199,6 +200,24 @@ exports.userModel = {
                 })
             }
             
+        });
+    },
+    upgradeUserLevel: (userData) => {
+        console.log(userData);
+        return new Promise((resolve, reject) => {
+            if (userData.user_id) {
+                User.update(
+                    {
+                        wallet_amount:userData.wallet_bal,
+                        role_id:userData.new_role_id
+                    },
+                    {where: {id: userData.user_id}}
+                ).then(user => {
+                   resolve(user[0]);
+                }, err => {
+                    reject({error: err});
+                })
+            }
         });
     },
     verifyTnxPin: (data) => {

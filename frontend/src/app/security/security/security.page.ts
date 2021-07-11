@@ -4,8 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-security',
   templateUrl: './security.page.html',
-  //styleUrls: ['./security.page.scss', '../../assets/css/main.scss'],
-  styleUrls: ['./security.page.scss'],
+  styleUrls: ['./security.page.scss', '../../../assets/css/main.scss']
 })
 export class SecurityPage implements OnInit {
 
@@ -25,5 +24,11 @@ export class SecurityPage implements OnInit {
   
   navigatePage(data) {
     this.router.navigate(['/user-dashboard/profile/security/'+data])
+  }
+ 
+  doRefresh(event){
+    setTimeout(() => {
+      event.target.complete();
+    }, 1000);
   }
 }

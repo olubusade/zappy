@@ -1,27 +1,31 @@
-/*Security css*/
-
-
 .details {
-  height: 60vh;
   padding-right: 0 !important;
 
-  h2 {
-   // width: 118px;
+  h5 {
+    //width: 118px;
     height: 12px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 12px;
     color: rgba(42, 43, 42, 0.6);
-    padding: 0 !important;
-    margin: 0 !important;
+    padding: 0px !important;
+    margin: 0px !important;
   }
 }
 .first_name {
   text-transform: uppercase;
 }
 
+ion-input {
+  font-size: 10px;
+  line-height: 12px;
+  --placeholder-color: rgba(42, 43, 42, 0.6) !important;
+  --placeholder-font-size: 10px !important;
+  --placeholder-font-style: normal;
+  --placeholder-font-weight: 500;
+}
 
 .avatar-main .caption {
   // width: 89px !important;
@@ -31,4 +35,63 @@
   line-height: 12px;
   color: rgba(0, 54, 121, 0.6);
   text-align: center;
+}
+
+button {
+  margin: 0 auto !important;
+}
+
+.back-arrow {
+  padding-top:9px;
+  text-align: left !important;
+  margin-left: -5px !important;
+  color: #424242;
+}
+/*
+.title {
+  font-weight: 600;
+  font-size:10px;
+}
+*/
+
+ion-list {
+  margin-left:-50px;
+  //height: 1px;
+  
+}
+ion-item {
+  height: 7vh;
+}
+
+ion-icon {
+  height: 1.8vh;
+  //margin-right: -5px;
+  color:#9ACD32;
+}
+
+span{
+  font-size:8px;
+  font-weight: normal;
+  color:#1e1f1d;
+ // margin-right: 0vh;
+}
+ion-datetime{
+  font-size:8px;
+  font-weight: 100;
+  margin-right: 0vh;
+}
+
+.avatar {
+  height:10vh;
+  width:10vh;
+}
+ion-title {
+  font-size:0.5vh;
+}
+.property{
+  font-size:12px;
+  font-weight:500;
+}
+.personal{
+  margin-top: 25px !important;
 }

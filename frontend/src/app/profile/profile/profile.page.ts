@@ -77,7 +77,7 @@ export class ProfilePage implements OnInit {
       const alert = await this.alertCtrl.create({
         cssClass: 'alert-zappy',
         mode:'ios',
-animated:true,
+        animated:true,
         header: 'Zappy',
         inputs: [
           {
@@ -119,7 +119,7 @@ animated:true,
       const alert = await this.alertCtrl.create({
         cssClass: 'alert-zappy',
         mode:'ios',
-animated:true,
+        animated:true,
         header: 'Zappy',
         inputs: [
           {
@@ -212,47 +212,7 @@ animated:true,
           }
         ]
       });
-      await actionSheet.present();
-      /*
-      const alert = await this.alertCtrl.create({
-        cssClass: 'alert-zappy',
-        mode:'ios',
-animated:true,
-        header: 'Zappy',
-        inputs: [
-          {
-            name: 'security_question',
-            mode:'ios',
-animated:true,
-            type: 'select'
-          }
-        ],
-        buttons: [
-          {
-            text: 'Cancel',
-            role: 'cancel',
-            cssClass: 'secondary',
-            handler: () => {
-            
-            }
-          }, {
-            text: 'Update',
-            handler: async (alertData) => {
-              const toast = await this.toastCtrl.create({
-                message: `${label} updated successfully.`,
-                duration: 2000
-              });
-              await toast.present();
-              localStorage.setItem(`setting:${label}`,alertData.security_question);            
-              if (alertData.security_question){
-                  this.userData.security_question = alertData.security_question;
-              }
-            }
-          }
-        ]
-      });
-      await alert.present();
-      */
+      await actionSheet.present();    
     }
     if (label == 'sq_answer'){
       const alert = await this.alertCtrl.create({
@@ -262,8 +222,7 @@ animated:true,
         header: 'Zappy',
         inputs: [
           {
-            name: 'sq_answer',
-           // type: 'text'
+            name: 'sq_answer'
           }
         ],
         buttons: [

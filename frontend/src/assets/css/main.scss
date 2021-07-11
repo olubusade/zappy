@@ -70,7 +70,7 @@ form {
 .btn {
 	padding: 15px;
 	margin: 2px;
-	border-radius: 6px;
+	border-radius: 20px;
 	height: 40px;
 	width: 90%;
 	font-size: 16px;
@@ -78,7 +78,8 @@ form {
 }
 
 .btn-secondary {
-	background: #ddab14;
+	background: #DDAB14;
+  	border-radius: 20px;
 }
 .btn-danger {
 	background: #eb445a;
@@ -86,6 +87,13 @@ form {
 
 .btn-primary {
 	background: linear-gradient(90deg, #9ACD32 0%, #056608 157.2%);
+	width: 282px;
+	font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
 }
 
 .btn-transparent {
