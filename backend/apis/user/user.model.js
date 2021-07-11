@@ -156,6 +156,49 @@ exports.userModel = {
                 reject({error: err});
             })
         });
+    },    
+    updateUserPassword: (userData) => {
+        return new Promise((resolve, reject) => {
+            User.findOne({
+                where: { id: userData.user_id},
+                limit: 1,
+            }).then(async user  => {
+                if(user === null){
+                    resolve(user);
+                }else{
+                    // if the user exists, let's compare their hashed password to a new hash from req.body.password
+                    const hashedPassword = await bcrypt.compare(
+                        userData.old_password,
+                        user.password
+                    );
+                    // bcrypt.compare returns a boolean to us, if it is false the passwords did not match!
+                    if ( hashedPassword === false ) {
+                        resolve(404);
+                    }
+                    if ( hashedPassword === true ) {
+                        bcrypt.genSalt(saltRounds, (err, salt) => {
+                            bcrypt.hash(userData.new_password, salt, (err, hash) => {
+                                userData['new_password'] = hash;
+                                console.log('Model2:', userData);
+                                User.update(
+                                    {password:userData.new_password},
+                                    {where: {id: userData.user_id}}
+                                ).then(user => {
+                                   resolve(user[0]);
+                                }, err => {
+                                    reject({error: err});
+                                })
+                            },err=>{
+                                    reject({error:err});
+                                }
+                            );
+                        });                      
+                    }                                    
+                }   
+            }, err => {
+                reject({error: err});
+            })
+        });
     },
     updateUserProfile: (userData) => {
         return new Promise((resolve, reject) => {

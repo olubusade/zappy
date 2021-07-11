@@ -102,6 +102,25 @@ exports.userController = {
         console.log(err);
       });  
     },
+    updateUserPassword : (req, res) => {
+      delete req.body.userData.confirm_new_password;
+      console.log(req.body.userData);
+     
+      UserModel.userModel.updateUserPassword(req.body.userData).then(async (result) => {
+          if (result) {
+            if(result == local_config.statusCode.notFound){
+               res.send({status:local_config.statusCode.notFound, message: 'Oops! Invalid Old Password!'});
+               console.log({status:local_config.statusCode.notFound, message: 'Oops! Invalid Old Password!'});
+            }else if(result >= 1) {
+              res.send({status:local_config.statusCode.accepted, message: 'Password changed successfully!'});
+              console.log({status:local_config.statusCode.accepted, message: 'Password changed successfully!'});
+            }
+          }
+      }, err => {
+        res.send({status:local_config.statusCode.internalServerError, message: 'Something went wrong!'});
+        console.log({status:local_config.statusCode.internalServerError, message: 'Something went wrong!!',error:err});
+      });  
+    },
     loginUserWithBiometric : (req, res) => {
       let {mobile_no, password} = req.body.userData;
       delete req.body.user_id;

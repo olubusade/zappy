@@ -65,7 +65,7 @@ export class ChangePasswordPage implements OnInit {
       this.userData.user_id = parseInt(this.user_id);
       console.log(this.userData);
       //Are you sure you want to update your password?
-      const alert = await this.alertCtrl.create({
+      const updateAlert = await this.alertCtrl.create({
         cssClass: 'my-alert',
         header: 'Zappy',
         mode: 'ios',
@@ -75,6 +75,7 @@ export class ChangePasswordPage implements OnInit {
           {
             text: 'Yes',
             handler: async () => {
+              await updateAlert.dismiss(); 
               //loader
                const loading = await this.loadingCtrl.create({
                  cssClass: 'loading',
@@ -86,51 +87,54 @@ export class ChangePasswordPage implements OnInit {
                await loading.present();
               this.userService.updateUserPassword(this.userData).subscribe(async(resp)=>{
                 console.log(resp);
-                await loading.dismiss();
-               if (resp.status == appConfig.statusCode.conflict){
-                 const alert = await this.alertCtrl.create({
-                   cssClass: 'my-alert',
-                   header: 'Zappy',
-                   mode: 'ios',
-                   message: resp.message,
-                   buttons: [
-                     {
-                       text: 'Ok',
-                       role: 'yes',
-                       cssClass: 'secondary',
-                       handler: () => {  
-                       }
-                     }
-                   ]
-                 });
-                 await alert.present();
-               }
-               else if (resp.status == appConfig.statusCode.notFound){
-                 const alert = await this.alertCtrl.create({
-                   cssClass: 'my-alert',
-                   header: 'Zappy',
-                   mode: 'ios',
-                   message: resp.message,
-                   buttons: [
-                     {
-                       text: 'Ok',
-                       role: 'yes',
-                       cssClass: 'secondary',
-                       handler: () => { 
-                       }
-                     }
-                   ]
-                 });
-             
-                 await alert.present();
-               }  
-               else if (resp.status == appConfig.statusCode.found) {
-                 
-                  const toast = await this.toastCtrl.create({
+                await updateAlert.dismiss(); 
+               // await loading.dismiss();
+                if (resp.status == appConfig.statusCode.conflict){
+                  await updateAlert.dismiss();  
+                  const alert = await this.alertCtrl.create({
+                    cssClass: 'my-alert',
+                    header: 'Zappy',
+                    mode: 'ios',
                     message: resp.message,
-                    duration: 2000
+                    buttons: [
+                      {
+                        text: 'Ok',
+                        role: 'yes',
+                        cssClass: 'secondary',
+                        handler: () => {  
+                        }
+                      }
+                    ]
                   });
-                  toast.present();
+                  await alert.present();
+                }
+                else if (resp.status == appConfig.statusCode.notFound){
+                  await updateAlert.dismiss();  
+                  const notFoundAlert = await this.alertCtrl.create({
+                    cssClass: 'my-alert',
+                    header: 'Zappy',
+                    mode: 'ios',
+                    message: resp.message,
+                    buttons: [
+                      {
+                        text: 'Ok',
+                        role: 'yes',
+                        cssClass: 'secondary',
+                        handler: () => { 
+                        }
+                      }
+                    ]
+                  });
+              
+                  await notFoundAlert.present();
+                }  
+                else if (resp.status == appConfig.statusCode.accepted) {
+                    await updateAlert.dismiss();  
+                    const toast = await this.toastCtrl.create({
+                      message: resp.message,
+                      duration: 2000
+                    });
+                    toast.present();
                 }
               });
             }
@@ -143,7 +147,8 @@ export class ChangePasswordPage implements OnInit {
           }
         ]
       });
-      await alert.present();  
+      await updateAlert.present();  
+      
     }
   }
   gotoService() {
