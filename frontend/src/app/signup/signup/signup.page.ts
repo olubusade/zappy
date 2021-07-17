@@ -189,7 +189,13 @@ export class SignupPage implements OnInit {
                             this.userRespData.cashback = resp.data.cashback;
                             this.userRespData.points = resp.data.points;
                             this.userRespData.referral_code = resp.data.referral_code;
-                        
+
+                            this.userRespData.notification_alert = resp.data.notification_alert;
+                            this.userRespData.alert_preference =  resp.data.alert_preference;
+                            this.userRespData.low_wallet_trigger_amount = resp.data.low_wallet_trigger_amount
+                            this.userRespData.automated_report = resp.data.automated_report;
+                            this.userRespData.commission_regime = resp.data.commission_regime;
+
                             localStorage.setItem(`setting:user_id`,this.userRespData.user_id);
                             localStorage.setItem(`setting:first_name`,this.userRespData.first_name);
                             localStorage.setItem(`setting:last_name`,this.userRespData.last_name);
@@ -200,6 +206,13 @@ export class SignupPage implements OnInit {
                             localStorage.setItem('setting:cashback',this.userRespData.cashback);
                             localStorage.setItem(`setting:referral_code`,this.userRespData.referral_code);
                             localStorage.setItem('setting:points',this.userRespData.points);
+                            localStorage.setItem(`setting:notification_alert`,this.userRespData.notification_alert);
+                            localStorage.setItem(`setting:alert_preference`,this.userRespData.alert_preference);
+                            localStorage.setItem(`setting:low_wallet_trigger_amount`,this.userRespData.low_wallet_trigger_amount);
+                            localStorage.setItem(`setting:automated_report`,this.userRespData.automated_report);
+                            localStorage.setItem(`setting:commission_regime`,this.userRespData.commission_regime);
+
+
                             localStorage.setItem(`setting:auxData`, JSON.stringify(auxData));
                             const toast = await this.toastCtrl.create({
                               message: `Log in successful`,

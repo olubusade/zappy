@@ -1,5 +1,6 @@
 <ion-list mode="ios">
-  <ion-radio-group value="{{userData.alert_pref}}">
+  <ion-radio-group  [value] = "this.userData.alert_pref">
+    
     <ion-list-header>
       <ion-label>Notification Alerts Preference</ion-label>
     </ion-list-header>

@@ -96,8 +96,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER
         },
         notification_alert:{
-            type: Sequelize.BOOLEAN,
-            allowNull: false
+            type: Sequelize.STRING
         },
         alert_preference:{
             type: Sequelize.STRING

@@ -254,7 +254,74 @@ exports.userModel = {
                     reject({error: err});
                 })
             }
-            
+            //Profile->Setting Update starts here
+            if (userData.notification_alert) {
+                User.update(
+                    {notification_alert:userData.notification_alert},
+                    {where: {id: userData.user_id}}
+                )
+                .then(user => {
+                   resolve(user[0]);
+                }, err => {
+                    reject({error: err});
+                })
+            }
+            if (userData.alert_preference) {
+                User.update(
+                    {alert_preference:userData.alert_preference},
+                    {where: {id: userData.user_id}}
+                )
+                .then(user => {
+                   resolve(user[0]);
+                }, err => {
+                    reject({error: err});
+                })
+            }
+            if (userData.low_wallet_amount) {
+                User.update(
+                    {low_wallet_trigger_amount:userData.low_wallet_amount},
+                    {where: {id: userData.user_id}}
+                )
+                .then(user => {
+                   resolve(user[0]);
+                }, err => {
+                    reject({error: err});
+                })
+            }
+            if (userData.automated_report) {
+                User.update(
+                    {automated_report:userData.automated_report},
+                    {where: {id: userData.user_id}}
+                )
+                .then(user => {
+                   resolve(user[0]);
+                }, err => {
+                    reject({error: err});
+                })
+            }
+            if (userData.commission_regime) {
+                User.update(
+                    {commission_regime:userData.commission_regime},
+                    {where: {id: userData.user_id}}
+                )
+                .then(user => {
+                   resolve(user[0]);
+                }, err => {
+                    reject({error: err});
+                })
+            }
+            if (userData.transaction_pin) {
+                User.update(
+                    {transaction_pin:userData.transaction_pin},
+                    {where: {id: userData.user_id}}
+                )
+                .then(user => {
+                   resolve(user[0]);
+                }, err => {
+                    reject({error: err});
+                })
+            }
+            //Profile->Setting Update ends here
         });
         
     },

@@ -275,6 +275,12 @@ export class LoginPage implements OnInit {
     localStorage.setItem(`setting:gender`,resp.data.gender);
     localStorage.setItem(`setting:address`,resp.data.address);
     localStorage.setItem(`setting:referral_code`,resp.data.referral_code);
+    localStorage.setItem(`setting:notification_alert`,resp.data.notification_alert);
+    localStorage.setItem(`setting:alert_preference`,resp.data.alert_preference);
+    localStorage.setItem(`setting:low_wallet_trigger_amount`,resp.data.low_wallet_trigger_amount);
+    localStorage.setItem(`setting:automated_report`,resp.data.automated_report);
+    localStorage.setItem(`setting:commission_regime`,resp.data.commission_regime);
+
     localStorage.setItem(`setting:auxData`, JSON.stringify(auxData));
     const toast = await this.toastCtrl.create({
       message: `Log in successful`,

@@ -167,7 +167,7 @@ exports.userController = {
     },
     updateUserProfile : (req, res) => {
       let {user_id, nickname, address, security_question, sq_answer} = req.body.userData;
-          console.log(req.body.userData);
+         
           UserModel.userModel.updateUserProfile(req.body.userData).then(async (result) => {       
             if (result == 1){
                res.send({status:local_config.statusCode.ok, message: 'update successful.'});

@@ -27,32 +27,32 @@
     <ion-item>
       <ion-label class="property">Notification Alerts</ion-label>
       <span></span>
-      <ion-toggle (ionChange)="getToggle($event)" [ngModel] = "notification" slot="end"></ion-toggle>
+      <ion-toggle (ionChange)="getToggle($event)" [ngModel] = "userData.notification_alert" slot="end"></ion-toggle>
     </ion-item>
-    <ion-item (click)="updateUserSettings('notification_preference',$event)">
+    <ion-item>
       <ion-label class="property">Notification Alerts Preference</ion-label>
       <span></span>
-      <ion-icon slot="end" name="create-outline"></ion-icon>
+      <ion-icon (click)="updateUserSettings('notification_preference',$event)" slot="end" name="create-outline"></ion-icon>
     </ion-item>
-    <ion-item (click)="updateUserSettings('low_wallet_trigger',$event)">
+    <ion-item>
       <ion-label class="property">Low Wallet Trigger Amount</ion-label>
       <span></span>
-      <ion-icon slot="end" name="create-outline"></ion-icon>
+      <ion-icon (click)="updateUserSettings('low_wallet_trigger',$event)" slot="end" name="create-outline"></ion-icon>
     </ion-item>
-    <ion-item (click)="updateUserSettings('automated_report',$event)">
+    <ion-item>
       <ion-label class="property">Automated Report</ion-label>
       <span slot="end"></span>
-      <ion-icon slot="end" name="create-outline"></ion-icon>
+      <ion-icon (click)="updateUserSettings('automated_report',$event)" slot="end" name="create-outline"></ion-icon>
     </ion-item>
-    <ion-item (click)="updateUserSettings('commission_regime',$event)">
+    <ion-item>
         <ion-label class="property">Commission Regime</ion-label>
         <span slot="end"></span>
-        <ion-icon slot="end" name="create-outline"></ion-icon>
+        <ion-icon (click)="updateUserSettings('commission_regime',$event)" slot="end" name="create-outline"></ion-icon>
     </ion-item>
-    <ion-item (click)="updateUserSettings('reset_pin',$event)">
+    <ion-item>
       <ion-label class="property">Reset Zappy PIN</ion-label>
       <span slot="end"></span>
-      <ion-icon slot="end" name="create-outline"></ion-icon>
+      <ion-icon  (click)="updateUserSettings('reset_pin',$event)" slot="end" name="create-outline"></ion-icon>
     </ion-item>
   </div>
   <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed" pullFactor="1" pullMin="50" pullMax="200">

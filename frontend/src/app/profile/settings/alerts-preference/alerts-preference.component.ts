@@ -1,6 +1,7 @@
+import { UserService } from './../../../services/user.service';
 import { PopoverController, ToastController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
-
+import { appConfig } from "../../../core/config/config";
 @Component({
   selector: 'app-alerts-preference',
   templateUrl: './alerts-preference.component.html',
@@ -8,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlertsPreferenceComponent implements OnInit {
 
-  userData = {
-    alert_pref:''
+  userData:any = {
+    alert_pref:'',
+    user_id:''
   }
   alert_notification_pref: any = 
   [
@@ -19,23 +21,40 @@ export class AlertsPreferenceComponent implements OnInit {
     "Push Notification"
   ]
 
-  constructor(private popCtrl: PopoverController,private toastCtrl: ToastController) { }
+  constructor(private popCtrl: PopoverController,
+              private toastCtrl: ToastController,
+              private userservice: UserService) { }
 
   ngOnInit() {
-    this.userData.alert_pref = localStorage.getItem(`setting:notification_alert_pref`);
+    this.userData.user_id = localStorage.getItem(`setting:user_id`);
+    this.userData.alert_pref = localStorage.getItem(`setting:alert_preference`);
   }
 
-  _dismiss(item:string){
-    console.log(item);
+  _dismiss(item:any){
+   //console.log(item);
     this.popCtrl.dismiss({
       "fromPopover": item
     });
 
     //send to backend
-
-    //if the update is successful at backend then update the localstorage
-    localStorage.setItem(`setting:notification_alert_pref`,item);
-    this.updateToast(item);
+    let updateData:any = {
+      user_id:'',
+      alert_preference:''
+    }
+    updateData.user_id = parseInt(this.userData.user_id);
+    updateData.alert_preference = item;
+    this.userservice.updateUserProfile(updateData).subscribe(async(resp)=>{
+      
+      //if the update is successful at backend then update the localstorage
+      if (resp.status == appConfig.statusCode.ok) { 
+            localStorage.setItem(`setting:alert_preference`,item);                        
+            if (item){
+                this.userData.alert_pref = item;
+                console.log(this.userData.alert_pref);
+            }
+            this.updateToast(item);
+      }
+    });
   }
   async updateToast(inputData:any) {
     await this.toastCtrl.create({

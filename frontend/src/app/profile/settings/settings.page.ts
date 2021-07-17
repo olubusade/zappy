@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController, AlertController, PopoverController, ToastController,ModalController } from '@ionic/angular';
 import { stringify } from 'querystring';
+import { appConfig } from 'src/app/core/config/config';
 
 @Component({
   selector: 'app-settings',
@@ -14,14 +15,18 @@ import { stringify } from 'querystring';
 })
 export class SettingsPage implements OnInit {
 
-  notification:boolean = false;
+ // notification:boolean = false;
   userData = {
     security_question:'',
     sq_answer:'',
     low_wallet_amount:'0',
-    transaction_pin:''
+    transaction_pin:'',
+    notification_alert:''
   }
-
+  updateData: any = {
+    user_id:'',
+    notification_alert:''
+  };
   constructor(private router: Router,
     private alertCtrl: AlertController,
     private toastCtrl: ToastController,
@@ -31,9 +36,12 @@ export class SettingsPage implements OnInit {
     private userservice: UserService) { }
 
   ngOnInit() {
+    this.updateData.user_id = parseInt(localStorage.getItem(`setting:user_id`));
     this.userData.security_question = localStorage.getItem('setting:security_question');
     this.userData.sq_answer = localStorage.getItem('setting:sq_answer');
     this.userData.low_wallet_amount = localStorage.getItem('setting:low_wallet_trigger_amount');
+    this.userData.notification_alert = localStorage.getItem('setting:notification_alert');
+    
   }
 
   segmentChanged(ev: any) {
@@ -68,13 +76,22 @@ export class SettingsPage implements OnInit {
       event.target.complete();
     }, 1000);
   }
-  getToggle(event){
-    console.log(event.detail.checked)
-    this.notification = event.detail.checked;
+  async getToggle(event:any){
+   
+    this.updateData.notification_alert = event.detail.checked.toString();   
+    this.userservice.updateUserProfile(this.updateData).subscribe(async (resp) => {
+      if (resp.status == appConfig.statusCode.ok) {
+        this.userData.notification_alert = this.updateData.notification_alert;
+        localStorage.setItem(`setting:notification_alert`, this.updateData.notification_alert);
+        this.updateToast('Notification Alerts');
+      }
+    });
+    
   }
+ 
   async updateUserSettings(label:string,ev:any){
     if(label == "notification_preference"){
-      if (this.notification == false) {
+      if (!this.userData.notification_alert || this.userData.notification_alert === 'false') {
         const alert = await this.alertCtrl.create({
           cssClass: 'alert-zappy',
           mode:'ios',
@@ -113,22 +130,23 @@ export class SettingsPage implements OnInit {
           message:`Please enter your preferred amount.`,
           inputs: [
             { type: 'number', value:this.userData.low_wallet_amount, name: 'low_wallet_trigger_amount', placeholder:'Trigger amount'}
-          ],
-          
+          ],  
           buttons: [
             {
               text: 'Set Amount',
               handler: async (res) => {
-                console.log(res.low_wallet_trigger_amount);
-                this.userData.low_wallet_amount = res.low_wallet_trigger_amount;
                 //send to backend
-
+                this.updateData.low_wallet_amount = parseFloat(res.low_wallet_trigger_amount);   
+                this.userservice.updateUserProfile(this.updateData).subscribe(async (resp) => {
                 //if the update is successful at backend then update the localstorage
-                localStorage.setItem(`setting:low_wallet_trigger_amount`,this.userData.low_wallet_amount);
-                await this.toastCtrl.create({
-                  message: `Low wallet trigger updated successfully`,
-                  duration: 1000
-                }).then(res => res.present());
+               
+                  if (resp.status == appConfig.statusCode.ok) {
+                    this.userData.low_wallet_amount = this.updateData.low_wallet_amount;
+                    localStorage.setItem(`setting:low_wallet_trigger_amount`,this.updateData.low_wallet_amount);
+                    this.updateToast('Low wallet trigger');
+                  }
+                });
+                
               }
             },{
               text: "Cancel"
@@ -227,8 +245,7 @@ export class SettingsPage implements OnInit {
                       message:`Please enter your preferred transaction pin.`,
                       inputs: [
                         { type: 'number', name: 'transaction_pin', placeholder:'Transaction pin'}
-                      ],
-                      
+                      ], 
                       buttons: [
                         {
                           text: 'Reset pin',
@@ -255,14 +272,20 @@ export class SettingsPage implements OnInit {
 
                             }else {
                                 //send to backend
-
+                                this.updateData.transaction_pin = res.transaction_pin;   
+                                this.userservice.updateUserProfile(this.updateData).subscribe(async (resp) => {
                                 //if the update is successful at backend then update the localstorage
-                                localStorage.setItem(`setting:transaction_pin`,this.userData.transaction_pin);
-                                await this.toastCtrl.create({
-                                  message: `Transaction pin reset successfully`,
-                                  duration: 1000
-                                }).then(res => res.present());
-                                }
+                              
+                                  if (resp.status == appConfig.statusCode.ok) {
+                                    this.userData.transaction_pin = this.updateData.transaction_pin;
+                                    localStorage.setItem(`setting:transaction_pin`,this.updateData.transaction_pin);
+                                    await this.toastCtrl.create({
+                                      message: `Transaction pin reset successfully`,
+                                      duration: 1000
+                                    }).then(res => res.present());
+                                  }
+                                });
+                            }
                           }
                         },{
                           text: "Cancel"
@@ -296,6 +319,13 @@ export class SettingsPage implements OnInit {
       }
       
     }
+  }
+  async updateToast(inputData:any) {
+    const toast = await this.toastCtrl.create({
+                message: `${inputData} updated successfully.`,
+                duration: 1500
+    });
+    await toast.present();
   }
 }
 
