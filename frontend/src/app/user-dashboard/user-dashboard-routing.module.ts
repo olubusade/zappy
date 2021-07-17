@@ -75,6 +75,7 @@ const routes: Routes = [
       },
       {path: 'profile/security', loadChildren: () => import('../security/security.module').then(m => m.SecurityPageModule)},
       {path: 'profile/features', loadChildren: () => import('../feature/feature.module').then(m => m.FeaturePageModule)},
+      {path: 'profile/settings', loadChildren: () => import('../profile/settings/settings.module').then(m => m.SettingsPageModule)},
       {path: 'profile/security/bvn', loadChildren: () => import('../bvn/bvn.module').then(m => m.BvnPageModule)},
       {path: 'profile/no-account', loadChildren: () => import('../no-account/no-account.module').then(m => m.NoAccountPageModule)},
       {path: 'profile/features/download', loadChildren: () => import('../feature/feature.module').then(m => m.FeaturePageModule)},

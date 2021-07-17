@@ -11,7 +11,11 @@ const routes: Routes = [
   {
     path: 'user-upgrade',
     loadChildren: () => import('./user-upgrade/user-upgrade.module').then( m => m.UserUpgradePageModule)
+  },  {
+    path: 'settings',
+    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
   }
+
 ];
 
 @NgModule({

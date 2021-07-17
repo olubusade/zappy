@@ -66,6 +66,9 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
+        dob:{
+            type: Sequelize.STRING
+        },
         cashback:{
             type: Sequelize.DOUBLE,
             DEFAULT:0
@@ -91,7 +94,24 @@ module.exports = (sequelize, Sequelize) => {
         },
         password_reset_otp:{
             type: Sequelize.INTEGER
+        },
+        notification_alert:{
+            type: Sequelize.BOOLEAN,
+            allowNull: false
+        },
+        alert_preference:{
+            type: Sequelize.STRING
+        },
+        low_wallet_trigger_amount:{
+            type: Sequelize.DOUBLE
+        },
+        automated_report:{
+            type: Sequelize.STRING
+        },
+        commission_regime:{
+            type: Sequelize.STRING
         }
+
     });
     return User;
 };

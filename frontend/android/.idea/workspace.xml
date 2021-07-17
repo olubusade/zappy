@@ -7,26 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="353f4e15-fc1a-4031-9138-3c866e937c13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../backend/apis/user/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/apis/user/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../backend/apis/user/user.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/apis/user/user.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../backend/apis/user/user.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/apis/user/user.route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/-390293928/capacitor-android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/-390293928/capacitor-android.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/capacitor.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/out/capacitor.config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/capacitor.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/capacitor.config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../capacitor.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../capacitor.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/core/config/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/core/config/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/login/login/login.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/login/login/login.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/profile/user-upgrade/user-upgrade.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/profile/user-upgrade/user-upgrade.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/profile/user-upgrade/user-upgrade.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/profile/user-upgrade/user-upgrade.page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/profile/user-upgrade/user-upgrade.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/profile/user-upgrade/user-upgrade.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/dashboard/dashboard/dashboard.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/dashboard/dashboard/dashboard.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/dashboard/dashboard/dashboard.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/dashboard/dashboard/dashboard.page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/otp/otp-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/otp/otp-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/profile/profile-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/profile/profile-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/profile/profile/profile.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/profile/profile/profile.page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/global.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,9 +148,9 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="604" y="100" width="649" height="531" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.768@0.0.1366.768" timestamp="1624723474974" />
-    <state x="625" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1625740471265">
+    <state x="625" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1626365673218">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="625" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1625740471265" />
+    <state x="625" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1626365673218" />
   </component>
 </project>

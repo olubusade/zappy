@@ -30,4 +30,5 @@ export class FeaturePage implements OnInit {
       this.router.navigate(['/user-dashboard/profile/features/'+data])
     }
   }
-}
+ 
+  }

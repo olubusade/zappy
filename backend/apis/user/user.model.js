@@ -201,10 +201,22 @@ exports.userModel = {
         });
     },
     updateUserProfile: (userData) => {
+        console.log(userData);
+        
         return new Promise((resolve, reject) => {
             if (userData.nickname) {
                 User.update(
                     {nickname:userData.nickname},
+                    {where: {id: userData.user_id}}
+                ).then(user => {
+                   resolve(user[0]);
+                }, err => {
+                    reject({error: err});
+                })
+            }
+            if (userData.dob) {
+                User.update(
+                    {dob:userData.dob},
                     {where: {id: userData.user_id}}
                 ).then(user => {
                    resolve(user[0]);
@@ -244,6 +256,7 @@ exports.userModel = {
             }
             
         });
+        
     },
     upgradeUserLevel: (userData) => {
         console.log(userData);

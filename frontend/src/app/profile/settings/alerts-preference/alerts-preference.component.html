@@ -1,0 +1,26 @@
+<ion-list mode="ios">
+  <ion-radio-group value="{{userData.alert_pref}}">
+    <ion-list-header>
+      <ion-label>Notification Alerts Preference</ion-label>
+    </ion-list-header>
+
+    <ion-item line = "none" detail="false" (click)="_dismiss('SMS')">
+      <ion-label class="ion-label">SMS only</ion-label>
+      <ion-radio slot="start" value="SMS"></ion-radio>
+    </ion-item>
+
+    <ion-item line = "none" detail="false" (click)="_dismiss('Email')">
+      <ion-label class="ion-label">Email Only</ion-label>
+      <ion-radio slot="start" value="Email"></ion-radio>
+    </ion-item>
+
+    <ion-item line = "none" detail="false" (click)="_dismiss('Email and SMS')">
+      <ion-label class="ion-label">Email and SMS</ion-label>
+      <ion-radio slot="start" value="Email and SMS"></ion-radio>
+    </ion-item>
+    <ion-item line = "none" detail="false" (click)="_dismiss('Push Notification')">
+      <ion-label class="ion-label">Push Notification</ion-label>
+      <ion-radio slot="start" value="Push Notification"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>

@@ -229,75 +229,75 @@ exports.userController = {
       }, err => {
         console.log(err);
       });
-  },
-  verifyTnxPin: (req, res) => {
-    console.log(req.body);
-    UserModel.userModel.verifyTnxPin(req.body).then(async (result) => {
-      console.log(result);
-      if(result == null){
-        res.send({status: local_config.statusCode.notFound});
-      }else{
-        res.send({status: local_config.statusCode.found});
-      }
-    });
-  },
-  recharge: (req, res) => {
-    console.log(req.body);
-    const customerReference = Math.floor(100000 + Math.random() * 900000);
+    },
+    verifyTnxPin: (req, res) => {
+      console.log(req.body);
+      UserModel.userModel.verifyTnxPin(req.body).then(async (result) => {
+        console.log(result);
+        if(result == null){
+          res.send({status: local_config.statusCode.notFound});
+        }else{
+          res.send({status: local_config.statusCode.found});
+        }
+      });
+    },
+    recharge: (req, res) => {
+      console.log(req.body);
+      const customerReference = Math.floor(100000 + Math.random() * 900000);
 
-    const https = require('https')
+      const https = require('https')
 
-    const data = JSON.stringify({
-      amount: req.body.amount,
-      beneficiary: req.body.mobile,
-      customer_reference: customerReference,
-      tariffTypeId: ""
-    })
-
-    const options = {
-      hostname: 'api.topupbox.com',
-      port: 443,
-      path: '/services/api/v2/w1/recharge/'+req.body.network+'/'+req.body.type,
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Content-Length': data.length,
-        'authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE2MjQ3MTU4MDMsImlzcyI6IlpFRURMQUJTIiwicm9sZU5hbWUiOiJtZXJjaGFudCIsImRlYWxlciI6ImJvZGxpbmsiLCJleHAiOjE2NTYyNTE4MDMsImlhdCI6MTYyNDcxNTgwMywidXNlcklkIjoiYWRlb3llYWRla295YSJ9.Sd1YxXNiuKwPzIGf6GvQM_HGo8nFmoUUqee0-2wlSNU',
-        'Accept': '*/*'
-      }
-    }
-
-    const subReq = https.request(options, subRes => {
-      var response = '';
-      console.log(`statusCode: ${subRes.statusCode}`)
-      //console.log(subRes.data);
-      subRes.on('data', d => {
-        //process.stdout.write(d)
-        response += d;
+      const data = JSON.stringify({
+        amount: req.body.amount,
+        beneficiary: req.body.mobile,
+        customer_reference: customerReference,
+        tariffTypeId: ""
       })
 
-      subRes.on('end', function () {
-        console.log("Sub res end");
-        console.log(response);
-        if(JSON.parse(response).response == null){
-          console.log("Sub response is null");
-          res.send({status:subRes.statusCode, response: JSON.parse(response)});
-          return;
+      const options = {
+        hostname: 'api.topupbox.com',
+        port: 443,
+        path: '/services/api/v2/w1/recharge/'+req.body.network+'/'+req.body.type,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Content-Length': data.length,
+          'authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE2MjQ3MTU4MDMsImlzcyI6IlpFRURMQUJTIiwicm9sZU5hbWUiOiJtZXJjaGFudCIsImRlYWxlciI6ImJvZGxpbmsiLCJleHAiOjE2NTYyNTE4MDMsImlhdCI6MTYyNDcxNTgwMywidXNlcklkIjoiYWRlb3llYWRla295YSJ9.Sd1YxXNiuKwPzIGf6GvQM_HGo8nFmoUUqee0-2wlSNU',
+          'Accept': '*/*'
         }
-        UserModel.userModel.updateWalletAfterRecharge(req.body).then(async (result) => {
-          console.log(result);
-          res.send({status:subRes.statusCode, response: JSON.parse(response)});
+      }
+
+      const subReq = https.request(options, subRes => {
+        var response = '';
+        console.log(`statusCode: ${subRes.statusCode}`)
+        //console.log(subRes.data);
+        subRes.on('data', d => {
+          //process.stdout.write(d)
+          response += d;
+        })
+
+        subRes.on('end', function () {
+          console.log("Sub res end");
+          console.log(response);
+          if(JSON.parse(response).response == null){
+            console.log("Sub response is null");
+            res.send({status:subRes.statusCode, response: JSON.parse(response)});
+            return;
+          }
+          UserModel.userModel.updateWalletAfterRecharge(req.body).then(async (result) => {
+            console.log(result);
+            res.send({status:subRes.statusCode, response: JSON.parse(response)});
+          });
+          //res.send({status:subRes.statusCode, response: JSON.parse(response)});
         });
-        //res.send({status:subRes.statusCode, response: JSON.parse(response)});
-      });
-    })
-    
-    subReq.on('error', error => {
-      console.log("Error is available");
-      console.error(error)
-    })
-    
-    subReq.write(data)
-    subReq.end()
-  }
+      })
+      
+      subReq.on('error', error => {
+        console.log("Error is available");
+        console.error(error)
+      })
+      
+      subReq.write(data)
+      subReq.end()
+    }
 }

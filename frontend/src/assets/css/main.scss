@@ -766,6 +766,12 @@ ion-buttons {
   ion-refresher {
 	margin-top:300px;
   }
+  ion-toggle {
+	--background-checked:#9ACD32;
+  }
+  ion-list-header ion-item ion-label {
+    font-size:10px;
+  }
   /*.back-arrow {
   padding-top:35px;
   text-align: left !important;

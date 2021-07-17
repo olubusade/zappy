@@ -1,14 +1,9 @@
-<ion-header>
-  <ion-toolbar mode="ios">
-    <ion-buttons mode="ios">
-      <ion-button>
-      </ion-button>
-      <ion-button></ion-button>
-    </ion-buttons>
-    <ion-title >Profile</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<ion-toolbar mode="ios">
+  <ion-buttons mode="ios"  slot="start">
+    <ion-icon class="icon back-arrow"[routerLink]="['/user-dashboard/home']" name="arrow-back-sharp"></ion-icon>
+  </ion-buttons>
+  <ion-title>Profile</ion-title>
+</ion-toolbar>
 
 <ion-content>
   <div class="container">
@@ -19,55 +14,45 @@
       <ion-segment-button value="security">
         <ion-label>Security</ion-label>
       </ion-segment-button>
+      <ion-segment-button value="settings">
+        <ion-label>Settings</ion-label>
+      </ion-segment-button>
       <ion-segment-button value="features">
-        <ion-label>Features</ion-label>
+        <ion-label>About Zappy</ion-label>
       </ion-segment-button>
     </ion-segment>
   </div>
 
   <div class="avatar-main text-center">
-    <img src="../../assets//imgs/passport2.png" alt="">
+    <img src="../../assets//imgs/logo.png" alt="">
     <div class="text-primary caption" (click)="navigatePage('change-photo')">
       <label>
-        Tap to change picture
-        <input type="file" name="photo" hidden>
+        version 1.0.0
       </label>
     </div>
   </div>
-
-  <div class="details">
-    <ion-grid>
-      <ion-row (click)="navigatePage('payment-methods')">
-        <ion-col >Cards & Payment Methods</ion-col>
-        <ion-col size="1">
-          <img src="../../assets/icon/right_arrow_icon.svg" alt="">
-        </ion-col>
-      </ion-row>
-      <ion-row (click)="navigatePage('download')">
-        <ion-col>Download Statement of Accounts</ion-col>
-        <ion-col size="1">
-          <img src="../../assets/icon/right_arrow_icon.svg" alt="">
-        </ion-col>
-      </ion-row>
-      <ion-row (click)="navigatePage('support')">
-        <ion-col>Support</ion-col>
-        <ion-col size="1">
-          <img src="../../assets/icon/right_arrow_icon.svg" alt="">
-        </ion-col>
-      </ion-row>
-      <ion-row (click)="navigatePage('terms')">
-        <ion-col>Terms & Conditions</ion-col>
-        <ion-col size="1">
-          <img src="../../assets/icon/right_arrow_icon.svg" alt="">
-        </ion-col>
-      </ion-row>
-      <ion-row (click)="navigatePage('privacy-policy')">
-        <ion-col>Privacy & Policy</ion-col>
-        <ion-col size="1">
-          <img src="../../assets/icon/right_arrow_icon.svg" alt="">
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+  <div class="personal">
+    <ion-item href="https://play.google.com/store/apps/details?id=com.transsnet.zappy&hl=en&gl=US">
+      <ion-label class="property">To playstore</ion-label>
+      <span></span>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item (click)="navigatePage('terms-and-conditions')">
+      <ion-label class="property">Terms & Conditions</ion-label>
+      <span></span>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item (click)="navigatePage('privacy-policy')">
+      <ion-label class="property">Privacy & Policy</ion-label>
+      <span slot="end"></span>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item href="mailto:no-reply.zappy@gmail.com">
+        <ion-label class="property">Support</ion-label>
+        <span slot="end"></span>
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
   </div>
+  
   
 </ion-content>

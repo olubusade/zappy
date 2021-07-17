@@ -26,6 +26,7 @@ export class ProfilePage implements OnInit {
     address:''
   }
 
+  public dob:any;
   constructor(private router: Router,
               private alertCtrl: AlertController,
               public toastCtrl: ToastController,
@@ -49,6 +50,27 @@ export class ProfilePage implements OnInit {
 
   ngOnInit() {
     
+  }
+  showdate(){
+    let updateData: any = {
+      user_id:'',
+      dob:''
+    };
+    updateData.user_id = parseInt(this.userData.user_id);
+    updateData.dob = this.dob.split('T')[0];
+    console.log(updateData);
+    
+    this.userservice.updateUserProfile(updateData).subscribe(async(resp)=>{
+      if (resp.status == appConfig.statusCode.ok) {
+            this.updateToast('Date of Birth');
+            localStorage.setItem(`setting:dob`,updateData.dob);            
+            if (updateData.dob){
+                this.userData.dob = updateData.dob;
+            }
+      }
+    });
+    
+
   }
   segmentChanged(ev: any) {
     const page = ev.detail.value
@@ -76,7 +98,7 @@ export class ProfilePage implements OnInit {
     if (label == "nickname"){
       const alert = await this.alertCtrl.create({
         cssClass: 'alert-zappy',
-        mode:'ios',
+        //mode:'ios',
         animated:true,
         header: 'Zappy',
         inputs: [
@@ -107,7 +129,7 @@ export class ProfilePage implements OnInit {
                         this.userData.nickname = alertData.nickname;
                     }
               }
-            });
+              });
               
             }
           }
@@ -118,7 +140,7 @@ export class ProfilePage implements OnInit {
     if (label == "address"){
       const alert = await this.alertCtrl.create({
         cssClass: 'alert-zappy',
-        mode:'ios',
+        //mode:'ios',
         animated:true,
         header: 'Zappy',
         inputs: [
@@ -217,7 +239,7 @@ export class ProfilePage implements OnInit {
     if (label == 'sq_answer'){
       const alert = await this.alertCtrl.create({
         cssClass: 'alert-zappy',
-        mode:'ios',
+        //mode:'ios',
         animated:true,
         header: 'Zappy',
         inputs: [

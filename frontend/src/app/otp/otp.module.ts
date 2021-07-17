@@ -8,12 +8,15 @@ import { OtpPageRoutingModule } from './otp-routing.module';
 
 import { OtpPage } from './otp/otp.page';
 
+import { PinResetOtpPageModule } from './pin-reset-otp/pin-reset-otp.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OtpPageRoutingModule
+    OtpPageRoutingModule,
+    PinResetOtpPageModule
   ],
   declarations: [OtpPage]
 })

@@ -14,8 +14,11 @@
       <ion-segment-button value="security">
         <ion-label>Security</ion-label>
       </ion-segment-button>
+      <ion-segment-button value="settings">
+        <ion-label>Settings</ion-label>
+      </ion-segment-button>
       <ion-segment-button value="features">
-        <ion-label>Features</ion-label>
+        <ion-label>About Zappy</ion-label>
       </ion-segment-button>
     </ion-segment>
   </div>
@@ -50,8 +53,8 @@
     </ion-item>
     <ion-item>
         <ion-label class="property">Date of Birth</ion-label>
-        <!--<ion-note slot="end">{{userData.dob}}</ion-note>-->
-        <ion-datetime value="{{userData.dob}}" displayFormat="DD MMM, YYYY" display-timezone="Africa/Lagos"></ion-datetime>
+        <ion-note *ngIf = "userData.dob && userData.dob != null" slot="end">{{userData.dob}}</ion-note>
+        <ion-datetime *ngIf = "!userData.dob || userData.dob == null || userData.dob == ''" (ngModel)]="dob" (ionChange)="showdate()" displayFormat="DD MMM, YYYY" display-timezone="Africa/Lagos"></ion-datetime>
     </ion-item>
     <ion-item>
         <ion-label class="property">Mobile</ion-label>
@@ -72,12 +75,20 @@
         <span slot="end">{{userData.address}}</span>
         <ion-icon slot="end" (click)="updateUserData('address')" name="create-outline"></ion-icon>
     </ion-item>
-    <ion-item>
+    <ion-item  
+        *ngIf = "(userData.security_question != null || userData.security_question != '') && 
+        (userData.sq_answer != null || userData.sq_answer != '')" disabled >
         <ion-label class="property">Security Question (SQ)</ion-label>
         <span slot="end">{{userData.security_question}}</span>
         <ion-icon slot="end" (click)="updateUserData('security_question')" name="create-outline"></ion-icon>
     </ion-item>
-    <ion-item>
+    <ion-item  
+        *ngIf = "(userData.security_question == null || userData.security_question == '')">
+        <ion-label class="property">Security Question (SQ)</ion-label>
+        <span slot="end">{{userData.security_question}}</span>
+        <ion-icon slot="end" (click)="updateUserData('security_question')" name="create-outline"></ion-icon>
+    </ion-item>
+    <ion-item *ngIf = "userData.sq_answer == null || userData.sq_answer == ''">
         <ion-label class="property">Answer to SQ</ion-label>
         <span slot="end">{{userData.sq_answer}}</span>
         <ion-icon slot="end" (click)="updateUserData('sq_answer')" name="create-outline"></ion-icon>

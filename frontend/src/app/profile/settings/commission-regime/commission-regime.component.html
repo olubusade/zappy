@@ -1,0 +1,17 @@
+<ion-list mode="ios">
+  <ion-radio-group value="{{userData.commission_regime}}">
+    <ion-list-header>
+      <ion-label>Set Commission Regime</ion-label>
+    </ion-list-header>
+
+    <ion-item line = "none" detail="false" (click)="_dismiss('Instant Cashback')">
+      <ion-label class="ion-label">Instant Cashback</ion-label>
+      <ion-radio slot="start" value="Instant Cashback"></ion-radio>
+    </ion-item>
+
+    <ion-item line = "none" detail="false" (click)="_dismiss('Upfront Discount')">
+      <ion-label class="ion-label">Upfront Discount</ion-label>
+      <ion-radio slot="start" value="Upfront Discount"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>

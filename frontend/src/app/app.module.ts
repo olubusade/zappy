@@ -16,6 +16,8 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import { Clipboard } from '@ionic-native/clipboard/ngx';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
 
+import { OtpPageModule } from './otp/otp.module';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -24,7 +26,8 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
             IonicModule.forRoot(), 
             AppRoutingModule, 
             AuthModule,
-            IonicStorageModule.forRoot()
+            IonicStorageModule.forRoot(),
+            OtpPageModule
           ],
   providers: [
     StatusBar,

@@ -1,0 +1,26 @@
+<ion-list mode="ios">
+  <ion-radio-group value="{{userData.report_option}}">
+    <ion-list-header>
+      <ion-label>Automated Reports</ion-label>
+    </ion-list-header>
+
+    <ion-item line = "none" detail="false" (click)="_dismiss('Daily')">
+      <ion-label class="ion-label">Daily</ion-label>
+      <ion-radio slot="start" value="Daily"></ion-radio>
+    </ion-item>
+
+    <ion-item line = "none" detail="false" (click)="_dismiss('Weekly')">
+      <ion-label class="ion-label">Weekly</ion-label>
+      <ion-radio slot="start" value="Weekly"></ion-radio>
+    </ion-item>
+
+    <ion-item line = "none" detail="false" (click)="_dismiss('Monthly')">
+      <ion-label class="ion-label">Monthly</ion-label>
+      <ion-radio slot="start" value="Monthly"></ion-radio>
+    </ion-item>
+    <ion-item line = "none" detail="false" (click)="_dismiss('Annually')">
+      <ion-label class="ion-label">Annually</ion-label>
+      <ion-radio slot="start" value="Annually"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
