@@ -1,93 +1,67 @@
-<ion-header>
-  <ion-toolbar mode="ios">
-    <ion-buttons mode="ios">
-      <ion-button>
+<ion-header class="header-bg">
+  <ion-toolbar mode="ios" color="none" class="text-white">
+    <!--ion-buttons mode="ios">
+      <ion-button (click)="goBack()" slot="start">
+        <ion-icon ios="arrow-back-outline" md="arrow-back"></ion-icon>
       </ion-button>
-      <ion-button></ion-button>
-    </ion-buttons>
-    <ion-title >Transactions</ion-title>
+    </ion-buttons-->
+    <ion-title >Transaction History</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="container">
-    <ion-segment (ionChange)="segmentChanged($event)" value="all" mode="ios">
-      <ion-segment-button value="all">
-        <ion-label>All</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="debit">
-        <ion-label>Debit</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="credit">
-        <ion-label>Credit</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-  </div>
+  <div class="main-container">
+    <ion-grid class="--ion-grid-padding">
+      <ion-row>
+        <ion-col size="12" style="text-align: center;">
+          <h6 style="font-size: 0.75rem">Pull down to refresh</h6>
+        </ion-col>
+        <ion-col size="12" style="margin-top: 20px;">
+          <ion-list>
+            <ion-item style="text-align: center;">
+              <p style="font-size: 12px;">Selected Year - {{year}}</p>
+              <ion-label>Transaction Year</ion-label>
+              <ion-select (ionChange)="fetchTrans()" name="year" [(ngModel)]="year" [value]="year">
+                <ion-select-option *ngFor="let year of transactionYears" [value]="year">{{year}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+          
+          
+          <!--ion-label>Select Transaction Year</ion-label>
+          <ion-select (change)="fetchTrans()" name="transactionYear" [(ngModel)]="year" placeholder="Select Transaction Year">
+            <ion-select-option *ngFor="let year of transactionYears" value="year">{{year}}</ion-select-option>
+            <ion-select-option value="2022">2022</ion-select-option>
+          </ion-select-->
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="noHistory == false" style="margin-top: 5px;">
+        <ion-col size="2" style="text-align: center; padding-top: 8px;">
+          <ion-icon *ngIf="historyId" (click)="flipTransaction('prev')" name="arrow-back-circle-outline" style="font-size: xx-large;"></ion-icon>
+        </ion-col>
+        <ion-col size="8" style="text-align: center;">
+          <h5 style="font-weight: bold;">{{transactionHistory[historyId].month}} {{transactionHistory[historyId].year}}</h5>
+        </ion-col>
+        <ion-col size="2" style="text-align: center; padding-top: 8px;">
+          <ion-icon *ngIf="historyId != transactionHistory.length-1" (click)="flipTransaction('next')" name="arrow-forward-circle-outline" style="font-size: xx-large;"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-  <div class="transactions" (click)="navigatePage('empty')">
-    <div class="d-flex">
-      <span>
-        <h6>Mobile Airtime</h6>
-        <small>20th May 2020</small>
-      </span>
-      <span class="danger">
-        -200
-      </span>
-    </div>
-  </div>
-  <div class="transactions">
-    <div class="d-flex">
-      <span>
-        <h6>Mobile Airtime</h6>
-        <small>20th May 2020</small>
-      </span>
-      <span class="danger">
-        -200
-      </span>
-    </div>
-  </div>
-  <div class="transactions" >
-    <div class="d-flex">
-      <span>
-        <h6>Cable TV</h6>
-        <small>4th June 2020</small>
-      </span>
-      <span class="danger">
-        -3800
-      </span>
-    </div>
-  </div>
-  <div class="transactions">
-    <div class="d-flex">
-      <span>
-        <h6>Credit Wallet</h6>
-        <small>1st January 2020</small>
-      </span>
-      <span class="success">
-        +15000
-      </span>
-    </div>
-  </div>
-  <div class="transactions">
-    <div class="d-flex">
-      <span>
-        <h6>Electricity Bills</h6>
-        <small>25th May 2020</small>
-      </span>
-      <span class="danger">
-        -8800
-      </span>
-    </div>
-  </div>
-  <div class="transactions">
-    <div class="d-flex">
-      <span>
-        <h6>Credit Wallet</h6>
-        <small>1st January 2020</small>
-      </span>
-      <span class="success">
-        +55000
-      </span>
-    </div>
+    <ion-list style="margin-top: 20px;" *ngIf="noHistory == false">
+      <ion-item *ngFor="let transaction of transactionHistory[historyId].transactions">
+        <ion-label>
+          <div style="margin-top: 10px; margin-bottom: 10px;">
+            <span style="font-size: 14px;"><span style="font-weight: bold;">{{transaction.title}}</span> ({{transaction.date}})</span>
+            <span style="font-size: 14px; float: right; font-weight: bold;">&#8358; {{transaction.amount}}</span>
+          </div>
+          <h3 style="font-size: 12px;">{{transaction.desc}} | {{transaction.ref}}</h3>
+          <h3 style="font-size: 10px; color: #9acd32">Click to download receipt</h3>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <div *ngIf="noHistory" style="margin-top: 50px; text-align: center; font-size: 14px;">Transaction history is empty</div>
+
   </div>
 </ion-content>

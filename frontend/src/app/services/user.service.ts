@@ -34,4 +34,28 @@ export class UserService {
   recharge(data: any): Observable<any> {
     return this.http.post(appConfig.apiURL + '/recharge', data);
   }
+
+  getTransactionHistory(data: any): Observable<any> {
+    return this.http.post(appConfig.apiURL + '/getTransactionHistory', data);
+  }
+
+  refreshWallet(data: any): Observable<any> {
+    return this.http.post(appConfig.apiURL + '/refreshWallet', data);
+  }
+
+  shareFund(data: any): Observable<any> {
+    return this.http.post(appConfig.apiURL + '/shareFund', data);
+  }
+
+  createBeneficiaryGroup(data: any): Observable<any> {
+    return this.http.post(appConfig.apiURL + '/createBeneficiaryGroup', data);
+  }
+
+  fetchGroups(data: any): Observable<any> {
+    return this.http.post(appConfig.apiURL + '/fetchBeneficiaryGroups', data);
+  }
+
+  addContact(data: any): Observable<any> {
+    return this.http.post(appConfig.apiURL + '/addContact', data);
+  }
 }

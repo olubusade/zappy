@@ -211,5 +211,93 @@ exports.userController = {
     
     subReq.write(data)
     subReq.end()
-  }
+  },
+
+  getTransactionHistory: (req, res) => {
+    console.log(req.body);
+    let resultReceiver = [];
+    UserModel.userModel.getTransactionHistory(req.body).then(async (result) => {
+      console.log(result);
+      if(result){
+        result.map(history => {
+          let newTransactions = [];
+          history.transactions.map((transaction) => {
+            newTransactions.push(JSON.parse(transaction));
+          });
+          history.transactions = newTransactions;
+          resultReceiver.push(history.dataValues);
+        });
+
+        console.log(resultReceiver);
+        res.send({status: local_config.statusCode.found, data: resultReceiver});
+      }else{
+        res.send({status: local_config.statusCode.notFound});
+      }
+    });
+  },
+
+  refreshWallet: (req, res) => {
+    console.log(req.body);
+    UserModel.userModel.refreshWallet(req.body).then(async (result) => {
+      console.log(result);
+      if(result){
+        res.send({status: local_config.statusCode.found, data: result});
+      }else{
+        res.send({status: local_config.statusCode.notFound});
+      }
+    });
+  },
+
+  shareFund: (req, res) => {
+    console.log(req.body);
+    UserModel.userModel.shareFund(req.body).then(async (result) => {
+      console.log(result);
+      if(result){
+        res.send({status: local_config.statusCode.found, data: result});
+      }else{
+        res.send({status: local_config.statusCode.notFound});
+      }
+    });
+  },
+
+  createBeneficiaryGroup: (req, res) => {
+    console.log(req.body);
+    UserModel.userModel.createBeneficiaryGroup(req.body).then(async (result) => {
+      console.log(result);
+      if(result.message == 'success'){
+        res.send({status: local_config.statusCode.found, message: "successful"});
+      }else if(result.message == 'existing'){
+        res.send({status: local_config.statusCode.notFound, message: "existing"});
+      }else{
+        res.send({status: local_config.statusCode.notFound, message: "failure"});
+      }
+    });
+  },
+
+  fetchBeneficiaryGroups: (req, res) => {
+    console.log(req.body);
+    let resultReceiver = [];
+    UserModel.userModel.fetchBeneficiaryGroups(req.body).then(async (result) => {
+      console.log(result);
+      result.map(group => {
+        let newGroups = [];
+        if(group.group != null){
+          group.group.map((g) => {
+            newGroups.push(JSON.parse(g));
+          });
+        }
+        group.group = newGroups;
+        resultReceiver.push(group.dataValues);
+      });
+      res.send({status: local_config.statusCode.found, data: resultReceiver});
+    });
+  },
+
+  addContact: (req, res) => {
+    console.log(req.body);
+    UserModel.userModel.addContact(req.body).then(async (result) => {
+      console.log(result);
+      res.send(result);
+    });
+  },
 }

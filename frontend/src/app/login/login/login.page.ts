@@ -117,6 +117,9 @@ export class LoginPage implements OnInit {
             localStorage.setItem(`setting:access_token`,resp.data.access_token);
             localStorage.setItem(`setting:expiresIn`,resp.data.expiresIn);
             localStorage.setItem(`setting:auxData`, JSON.stringify(auxData));
+            localStorage.setItem(`setting:sms_unit`,resp.data.sms_unit==null ? '0' : resp.data.sms_unit);
+            localStorage.setItem(`setting:voice_sms_unit`,resp.data.voice_sms_unit==null ? '0' : resp.data.voice_sms_unit);
+            localStorage.setItem(`setting:referral_bonus`,resp.data.referral_bonus==null ? '0' : resp.data.referral_bonus);
             
             this.router.navigate(['/user-dashboard'])
             //  await loading.onDidDismiss();

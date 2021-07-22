@@ -21,7 +21,7 @@ const routes: Routes = [
       },
       {path: 'home/mobile-airtime', loadChildren: () => import('../mobile-airtime/mobile-airtime.module').then(m => m.MobileAirtimePageModule)},
       {path: 'home/cable-tv', loadChildren: () => import('../cable-tv/cable-tv.module').then(m => m.CableTvPageModule)},
-      {path: 'home/data-bundle', loadChildren: () => import('../data-bundle/data-bundle.module').then(m => m.DataBundlePageModule)},
+      {path: 'home/beneficiary-group', loadChildren: () => import('../beneficiary-group/beneficiary-group.module').then(m => m.BeneficiaryGroupPageModule)},
       {path: 'home/fund-transfer', loadChildren: () => import('../fund-transfer/fund-transfer.module').then(m => m.FundTransferPageModule)},
       {path: 'home/transfer2', loadChildren: () => import('../fund-transfer/transfer2/transfer2.module').then(m => m.Transfer2PageModule)},
       {path: 'home/electricity', loadChildren: () => import('../electricity/electricity.module').then(m => m.ElectricityPageModule)},

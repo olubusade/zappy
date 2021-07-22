@@ -23,7 +23,7 @@ const routes: Routes = [
       {path: 'home/mobile-airtime/payment-details', loadChildren: () => import('../payment-details/payment-details.module').then(m => m.PaymentDetailsPageModule)},
       {path: 'home/mobile-airtime/payment-successful', loadChildren: () => import('../payment-successful/payment-successful.module').then(m => m.PaymentSuccessfulPageModule)},
       {path: 'home/cable-tv', loadChildren: () => import('../cable-tv/cable-tv.module').then(m => m.CableTvPageModule)},
-      {path: 'home/data-bundle', loadChildren: () => import('../data-bundle/data-bundle.module').then(m => m.DataBundlePageModule)},
+      {path: 'home/beneficiary-group', loadChildren: () => import('../beneficiary-group/beneficiary-group.module').then(m => m.BeneficiaryGroupPageModule)},
       {path: 'home/fund-transfer', loadChildren: () => import('../fund-transfer/fund-transfer.module').then(m => m.FundTransferPageModule)},
       {path: 'home/transfer2', loadChildren: () => import('../fund-transfer/transfer2/transfer2.module').then(m => m.Transfer2PageModule)},
       {path: 'home/electricity', loadChildren: () => import('../electricity/electricity.module').then(m => m.ElectricityPageModule)},
@@ -37,7 +37,7 @@ const routes: Routes = [
             loadChildren: () => import('../wallet/wallet.module').then(m => m.WalletPageModule)
           }
         ]
-      },
+      }, 
       {path: 'wallet/cards', loadChildren: () => import('../my-cards/my-cards.module').then(m => m.MyCardsPageModule)},
       {path: 'wallet/card-blank', loadChildren: () => import('../my-cards-blank/my-cards-blank.module').then(m => m.MyCardsBlankPageModule)},
       {path: 'wallet/add-money', loadChildren: () => import('../add-money/add-money.module').then(m => m.AddMoneyPageModule)},

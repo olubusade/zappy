@@ -34,7 +34,7 @@ export class PaymentDetailsPage implements OnInit {
     private navService: NavigationServiceService, 
     private userService : UserService,
     private loadingCtrl: LoadingController,
-    private alertCtrl: AlertController,) { }
+    private alertCtrl: AlertController) { }
   
   ngOnInit() {
     this.userId = localStorage.getItem(`setting:user_id`);
@@ -48,6 +48,7 @@ export class PaymentDetailsPage implements OnInit {
 
     this.walletAmount = localStorage.getItem(`setting:wallet_amount`);
     this.cashback = localStorage.getItem(`setting:cashback`);
+    console.log(this.walletAmount);
   }
 
   goBack() {
@@ -127,7 +128,7 @@ export class PaymentDetailsPage implements OnInit {
     });
     await loading.present();
 
-    if(this.purchaseParams.amount > this.walletAmount){
+    if(parseFloat(this.purchaseParams.amount) > parseFloat(this.walletAmount)){
       await loading.dismiss();
       const alert = await this.alertCtrl.create({
         cssClass: 'my-alert',

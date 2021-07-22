@@ -15,7 +15,7 @@ import { TokenInterceptor } from './../app/core/utils/TokenInterceptor';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ],
   entryComponents: [],
   imports: [BrowserModule, 
             HttpClientModule, 
