@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="353f4e15-fc1a-4031-9138-3c866e937c13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../backend/apis/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/apis/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../backend/apis/user/user.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/apis/user/user.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/profile/settings/settings.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/profile/settings/settings.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/profile/settings/settings.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/profile/settings/settings.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
