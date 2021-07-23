@@ -109,6 +109,15 @@ module.exports = (sequelize, Sequelize) => {
         },
         commission_regime:{
             type: Sequelize.STRING
+        },
+        sms_unit:{
+            type: Sequelize.STRING,
+        },
+        voice_sms_unit:{
+            type: Sequelize.STRING,
+        },
+        referral_bonus:{
+            type: Sequelize.STRING,
         }
 
     });

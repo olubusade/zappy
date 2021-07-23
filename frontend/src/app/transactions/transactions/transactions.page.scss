@@ -1,8 +1,15 @@
-ion-content {
-  --background: rgba(0, 0, 92, 0.02);
+p,
+h6,
+div,
+ion-grid,
+ion-card,
+ion-row,
+ion-col {
+  padding: 0;
+  margin: 0;
+  line-height: 0;
 }
 
-.d-flex {
-  padding-left: 20px;
-  padding-right: 20px;
-} 
+.main-container {
+  padding: 10px;
+}

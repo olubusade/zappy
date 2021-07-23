@@ -19,7 +19,7 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
 import { OtpPageModule } from './otp/otp.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ],
   entryComponents: [],
   imports: [BrowserModule, 
             HttpClientModule, 

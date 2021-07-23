@@ -1,31 +1,77 @@
-ion-card {
-  text-align: center;
-  color: #003679;
+p,
+h6,
+div,
+ion-grid,
+ion-card,
+ion-row,
+ion-col {
+  padding: 0;
+  margin: 0;
+  line-height: 0;
 }
 
-ion-title {
-  // text-align: center;
-  color: #003679 !important;
+.main-container {
+  padding: 10px;
 }
 
+.sliderCard {
+  width: 90%;
+  height: 140px;
+  border-radius: 10px;
+  border-width: 0px;
+}
 
+/*Bottom Sheet CSS*/
 
-ion-buttons {
-  justify-content: space-between;
-  padding: 15px 0px;
-  background-color: transparent !important;
-  ion-button {
-    width: auto;
-    margin: 0 !important;
-    --padding-end: 0px !important;
-    --padding-start: 0px !important;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 10px;
-    line-height: 15px;
-    color: #003679;
+ion-title,
+ion-button {
+  font-weight: bold;
+}
+
+.bottomSheet {
+  position: fixed;
+  width: 100%;
+  //height: 50%;
+  bottom: 0;
+  border-radius: 15px 15px 0 0;
+  z-index: 20;
+  background-color: var(--ion-background-color);
+  transition: 0.3s;
+  transform: translate3d(0, 0, 0);
+
+  .content {
+    h1 {
+      font-weight: bold;
+    }
+    p {
+      color: gray;
+      font-weight: bold;
+    }
+  }
+
+  .swipe-handler::after {
+    content: "";
+    width: 36px;
+    height: 6px;
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    margin-left: -18px;
+    margin-top: -3px;
+    border-radius: 3px;
+    background: lightgray;
   }
 }
 
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  z-index: 10;
+  transition: 0.3s;
+}
 
+/*Bottom Sheet CSS*/

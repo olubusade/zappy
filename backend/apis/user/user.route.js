@@ -15,4 +15,10 @@ exports.userRoutes = function (app) {
     app.post('/finish_wallet_payment', [UserController.userController.finishWalletPayment]);
     app.post('/verify_tnx_pin', [UserController.userController.verifyTnxPin]);
     app.post('/recharge', [UserController.userController.recharge]);
+    app.post('/getTransactionHistory', [UserController.userController.getTransactionHistory]);
+    app.post('/refreshWallet', [UserController.userController.refreshWallet]);
+    app.post('/shareFund', [UserController.userController.shareFund]);
+    app.post('/createBeneficiaryGroup', [UserController.userController.createBeneficiaryGroup]);
+    app.post('/fetchBeneficiaryGroups', [UserController.userController.fetchBeneficiaryGroups]);
+    app.post('/addContact', [UserController.userController.addContact]);
 };
