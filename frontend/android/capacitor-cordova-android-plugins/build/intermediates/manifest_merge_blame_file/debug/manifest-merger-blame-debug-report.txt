@@ -11,23 +11,32 @@
 10        android:targetSdkVersion="29" />
 10-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
 11
-12    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+12    <uses-permission android:name="android.permission.READ_CONTACTS" />
 12-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:1-67
 12-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:18-65
-13    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-13-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:1-69
-13-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:18-67
-14
-15    <application>
-15-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-7:15
-16        <activity
-16-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-141
-17            android:name="de.niklasmerz.cordova.biometric.BiometricActivity"
-17-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:11-75
-18            android:exported="true"
-18-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:116-139
-19            android:theme="@style/TransparentTheme" />
-19-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:76-115
-20    </application>
-21
-22</manifest>
+13    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+13-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:1-68
+13-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:18-66
+14    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+14-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:10:1-66
+14-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:10:18-64
+15    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+15-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:1-67
+15-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:18-65
+16    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+16-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:12:1-69
+16-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:12:18-67
+17
+18    <application>
+18-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-7:15
+19        <activity
+19-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-141
+20            android:name="de.niklasmerz.cordova.biometric.BiometricActivity"
+20-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:11-75
+21            android:exported="true"
+21-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:116-139
+22            android:theme="@style/TransparentTheme" />
+22-->C:\Users\Lenovo\Documents\vsc_local_dev\native-mobile-app\zappy\frontend\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:76-115
+23    </application>
+24
+25</manifest>

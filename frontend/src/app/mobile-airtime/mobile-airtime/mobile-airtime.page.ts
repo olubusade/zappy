@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { IonSlides } from '@ionic/angular';
 import { NavigationServiceService } from '../../services/navigation-service.service';
 import { AlertController, NavController, LoadingController } from '@ionic/angular';
-
+import { Contact } from '@ionic-native/contacts';
 @Component({
   selector: 'app-mobile-airtime',
   templateUrl: './mobile-airtime.page.html',
@@ -74,10 +74,14 @@ export class MobileAirtimePage implements OnInit {
       ]
     }
   ]
+  
+  public allContacts: any
 
   constructor( private router: Router, 
     private navService: NavigationServiceService, 
-    private alertCtrl: AlertController) {
+    private alertCtrl: AlertController,
+    private contact: Contact
+    ) {
   }
   
   ngOnInit() {
@@ -186,10 +190,12 @@ export class MobileAirtimePage implements OnInit {
       this.selectedSegment = this.tabs[index];
     });
   }
-
-  // gotoService(data:string) {
-  // // console.log(data)
-  //   this.router.navigate(['user-dashboard/home/mobile-airtime/'+data])
-  // }
+  pickContact(){
+    this.contact.find()
+    .then(data => {
+      this.allContacts = data
+      console.log(this.allContacts);
+    });
+  }
   
 }

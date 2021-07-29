@@ -15,7 +15,7 @@ import { TokenInterceptor } from './../app/core/utils/TokenInterceptor';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { Clipboard } from '@ionic-native/clipboard/ngx';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
-
+import { Contact } from '@ionic-native/contacts';
 import { OtpPageModule } from './otp/otp.module';
 
 @NgModule({
@@ -34,6 +34,7 @@ import { OtpPageModule } from './otp/otp.module';
     SplashScreen,
     Clipboard,
     FingerprintAIO,
+    Contact,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {
       provide: HTTP_INTERCEPTORS,
