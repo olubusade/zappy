@@ -1,0 +1,118 @@
+<ion-header class="header-bg">
+    <ion-toolbar mode="ios" color="none" class="text-white">
+      <ion-buttons mode="ios">
+        <ion-button (click)="goBack()" slot="start">
+          <ion-icon ios="arrow-back-outline" md="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Recurrent Services</ion-title>
+    </ion-toolbar>
+</ion-header>
+  
+<ion-content>
+    <div class="main-container">
+        <ion-grid>
+            <ion-row>
+                <ion-col size='6' style="padding: 10px">
+                    <ion-card (click)="setRecurrent('airtime')">
+                        <ion-card-header>
+                            <img src="../../../assets/icon/recurrent_airtime.png" style="max-height: 100px; max-width: auto;"/>
+                            <ion-card-title style="margin-top: 15px; font-size: 18px;">Airtime</ion-card-title>
+                        </ion-card-header>
+                        
+                        <ion-card-content>
+                            <h3>Current: <span style="color: #9acd32">Weekly</span></h3>        
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+                <ion-col size='6' style="padding: 10px">
+                    <ion-card (click)="setRecurrent('data')">
+                        <ion-card-header>
+                            <img src="../../../assets/icon/recurrent_wifi.png" style="max-height: 100px; max-width: auto;"/>
+                            <ion-card-title style="margin-top: 15px; font-size: 18px;">Data</ion-card-title>
+                        </ion-card-header>
+                        
+                        <ion-card-content>
+                            <h3>Current: <span style="color: #9acd32">Monthly</span></h3>        
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size='6' style="padding: 10px">
+                    <ion-card (click)="setRecurrent('data-share')">
+                        <ion-card-header>
+                            <img src="../../../assets/icon/recurrent_share.png" style="max-height: 100px; max-width: auto;"/>
+                            <ion-card-title style="margin-top: 15px; font-size: 18px;">Data Share</ion-card-title>
+                        </ion-card-header>
+                        
+                        <ion-card-content>
+                            <h3>Current: <span style="color: #9acd32">Daily</span></h3>        
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+                <ion-col size='6' style="padding: 10px">
+                    <ion-card>
+                        <ion-card-header>
+                            <img src="../../../assets/icon/recurrent_sim.png" style="max-height: 100px; max-width: auto;"/>
+                            <ion-card-title style="margin-top: 15px; font-size: 18px;">Sim Hosting</ion-card-title>
+                        </ion-card-header>
+                        
+                        <ion-card-content>
+                            <h3>Current: <span style="color: #9acd32">Monthly</span></h3>        
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size='6' style="padding: 10px">
+                    <ion-card>
+                        <ion-card-header>
+                            <img src="../../../assets/icon/recurrent_sms.png" style="max-height: 100px; max-width: auto;"/>
+                            <ion-card-title style="margin-top: 15px; font-size: 18px;">Bulk SMS</ion-card-title>
+                        </ion-card-header>
+                        
+                        <ion-card-content>
+                            <h3>Current: <span style="color: #9acd32">Monthly</span></h3>        
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+                <ion-col size='6' style="padding: 10px">
+                    <ion-card>
+                        <ion-card-header>
+                            <img src="../../../assets/icon/recurrent_mic.png" style="max-height: 100px; max-width: auto;"/>
+                            <ion-card-title style="margin-top: 15px; font-size: 18px;">Voice SMS</ion-card-title>
+                        </ion-card-header>
+                        
+                        <ion-card-content>
+                            <h3>Current: <span style="color: #9acd32">Monthly</span></h3>        
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size='6' style="padding: 10px">
+                    <ion-card>
+                        <ion-card-header>
+                            <img src="../../../assets/icon/recurrent_elect.png" style="max-height: 100px; max-width: auto;"/>
+                            <ion-card-title style="margin-top: 15px; font-size: 18px;">Electricity</ion-card-title>
+                        </ion-card-header>
+                        
+                        <ion-card-content>
+                            <h3>Current: <span style="color: #9acd32">Monthly</span></h3>        
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+                <ion-col size='6' style="padding: 10px">
+                    <ion-card>
+                        <ion-card-header>
+                            <img src="../../../assets/icon/recurrent_cable.png" style="max-height: 100px; max-width: auto;"/>
+                            <ion-card-title style="margin-top: 15px; font-size: 18px;">Cable TV</ion-card-title>
+                        </ion-card-header>
+                        
+                        <ion-card-content>
+                            <h3>Current: <span style="color: #9acd32">Monthly</span></h3>        
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

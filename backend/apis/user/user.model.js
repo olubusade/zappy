@@ -7,6 +7,7 @@ const WalletTnxRef = require('../models/wallet-tnx-ref')(sequelize, Sequelize);
 const AuxData = require('../models/aux-data')(sequelize, Sequelize);
 const TransactionHistory = require('../models/trans-hist')(sequelize, Sequelize);
 const BeneficiaryGroup = require('../models/ben-group')(sequelize, Sequelize);
+const RecurrentTransMobile = require('../models/recurrent-trans-mobile')(sequelize, Sequelize);
 const { Op } = require("sequelize");
 const { QueryTypes } = require('sequelize');
 const { reject, result } = require('lodash');
@@ -20,6 +21,7 @@ WalletTnxRef.sync();
 AuxData.sync();
 TransactionHistory.sync();
 BeneficiaryGroup.sync();
+RecurrentTransMobile.sync();
 
 exports.userModel = {
     registerUser: async(userData) => {
@@ -400,6 +402,45 @@ exports.userModel = {
             }, err => {
                 reject({error:err});
             });
+        });
+    },
+
+    addMobileRecurrent: (data) => {
+        return new Promise((resolve, reject) => {
+            //console.log(((data.nextDate).toISOString().split('T')[0]).split('-').reverse().join('-'));
+            data['nextDate'] = ((data.nextDate).toISOString().split('T')[0]).split('-').reverse().join('/');
+            console.log(data);
+            RecurrentTransMobile.create({
+                user_id: data.userId, 
+                last_date: data.lastDate,
+                last_time: data.lastTime,
+                next_date: data.nextDate,
+                next_time: data.nextTime,
+                type: data.type,
+                mobile: data.phone,
+                amount: data.amount,
+                duration: data.duration
+            }).then(contact => {
+                resolve({data: contact, message: "success"});
+            },err=>{
+                reject({error:err});
+            });
+        });
+    },
+
+    fetchRecurrentMobile: (data) => {
+        return new Promise((resolve, reject) => {
+            RecurrentTransMobile.findAll({
+                where: {
+                    user_id: data.userId,
+                    type: data.type
+                },
+                //limit: 1,
+            }).then(contacts => {
+                resolve(contacts);    
+            }, err => {
+                reject({error: err});
+            })
         });
     },
 }

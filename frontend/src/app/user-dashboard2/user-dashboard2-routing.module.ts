@@ -19,6 +19,7 @@ const routes: Routes = [
           }
         ]
       },
+      //{path: 'home/recurrent-services', loadChildren: () => import('../recurrent-services/recurrent-services.module').then(m => m.RecurrentServicesPageModule)},
       {path: 'home/mobile-airtime', loadChildren: () => import('../mobile-airtime/mobile-airtime.module').then(m => m.MobileAirtimePageModule)},
       {path: 'home/cable-tv', loadChildren: () => import('../cable-tv/cable-tv.module').then(m => m.CableTvPageModule)},
       {path: 'home/beneficiary-group', loadChildren: () => import('../beneficiary-group/beneficiary-group.module').then(m => m.BeneficiaryGroupPageModule)},

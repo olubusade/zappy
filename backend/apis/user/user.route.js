@@ -16,4 +16,8 @@ exports.userRoutes = function (app) {
     app.post('/createBeneficiaryGroup', [UserController.userController.createBeneficiaryGroup]);
     app.post('/fetchBeneficiaryGroups', [UserController.userController.fetchBeneficiaryGroups]);
     app.post('/addContact', [UserController.userController.addContact]);
+    app.post('/addMobileRecurrent', [UserController.userController.addMobileRecurrent]);
+    app.post('/fetchRecurrentMobile', [UserController.userController.fetchRecurrentMobile]);
+    app.post('/payElectricityBill', [UserController.userController.payElectricityBill]);
+    app.post('/payCableTvBill', [UserController.userController.payCableTvBill]);
 };

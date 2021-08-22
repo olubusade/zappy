@@ -58,4 +58,20 @@ export class UserService {
   addContact(data: any): Observable<any> {
     return this.http.post(appConfig.apiURL + '/addContact', data);
   }
+
+  addMobileRecurrent(data: any): Observable<any> {
+    return this.http.post(appConfig.apiURL + '/addMobileRecurrent', data);
+  }
+
+  fetchRecurrentMobile(data: any): Observable<any> {
+    return this.http.post(appConfig.apiURL + '/fetchRecurrentMobile', data);
+  }
+
+  payElectricityBill(data: any): Observable<any> {
+    return this.http.post(appConfig.apiURL + '/payElectricityBill', data);
+  }
+
+  payCableTvBill(data: any): Observable<any> {
+    return this.http.post(appConfig.apiURL + '/payCableTvBill', data);
+  }
 }

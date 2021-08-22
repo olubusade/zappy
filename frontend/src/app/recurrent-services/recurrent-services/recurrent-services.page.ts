@@ -6,13 +6,12 @@ import { AlertController, NavController, LoadingController } from '@ionic/angula
 import { appConfig } from 'src/app/core/config/config';
 
 @Component({
-  selector: 'app-payment-successful',
-  templateUrl: './payment-successful.page.html',
- styleUrls: ['./payment-successful.page.scss', '../../../assets/css/action.scss']
+  selector: 'app-recurrent-services',
+  templateUrl: './recurrent-services.page.html',
+  styleUrls: ['./recurrent-services.page.scss']
 })
-export class PaymentSuccessfulPage implements OnInit {
-  purchaseParams: any = {};
-  
+export class RecurrentServicesPage implements OnInit {
+
   constructor( private router: Router,
     private route: ActivatedRoute, 
     private navService: NavigationServiceService, 
@@ -21,15 +20,16 @@ export class PaymentSuccessfulPage implements OnInit {
     private alertCtrl: AlertController,) { }
   
   ngOnInit() {
-    this.route.queryParams.subscribe(param => {
-      console.log(param);
-      this.purchaseParams = param;
-    });
+    
   }
   
-  goHome() {
-    // console.log(data)
-    this.router.navigate(['/user-dashboard'])
+  setRecurrent(service){
+    this.router.navigate(['/user-dashboard/home/recurrent-mobile'], {queryParams: {type: service}})
+  }
+
+  goBack() {
+  // console.log(data)
+  this.router.navigate(['/user-dashboard/home'])
   }
   
 }

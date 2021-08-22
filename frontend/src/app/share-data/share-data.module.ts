@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DataBundlePageRoutingModule } from './data-bundle-routing.module';
+import { ShareDataPageRoutingModule } from './share-data-routing.module';
 
-import { DataBundlePage } from './data-bundle/data-bundle.page';
+import { ShareDataPage } from './share-data/share-data.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DataBundlePageRoutingModule
+    ShareDataPageRoutingModule
   ],
-  declarations: [DataBundlePage]
+  declarations: [ShareDataPage]
 })
-export class DataBundlePageModule {}
+export class ShareDataPageModule {}

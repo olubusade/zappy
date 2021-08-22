@@ -3,13 +3,13 @@ import { Router } from '@angular/router';
 import { NavigationServiceService } from '../../services/navigation-service.service';
 
 @Component({
-  selector: 'app-data-bundle',
-  templateUrl: './data-bundle.page.html',
-  styleUrls: ['./data-bundle.page.scss', '../../../assets/css/main.scss'],
+  selector: 'app-share-data',
+  templateUrl: './share-data.page.html',
+  styleUrls: ['./share-data.page.scss'],
 })
-export class DataBundlePage implements OnInit {
+export class ShareDataPage implements OnInit {
 
-  constructor( private router: Router,private navService: NavigationServiceService) { }
+  constructor(private router: Router,private navService: NavigationServiceService) { }
   goBack() {
     this.navService.navigateToPreviousPage();
   }

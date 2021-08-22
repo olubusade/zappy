@@ -69,3 +69,40 @@ ion-button {
 }
 
 /*Bottom Sheet CSS*/
+
+.iconContainer {
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  border: 2px solid #9acd32;
+  margin: 0px auto;
+}
+
+.networkCheck {
+  float: right;
+  margin-top: 30px;
+}
+
+.airtelUrl {
+  background: url("../../../assets/icon/airtel_icon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mtnUrl {
+  background: url("../../../assets/icon/mtn_icon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gloUrl {
+  background: url("../../../assets/icon/glo_icon.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nineMobileUrl {
+  background: url("../../../assets/icon/nine_mobile_icon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

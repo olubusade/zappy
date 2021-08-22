@@ -1,126 +1,71 @@
-@import 'https://fonts.google.com/specimen/Nunito?query=nuni';
-
-ion-header  {
-  color: #ffffff;
-  font-weight: 400;
+p,
+h6,
+h5,
+div,
+ion-grid,
+ion-card,
+ion-row,
+ion-col {
+  padding: 0;
+  margin: 0;
+  line-height: 0;
 }
 
-
-.signup {
-  height: 50vh;
-  margin: 10px 30px;
-
-
-  
-  // form {
-  //   border-top-right-radius: 30px;
-  //   border-top-left-radius: 30px;
-  //   background-color: #ffffff;
-  //   width: 100%;
-  //   padding: 50px 20px;
-
-  //   input {
-  //     padding: 10px;
-  //     margin: 5px 0;
-  //     width: 90%;
-  //     border-radius: 7px;
-  //     border: none;
-  //     background-color: #e4e7e9;
-
-  //     &::placeholder {
-  //       color: #38569A;
-  //       padding-left: 10px;
-  //     }
-
-  //     &:focus {
-  //       outline: solid #38569A 1px;
-  //     }
-  //   }
-  //   select {
-  //     width: 90%;
-  //     border-radius: 7px;
-  //     margin: 5px 0;
-  //     padding: 10px;
-  //     background-color: #e4e7e9;
-  //     border: none;
-
-  //     &::placeholder {
-  //       color: #38569A;
-  //     }
-  //   }
-
-  //   button {
-  //     margin-top: 20px;
-  //   }
-  // }
+.main-container {
+  padding: 10px;
 }
 
-.brand {
-  img {
-    width: 100% !important;
-    padding: 30px;
-  }
-} 
+/*Bottom Sheet CSS*/
 
-ion-title {
-  color: #ffffff !important;
-}
-ion-toolbar {
-  ion-icon {
-    color: #ffffff !important;
-  }
-  ion-buttons {
-    width: 100% !important;
-  }
-  ion-title {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500 !important;
-    font-size: 16px !important;
-    line-height: 24px !important;
-    letter-spacing: 0.05em !important;
-
-  }
-}
+ion-title,
 ion-button {
+  font-weight: bold;
+}
+
+.bottomSheet {
+  position: fixed;
   width: 100%;
+  //height: 50%;
+  bottom: 0;
+  border-radius: 15px 15px 0 0;
+  z-index: 20;
+  background-color: var(--ion-background-color);
+  transition: 0.3s;
+  transform: translate3d(0, 0, 0);
+
+  .content {
+    h1 {
+      font-weight: bold;
+    }
+    p {
+      color: gray;
+      font-weight: bold;
+    }
+  }
+
+  .swipe-handler::after {
+    content: "";
+    width: 36px;
+    height: 6px;
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    margin-left: -18px;
+    margin-top: -3px;
+    border-radius: 3px;
+    background: lightgray;
+  }
 }
 
-ion-item {
-  color: #003679;
-  --background: rgba(0, 54, 121, 0.1) !important;
-  border-radius: 6px;
-  --min-height: 40px;
-  margin: 10px !important;
-}
-ion-input, ion-select{
-  --placeholder-opacity: .9 !important;
-  --padding-top: 0;
-  --padding-bottom: 0;
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 18px;
-  --placeholder-color: rgba(0, 54, 121, 0.6) !important;
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  z-index: 10;
+  transition: 0.3s;
 }
 
-ion-button {
-  width: 241px;
-  min-height: 40px;
-  --border-radius: 6px !important;
-  margin-top: 10px !important;
-}
-
-.bg-white {
-  background: #ffffff !important;
-}
-
-ion-label {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px !important;
-  line-height: 18px;
-  color: rgba(0, 54, 121, 0.6) !important;
-}
+/*Bottom Sheet CSS*/

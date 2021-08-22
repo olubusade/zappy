@@ -13,37 +13,77 @@
 </ion-header>
 
 <ion-content>
+  <!--Background Overlay-->
+  <div class="bg"></div>
+  
+  <!--Bottom Sheet-->
+  <div class="bottomSheet" (touchmove)="touchMove($event)" (touchend)="touchEnd()">
+    <!--Short line at top of bottom sheet-->
+    <div style="text-align: right; padding-top: 20px;"><ion-icon name="close" color="primary" style="font-size: 35px;" (click)="closePinPad()"></ion-icon></div>
+    <!--Bottom sheet content-->
+    <div class="content ion-padding">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div style="margin-top: 40px; font-size: 18px; font-weight: bold; text-align: center;">Bill Payment</div>
+          </ion-col>
+        </ion-row>
+        <!--Network icons row-->
+        <ion-row style="margin-top: 30px;">
+          <ion-col size="12" style="padding-left: 20px; text-align: center;">
+            <img [src]="billers[selectedBillerIndex].src" style="border: 1px solid #9acd32; max-height: 40px; max-width: auto; border-radius: 100px;"/>
+            <span> {{billers[selectedBillerIndex].name}} </span>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 20px;">
+          <ion-col size="12" style="padding-left: 20px; padding-right: 20px;">
+            <ion-list>
+              <ion-item style="text-align: center;">
+                <p style="font-size: 12px;">Selected plan - {{billingData.plan}}</p>
+                <ion-label>Select Plan</ion-label>
+                <ion-select name="plan" [(ngModel)]="billingData.plan" [value]="billingData.plan">
+                  <ion-select-option value="prepaid">Prepaid</ion-select-option>
+                  <ion-select-option value="postpaid">Postpaid</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 20px;">
+          <ion-col size="12" style="padding-left: 20px; padding-right: 20px;">
+            <div style="background-color: #f5f5f5; height: 40px; padding: 5px; border-radius: 7px;">
+              <ion-input placeholder="Meter Number" [(ngModel)]="billingData.meterNumber" name="meterNumber" inputmode="numeric" style="font-size: 12px; text-align: center;"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 20px;">
+          <ion-col size="12" style="padding-left: 20px; padding-right: 20px;">
+            <div style="background-color: #f5f5f5; height: 40px; padding: 5px; border-radius: 7px;">
+              <ion-input placeholder="Amount" [(ngModel)]="billingData.amount" name="amount" inputmode="numeric" style="font-size: 12px; text-align: center;"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
+            <ion-button (click)="proceed()" shape="round" mode="ios" strong="true" size="default" color="primary" style="font-size: 14px;">Proceed</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+
+
   <div class="container">    
-    <div class="brand">
-      <img src="../../assets/imgs/logo.png" alt="adikpopay-logo" />
-    </div>
-    <div>
-      <ion-item lines="none" >
-        <ion-label *ngIf="!isSelected">Select meter location</ion-label>
-        <ion-select 
-          okText="Okay" 
-          cancelText="Dismiss" 
-          required 
-          (ionChange)="onChnage()"
-          >
-          <ion-select-option *ngFor="let provider of powerproviders" [value]="provider.value">
-            {{provider.name}}
-          </ion-select-option>
-        </ion-select>
+    <h2>Select a biller</h2>
+
+    <ion-list>
+      <ion-item *ngFor="let biller of billers; let i = index;" (click)="chooseBiller(i)">
+        <ion-thumbnail item-left>
+          <img [src]="biller.src" style="border: 1px solid #9acd32; border-radius: 50px;"/>
+        </ion-thumbnail>
+        <span style="margin-left: 20px;">{{biller.name}}</span>
       </ion-item>
-  
-      <ion-item lines="none">
-        <ion-input placeholder="Meter number" size="number" type="text" required></ion-input>
-      </ion-item>
-  
-      <ion-item lines="none">
-        <ion-input placeholder="Amount" type="number" required></ion-input>
-      </ion-item>  
-    </div>
-    <div class="ion-text-center">      
-      <ion-button color="primary" (click)="subscribeToService()" mode='ios'>
-        Continue
-      </ion-button>
-    </div>
+    </ion-list>
   </div>
 </ion-content>

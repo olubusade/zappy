@@ -19,8 +19,6 @@ exports.userController = {
         if (result > 0) {
             res.send({status:local_config.statusCode.conflict,message:"Oops! You're an existing user!"});
         }else {
-          
-          
           let user = {
             "id": result.user.id,
             "role_id": result.user.role_id,
@@ -213,6 +211,146 @@ exports.userController = {
     subReq.end()
   },
 
+  payElectricityBill: (req, res) => {
+    console.log(req.body);
+    req.body['reward'] = 0;
+    const customerReference = Math.floor(100000 + Math.random() * 900000);
+
+    UserModel.userModel.updateWalletAfterRecharge(req.body).then(async (result) => {
+      console.log(result);
+      if(result){
+        res.send({status:local_config.statusCode.accepted});
+      }else{
+        res.send({status:local_config.statusCode.notAcceptable});
+      }
+    });
+
+    // const https = require('https')
+
+    // const data = JSON.stringify({
+    //   amount: req.body.amount,
+    //   beneficiary: req.body.mobile,
+    //   customer_reference: customerReference,
+    //   tariffTypeId: ""
+    // })
+
+    // const options = {
+    //   hostname: 'api.topupbox.com',
+    //   port: 443,
+    //   path: '/services/api/v2/w1/recharge/'+req.body.network+'/'+req.body.type,
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'Content-Length': data.length,
+    //     'authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE2MjQ3MTU4MDMsImlzcyI6IlpFRURMQUJTIiwicm9sZU5hbWUiOiJtZXJjaGFudCIsImRlYWxlciI6ImJvZGxpbmsiLCJleHAiOjE2NTYyNTE4MDMsImlhdCI6MTYyNDcxNTgwMywidXNlcklkIjoiYWRlb3llYWRla295YSJ9.Sd1YxXNiuKwPzIGf6GvQM_HGo8nFmoUUqee0-2wlSNU',
+    //     'Accept': '*/*'
+    //   }
+    // }
+
+    // const subReq = https.request(options, subRes => {
+    //   var response = '';
+    //   console.log(`statusCode: ${subRes.statusCode}`)
+    //   //console.log(subRes.data);
+    //   subRes.on('data', d => {
+    //     //process.stdout.write(d)
+    //     response += d;
+    //   })
+
+    //   subRes.on('end', function () {
+    //     console.log("Sub res end");
+    //     console.log(response);
+    //     if(JSON.parse(response).response == null){
+    //       console.log("Sub response is null");
+    //       res.send({status:subRes.statusCode, response: JSON.parse(response)});
+    //       return;
+    //     }
+    //     UserModel.userModel.updateWalletAfterRecharge(req.body).then(async (result) => {
+    //       console.log(result);
+    //       res.send({status:subRes.statusCode, response: JSON.parse(response)});
+    //     });
+    //     //res.send({status:subRes.statusCode, response: JSON.parse(response)});
+    //   });
+    // })
+    
+    // subReq.on('error', error => {
+    //   console.log("Error is available");
+    //   console.error(error)
+    // })
+    
+    // subReq.write(data)
+    // subReq.end()
+  },
+
+  payCableTvBill: (req, res) => {
+    console.log(req.body);
+    req.body['reward'] = 0;
+    const customerReference = Math.floor(100000 + Math.random() * 900000);
+
+    UserModel.userModel.updateWalletAfterRecharge(req.body).then(async (result) => {
+      console.log(result);
+      if(result){
+        res.send({status:local_config.statusCode.accepted});
+      }else{
+        res.send({status:local_config.statusCode.notAcceptable});
+      }
+    });
+
+    // const https = require('https')
+
+    // const data = JSON.stringify({
+    //   amount: req.body.amount,
+    //   beneficiary: req.body.mobile,
+    //   customer_reference: customerReference,
+    //   tariffTypeId: ""
+    // })
+
+    // const options = {
+    //   hostname: 'api.topupbox.com',
+    //   port: 443,
+    //   path: '/services/api/v2/w1/recharge/'+req.body.network+'/'+req.body.type,
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'Content-Length': data.length,
+    //     'authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE2MjQ3MTU4MDMsImlzcyI6IlpFRURMQUJTIiwicm9sZU5hbWUiOiJtZXJjaGFudCIsImRlYWxlciI6ImJvZGxpbmsiLCJleHAiOjE2NTYyNTE4MDMsImlhdCI6MTYyNDcxNTgwMywidXNlcklkIjoiYWRlb3llYWRla295YSJ9.Sd1YxXNiuKwPzIGf6GvQM_HGo8nFmoUUqee0-2wlSNU',
+    //     'Accept': '*/*'
+    //   }
+    // }
+
+    // const subReq = https.request(options, subRes => {
+    //   var response = '';
+    //   console.log(`statusCode: ${subRes.statusCode}`)
+    //   //console.log(subRes.data);
+    //   subRes.on('data', d => {
+    //     //process.stdout.write(d)
+    //     response += d;
+    //   })
+
+    //   subRes.on('end', function () {
+    //     console.log("Sub res end");
+    //     console.log(response);
+    //     if(JSON.parse(response).response == null){
+    //       console.log("Sub response is null");
+    //       res.send({status:subRes.statusCode, response: JSON.parse(response)});
+    //       return;
+    //     }
+    //     UserModel.userModel.updateWalletAfterRecharge(req.body).then(async (result) => {
+    //       console.log(result);
+    //       res.send({status:subRes.statusCode, response: JSON.parse(response)});
+    //     });
+    //     //res.send({status:subRes.statusCode, response: JSON.parse(response)});
+    //   });
+    // })
+    
+    // subReq.on('error', error => {
+    //   console.log("Error is available");
+    //   console.error(error)
+    // })
+    
+    // subReq.write(data)
+    // subReq.end()
+  },
+
   getTransactionHistory: (req, res) => {
     console.log(req.body);
     let resultReceiver = [];
@@ -298,6 +436,47 @@ exports.userController = {
     UserModel.userModel.addContact(req.body).then(async (result) => {
       console.log(result);
       res.send(result);
+    });
+  },
+
+  addMobileRecurrent: (req, res) => {
+    console.log(req.body);
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+
+    let currentDate = dd + '/' + mm + '/' + yyyy;
+    let currentTime = h + ':' + m + ':' + s;
+
+    let initNextDate = today.setDate(today.getDate() + parseInt(req.body.duration));
+    let newDate = new Date(initNextDate);
+    let nextDate = newDate
+    let nextTime = currentTime;
+
+    req.body['lastDate'] = currentDate;
+    req.body['lastTime'] = currentTime;
+    req.body['nextDate'] = nextDate;
+    req.body['nextTime'] = nextTime;
+
+    UserModel.userModel.addMobileRecurrent(req.body).then(async (result) => {
+      console.log(result);
+      res.send(result);
+    });
+  },
+
+  fetchRecurrentMobile: (req, res) => {
+    console.log(req.body);
+    let resultReceiver = [];
+    UserModel.userModel.fetchRecurrentMobile(req.body).then(async (result) => {
+      console.log(result);
+      result.map(contact => {
+        resultReceiver.push(contact.dataValues);
+      });
+      res.send({status: local_config.statusCode.found, data: resultReceiver});
     });
   },
 }

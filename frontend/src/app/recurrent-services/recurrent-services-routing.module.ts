@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DataBundlePage } from './data-bundle/data-bundle.page';
+import { RecurrentServicesPage } from './recurrent-services/recurrent-services.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: DataBundlePage
+    component: RecurrentServicesPage
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DataBundlePageRoutingModule {}
+export class RecurrentServicesPageRoutingModule {}
